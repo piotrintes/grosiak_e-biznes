@@ -1,0 +1,98 @@
+
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Categories
+GET     /addcategory                controllers.HomeController.addCategory
+POST    /addcategoryhandle          controllers.HomeController.addCategoryHandle
+GET     /updatecategory/:id         controllers.HomeController.updateCategory(id: Long)
+GET     /updatecategoryhandle       controllers.HomeController.updateCategoryHandle
+GET     /deletecategory/:id         controllers.HomeController.deleteCategory(id: Long)
+GET     /category/:id               controllers.HomeController.getCategory(id: Long)
+GET     /categories                 controllers.HomeController.getCategorys
+
+# Products
+GET     /addproduct                 controllers.HomeController.addProduct
+POST    /addproducthandle           controllers.HomeController.addProductHandle
+GET     /updateproduct/:id          controllers.HomeController.updateProduct(id: Long)
+POST    /updateproducthandle        controllers.HomeController.updateProductHandle
+GET     /products                   controllers.HomeController.getProducts
+GET     /product/:id                controllers.HomeController.getProduct(id: Long)
+GET     /delete/:id                 controllers.HomeController.delete(id: Long)
+
+# Product Opinions
+GET     /addopinion/:productid              controllers.HomeController.addOpinion(productid: Long)
+POST    /addopinionhandle                   controllers.HomeController.addOpinionHandle
+GET     /updateopinion/:productid/:id       controllers.HomeController.updateOpinion(productid: Long, id: Long)
+POST    /updateopinionhandle                controllers.HomeController.updateOpinionHandle
+GET     /deleteopinion/:productid/:id       controllers.HomeController.deleteOpinion(productid: Long, id: Long)
+GET     /opinions/:productid                controllers.HomeController.opinions(productid: Long)
+
+# Promotions
+GET     /addpromotion/:productid            controllers.HomeController.addPromotion(productid: Long)
+POST    /addpromotionhandle                 controllers.HomeController.addPromotionHandle
+GET     /updatepromotion/:productid/:id     controllers.HomeController.updatePromotion(productid: Long, id: Long)
+POST    /updatepromotionhandle              controllers.HomeController.updatePromotionHandle
+GET     /deletepromotion/:productid/:id     controllers.HomeController.deletePromotion(productid: Long, id: Long)
+GET     /promotion/:productid/:id           controllers.HomeController.promotion(productid: Long, id: Long)
+
+# Comments
+GET     /addcomment                 controllers.HomeController.addComment
+POST    /addcommenthandle           controllers.HomeController.addCommentHandle
+GET     /updatecomment/:id          controllers.HomeController.updateComment(id: Long)
+GET     /updatecommenthandle        controllers.HomeController.updateCommentHandle
+GET     /deletecomment/:id          controllers.HomeController.deleteComment(id: Long)
+GET     /comment/:id                controllers.HomeController.comment(id: Long)
+
+# Users
+GET     /adduser                    controllers.HomeController.addUser
+POST    /adduserhandle              controllers.HomeController.addUserHandle
+GET     /updateuser/:id             controllers.HomeController.updateUser(id: Long)
+GET     /updateuserhandle           controllers.HomeController.updateUserHandle
+GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Long)
+GET     /user/:id                   controllers.HomeController.user(id: Long)
+
+# Chart
+GET     /addtochart/:productid/:number        controllers.HomeController.addToChart(productid: Long, number: Long)
+POST    /addtocharthandle                     controllers.HomeController.addToChartHandle
+GET     /updatechart/:productid/:number       controllers.HomeController.addToChart(productid: Long, number: Long)
+GET     /deletefromchart/:productid           controllers.HomeController.deleteFromChart(productid: Long)
+GET     /chart                                controllers.HomeController.chart
+
+# Transactions
+GET     /addtransaction                 controllers.HomeController.addTransaction
+POST    /addtransactionhandle           controllers.HomeController.addTransactionHandle
+GET     /updatetransaction/:id          controllers.HomeController.updateTransaction(id: Long)
+GET     /updatetransactionhandle        controllers.HomeController.updateTransactionHandle
+GET     /deletetransaction/:id          controllers.HomeController.deleteTransaction(id: Long)
+GET     /transaction/:id                controllers.HomeController.transaction(id: Long)
+
+# Payments
+GET     /addpayment                 controllers.HomeController.addPayment
+POST    /addpaymenthandle           controllers.HomeController.addPaymentHandle
+GET     /updatepayment/:id          controllers.HomeController.updatePayment(id: Long)
+GET     /updatepaymenthandle        controllers.HomeController.updatePaymentHandle
+GET     /deletepayment/:id          controllers.HomeController.deletePayment(id: Long)
+GET     /payment/:id                controllers.HomeController.payment(id: Long)
+
+# Deliverys
+GET     /adddelivery                controllers.HomeController.addDelivery
+POST    /adddeliveryhandle          controllers.HomeController.addDeliveryHandle
+GET     /updatedelivery/:id         controllers.HomeController.updateDelivery(id: Long)
+GET     /updatedeliveryhandle       controllers.HomeController.updateDeliveryHandle
+GET     /deletedelivery/:id         controllers.HomeController.deleteDelivery(id: Long)
+GET     /delivery/:id               controllers.HomeController.delivery(id: Long)
+
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
