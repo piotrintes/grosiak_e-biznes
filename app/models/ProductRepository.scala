@@ -14,7 +14,6 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cat
 
 
   private class ProductTable(tag: Tag) extends Table[Product](tag, "product") {
-
     /** The ID column, which is the primary key, and auto incremented */
     def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
 
@@ -69,6 +68,7 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cat
       // And finally, insert the product into the database
       ) += (name, description,category)
   }
+
 
   /**
    * List all the people in the database.
