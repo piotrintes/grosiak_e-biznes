@@ -27,8 +27,8 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
   def create(name: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {
     (user.map(u => (u.name, u.surname,u.email, u.admin))
       returning user.map(_.id)
-      into {case ((name,surname,email,admin),id) => User(id,name, surname, email, admin)}
-      ) += (name, surname,email,admin)
+      into {case ((name,surname,email,admin),id) => User(id, name, surname, email, admin)}
+      ) += (name, surname, email, admin)
   }
 
   def list(): Future[Seq[User]] = db.run {

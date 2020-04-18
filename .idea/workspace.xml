@@ -2,11 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8f39bba-6a2b-4bd6-a729-0bc3fd211f82" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/User.scala" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/UserRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Chart.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/ChartRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Comment.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/CommentRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Delivery.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Payment.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/PaymentRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/PrOpinion.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Transaction.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/TransactionRepository.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Product.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Product.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/ProductRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ProductRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserRepository.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +104,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="inlay.hints.Scala" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -174,12 +186,25 @@
       <workItem from="1586273050724" duration="2530000" />
       <workItem from="1586275707448" duration="10079000" />
       <workItem from="1586288638760" duration="342000" />
-      <workItem from="1587138515195" duration="2798000" />
+      <workItem from="1587138515195" duration="3210000" />
+      <workItem from="1587205937038" duration="4826000" />
     </task>
+    <task id="LOCAL-00001" summary="Models part1">
+      <created>1587142836460</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587142836460</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Models part1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Models part1" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586277054647">
@@ -187,6 +212,10 @@
     </state>
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586277054647" />
     <state x="424" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.3200.1002@0.36.3200.1002" timestamp="1586274177575" />
+    <state x="445" y="76" key="CommitChangelistDialog2" timestamp="1587142836269">
+      <screen x="0" y="36" width="1920" height="1002" />
+    </state>
+    <state x="445" y="76" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1587142836269" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom" timestamp="1586288979857">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
@@ -219,9 +248,10 @@
       <screen x="0" y="36" width="3200" height="1002" />
     </state>
     <state x="730" y="382" key="NewModule_or_Project.wizard/0.36.3200.1002@0.36.3200.1002" timestamp="1586273072957" />
-    <state x="446" y="156" key="SettingsEditor" timestamp="1586273550451">
-      <screen x="0" y="36" width="3200" height="1002" />
+    <state x="268" y="156" key="SettingsEditor" timestamp="1587207932565">
+      <screen x="0" y="36" width="1920" height="1002" />
     </state>
+    <state x="268" y="156" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1587207932565" />
     <state x="446" y="156" key="SettingsEditor/0.36.3200.1002@0.36.3200.1002" timestamp="1586273550451" />
     <state x="606" y="99" width="707" height="876" key="find.popup" timestamp="1586283811681">
       <screen x="0" y="36" width="1920" height="1002" />
