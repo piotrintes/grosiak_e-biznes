@@ -13,7 +13,7 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
   import dbConfig._
   import profile.api._
 
-  class DeliveryTable(tag: Tag) extends Table[Delivery](tag, "chart") {
+  class DeliveryTable(tag: Tag) extends Table[Delivery](tag, "delivery") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def transaction = column[Int]("name")
     def date: Rep[String] = column[String]("date")

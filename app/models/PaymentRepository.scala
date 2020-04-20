@@ -13,7 +13,7 @@ class PaymentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tran
   import dbConfig._
   import profile.api._
 
-  class PaymentTable(tag: Tag) extends Table[Payment](tag, "chart") {
+  class PaymentTable(tag: Tag) extends Table[Payment](tag, "payment") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def transaction = column[Int]("name")
     def date: Rep[String] = column[String]("date")

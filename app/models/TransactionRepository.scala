@@ -13,7 +13,7 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
   import dbConfig._
   import profile.api._
 
-  class TransactionTable(tag: Tag) extends Table[Transaction](tag, "chart") {
+  class TransactionTable(tag: Tag) extends Table[Transaction](tag, "transaction") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def user = column[Int]("name")
     def product: Rep[Int] = column[Int]("product")
