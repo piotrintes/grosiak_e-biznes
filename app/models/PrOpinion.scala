@@ -1,3 +1,3 @@
 package models
 
-case class PrOpinion(id: Int, user: Int, product: Int, stars: Int, text: String)
+case class PrOpinion(id: Int, user: Int, product: Long, stars: Int, text: String)

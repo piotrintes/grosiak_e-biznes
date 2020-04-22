@@ -1,3 +1,3 @@
 package models
 
-case class Chart(id: Int, user: Int, product: Int, count: Int)
+case class Chart(id: Int, user: Int, product: Long, count: Int)

@@ -22,7 +22,7 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
   }
 
   import transactionRepository.TransactionTable
-  private val trs = TableQuery[TransactionTable]
+  val trs = TableQuery[TransactionTable]
 
   val delivery = TableQuery[DeliveryTable]
 

@@ -22,7 +22,7 @@ class PaymentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tran
   }
 
   import transactionRepository.TransactionTable
-  private val trs = TableQuery[TransactionTable]
+  val trs = TableQuery[TransactionTable]
 
   val payment = TableQuery[PaymentTable]
 

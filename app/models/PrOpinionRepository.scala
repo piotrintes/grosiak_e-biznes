@@ -16,7 +16,7 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   class PrOpinionTable(tag: Tag) extends Table[PrOpinion](tag, "prOpinion") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def user = column[Int]("name")
-    def product: Rep[Int] = column[Int]("product")
+    def product: Rep[Long] = column[Long]("product")
     def stars: Rep[Int] = column[Int]("stars")
     def text: Rep[String] = column[String]("text")
     def user_fk = foreignKey("user_fk",user, usr)(_.id)
@@ -25,13 +25,13 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   }
 
   import userRepository.UserTable
-  private val usr = TableQuery[UserTable]
+  val usr = TableQuery[UserTable]
   import productRepository.ProductTable
-  private val prd = TableQuery[ProductTable]
+  val prd = TableQuery[ProductTable]
 
   val opinion = TableQuery[PrOpinionTable]
 
-  def create(user: Int, product: Int, stars: Int, text: String): Future[PrOpinion] = db.run {
+  def create(user: Int, product: Long, stars: Int, text: String): Future[PrOpinion] = db.run {
     (opinion.map(o => (o.user, o.product, o.stars, o.text))
       returning opinion.map(_.id)
       into {case ((user,product,stars,text),id) => PrOpinion(id, user, product, stars, text)}

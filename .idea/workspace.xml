@@ -3,10 +3,23 @@
   <component name="ChangeListManager">
     <list default="true" id="b8f39bba-6a2b-4bd6-a729-0bc3fd211f82" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ProductController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ProductController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Chart.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Chart.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ChartRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ChartRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/CommentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CommentRepository.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/PaymentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PaymentRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/PrOpinion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PrOpinion.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Product.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Product.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ProductRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ProductRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Transaction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Transaction.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/TransactionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/TransactionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/playCommonClassloader/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/playCommonClassloader/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,7 +189,9 @@
       <workItem from="1586288638760" duration="342000" />
       <workItem from="1587138515195" duration="3210000" />
       <workItem from="1587205937038" duration="5573000" />
-      <workItem from="1587381517122" duration="1509000" />
+      <workItem from="1587381517122" duration="2154000" />
+      <workItem from="1587480983781" duration="4048000" />
+      <workItem from="1587558187040" duration="1380000" />
     </task>
     <task id="LOCAL-00001" summary="Models part1">
       <created>1587142836460</created>
@@ -192,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587212253663</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="evolutions">
+      <created>1587383344716</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1587383344716</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,7 +223,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Models part1" />
     <MESSAGE value="Slick Models" />
-    <option name="LAST_COMMIT_MESSAGE" value="Slick Models" />
+    <MESSAGE value="evolutions" />
+    <option name="LAST_COMMIT_MESSAGE" value="evolutions" />
   </component>
   <component name="WindowStateProjectService">
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586277054647">
@@ -209,32 +232,41 @@
     </state>
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586277054647" />
     <state x="424" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.3200.1002@0.36.3200.1002" timestamp="1586274177575" />
-    <state x="445" y="76" key="CommitChangelistDialog2" timestamp="1587212253503">
+    <state x="445" y="76" width="1030" height="922" key="CommitChangelistDialog2" timestamp="1587383344279">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
+    <state x="445" y="76" width="1030" height="922" key="CommitChangelistDialog2/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1587383344279" />
     <state x="445" y="76" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1587212253503" />
-    <state width="1870" height="269" key="GridCell.Tab.0.bottom" timestamp="1586288979857">
-      <screen x="0" y="36" width="1920" height="1002" />
+    <state width="1230" height="276" key="GridCell.Tab.0.bottom" timestamp="1587486472649">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
+    <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
+    <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551102" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1586288979857" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618178" />
-    <state width="1870" height="269" key="GridCell.Tab.0.center" timestamp="1586288979857">
-      <screen x="0" y="36" width="1920" height="1002" />
+    <state width="1230" height="276" key="GridCell.Tab.0.center" timestamp="1587486472648">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
+    <state width="1230" height="276" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
+    <state width="1230" height="276" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1586288979857" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
-    <state width="1870" height="269" key="GridCell.Tab.0.left" timestamp="1586288979856">
-      <screen x="0" y="36" width="1920" height="1002" />
+    <state width="1230" height="276" key="GridCell.Tab.0.left" timestamp="1587486472648">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
+    <state width="1230" height="276" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
+    <state width="1230" height="276" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1586288979856" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618176" />
-    <state width="1870" height="269" key="GridCell.Tab.0.right" timestamp="1586288979857">
-      <screen x="0" y="36" width="1920" height="1002" />
+    <state width="1230" height="276" key="GridCell.Tab.0.right" timestamp="1587486472649">
+      <screen x="1920" y="0" width="1280" height="1024" />
     </state>
+    <state width="1230" height="276" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
+    <state width="1230" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1586288979857" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
     <state width="264" height="563" key="HiddenNamespacesPopup" timestamp="1586277260461">
@@ -250,10 +282,11 @@
     </state>
     <state x="268" y="156" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1587207932565" />
     <state x="446" y="156" key="SettingsEditor/0.36.3200.1002@0.36.3200.1002" timestamp="1586273550451" />
-    <state x="606" y="99" width="707" height="876" key="find.popup" timestamp="1586283811681">
+    <state x="606" y="99" width="707" height="876" key="find.popup" timestamp="1587559565861">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="606" y="99" width="707" height="876" key="find.popup/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586283811681" />
+    <state x="606" y="99" width="707" height="876" key="find.popup/0.36.1920.1002@0.36.1920.1002" timestamp="1587559565861" />
     <state x="623" y="255" width="672" height="678" key="search.everywhere.popup" timestamp="1587213027863">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>

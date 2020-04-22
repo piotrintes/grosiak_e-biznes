@@ -7,24 +7,18 @@ import scala.concurrent.{ Future, ExecutionContext }
 
 @Singleton
 class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, categoryRepository: CategoryRepository)(implicit ec: ExecutionContext) {
-  private val dbConfig = dbConfigProvider.get[JdbcProfile]
+  val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
   import profile.api._
 
-
   class ProductTable(tag: Tag) extends Table[Product](tag, "product") {
     /** The ID column, which is the primary key, and auto incremented */
-    def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-
+    def id = column[Long]("id", O.PrimaryKey, O.AutoInc)
     def name = column[String]("name")
-
     def description = column[String]("description")
-
     def category = column[Int]("category")
-
     def price = column[Double]("price")
-
     def category_fk = foreignKey("cat_fk",category, cat)(_.id)
 
 
@@ -48,7 +42,7 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cat
 
   private val product = TableQuery[ProductTable]
 
-  private val cat = TableQuery[CategoryTable]
+  val cat = TableQuery[CategoryTable]
 
 
   /**
@@ -81,11 +75,11 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cat
     product.filter(_.category === category_id).result
   }
 
-  def getById(id: Int): Future[Product] = db.run {
+  def getById(id: Long): Future[Product] = db.run {
     product.filter(_.id === id).result.head
   }
 
-  def getByIdOption(id: Int): Future[Option[Product]] = db.run {
+  def getByIdOption(id: Long): Future[Option[Product]] = db.run {
     product.filter(_.id === id).result.headOption
   }
 
@@ -93,9 +87,9 @@ class ProductRepository @Inject() (dbConfigProvider: DatabaseConfigProvider, cat
     product.filter(_.category inSet category_ids).result
   }
 
-  def delete(id: Int): Future[Unit] = db.run(product.filter(_.id === id).delete).map(_ => ())
+  def delete(id: Long): Future[Unit] = db.run(product.filter(_.id === id).delete).map(_ => ())
 
-  def update(id: Int, new_product: Product): Future[Unit] = {
+  def update(id: Long, new_product: Product): Future[Unit] = {
     val productToUpdate: Product = new_product.copy(id)
     db.run(product.filter(_.id === id).update(productToUpdate)).map(_ => ())
   }

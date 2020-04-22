@@ -1,3 +1,3 @@
 package models
 
-case class Transaction(id: Int, user: Int, product: Int, count: Int, price: Double, date: String)
+case class Transaction(id: Int, user: Int, product: Long, count: Int, price: Double, date: String)

@@ -23,7 +23,7 @@ class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, user
   }
 
   import userRepository.UserTable
-  private val usr = TableQuery[UserTable]
+  val usr = TableQuery[UserTable]
 
   val comment = TableQuery[CommentTable]
 
