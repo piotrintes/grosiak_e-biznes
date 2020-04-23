@@ -8,12 +8,12 @@ import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, transactionRepository: TransactionRepository)(implicit ec: ExecutionContext) {
-  val dbConfig = dbConfigProvider.get[JdbcProfile]
+  private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
   import profile.api._
 
-  class DeliveryTable(tag: Tag) extends Table[Delivery](tag, "delivery") {
+  private class DeliveryTable(tag: Tag) extends Table[Delivery](tag, "delivery") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def transaction = column[Int]("name")
     def date: Rep[String] = column[String]("date")
@@ -22,9 +22,9 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
   }
 
   import transactionRepository.TransactionTable
-  val trs = TableQuery[TransactionTable]
+  private val trs = TableQuery[TransactionTable]
 
-  val delivery = TableQuery[DeliveryTable]
+  private val delivery = TableQuery[DeliveryTable]
 
   def create(id: Int, transaction: Int, date: String): Future[Delivery] = db.run {
     (delivery.map(t => (t.transaction, t.date))

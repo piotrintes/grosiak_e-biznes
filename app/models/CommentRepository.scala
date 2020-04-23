@@ -8,12 +8,12 @@ import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRepository: UserRepository)(implicit ec: ExecutionContext) {
-  val dbConfig = dbConfigProvider.get[JdbcProfile]
+  private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
   import profile.api._
 
-  class CommentTable(tag: Tag) extends Table[Comment](tag, "comment") {
+  private class CommentTable(tag: Tag) extends Table[Comment](tag, "comment") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def user = column[Int]("name")
     def stars: Rep[Int] = column[Int]("stars")
@@ -23,9 +23,9 @@ class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, user
   }
 
   import userRepository.UserTable
-  val usr = TableQuery[UserTable]
+  private val usr = TableQuery[UserTable]
 
-  val comment = TableQuery[CommentTable]
+  private val comment = TableQuery[CommentTable]
 
   def create(user: Int, stars: Int, text: String): Future[Comment] = db.run {
     (comment.map(c => (c.user, c.stars, c.text))

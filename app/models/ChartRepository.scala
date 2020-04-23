@@ -8,12 +8,12 @@ import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class ChartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRepository: UserRepository, productRepository: ProductRepository)(implicit ec: ExecutionContext) {
-  val dbConfig = dbConfigProvider.get[JdbcProfile]
+  private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
   import profile.api._
 
-  class ChartTable(tag: Tag) extends Table[Chart](tag, "chart") {
+  private class ChartTable(tag: Tag) extends Table[Chart](tag, "chart") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def user = column[Int]("name")
     def product: Rep[Long] = column[Long]("product")
@@ -24,11 +24,11 @@ class ChartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRe
   }
 
   import userRepository.UserTable
-  val usr = TableQuery[UserTable]
+  private val usr = TableQuery[UserTable]
   import productRepository.ProductTable
-  val prd = TableQuery[ProductTable]
+  private val prd = TableQuery[ProductTable]
 
-  val chart = TableQuery[ChartTable]
+  private val chart = TableQuery[ChartTable]
 
   def create(user: Int, product: Long, count: Int): Future[Chart] = db.run {
     (chart.map(o => (o.user, o.product, o.count))
@@ -41,4 +41,3 @@ class ChartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRe
     chart.result
   }
 }
-

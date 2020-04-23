@@ -22,6 +22,7 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
     def * = (id, name, surname, email, admin) <> ((User.apply _).tupled, User.unapply)
   }
 
+
   val user = TableQuery[UserTable]
 
   def create(name: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {

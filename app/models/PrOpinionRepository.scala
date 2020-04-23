@@ -8,12 +8,12 @@ import scala.concurrent.{ExecutionContext, Future}
 
 @Singleton
 class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRepository: UserRepository, productRepository: ProductRepository)(implicit ec: ExecutionContext) {
-  val dbConfig = dbConfigProvider.get[JdbcProfile]
+  private val dbConfig = dbConfigProvider.get[JdbcProfile]
 
   import dbConfig._
   import profile.api._
 
-  class PrOpinionTable(tag: Tag) extends Table[PrOpinion](tag, "prOpinion") {
+  private class PrOpinionTable(tag: Tag) extends Table[PrOpinion](tag, "prOpinion") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def user = column[Int]("name")
     def product: Rep[Long] = column[Long]("product")
@@ -25,11 +25,11 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   }
 
   import userRepository.UserTable
-  val usr = TableQuery[UserTable]
+  private val usr = TableQuery[UserTable]
   import productRepository.ProductTable
-  val prd = TableQuery[ProductTable]
+  private val prd = TableQuery[ProductTable]
 
-  val opinion = TableQuery[PrOpinionTable]
+  private val opinion = TableQuery[PrOpinionTable]
 
   def create(user: Int, product: Long, stars: Int, text: String): Future[PrOpinion] = db.run {
     (opinion.map(o => (o.user, o.product, o.stars, o.text))
