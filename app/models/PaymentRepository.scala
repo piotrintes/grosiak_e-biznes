@@ -17,12 +17,12 @@ class PaymentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tran
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def transaction = column[Int]("name")
     def date: Rep[String] = column[String]("date")
-    def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
+    //def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
     def * = (id, transaction, date) <> ((Payment.apply _).tupled, Payment.unapply)
   }
 
   import transactionRepository.TransactionTable
-  private val trs = TableQuery[TransactionTable]
+  //private val trs = TableQuery[TransactionTable]
 
   private val payment = TableQuery[PaymentTable]
 

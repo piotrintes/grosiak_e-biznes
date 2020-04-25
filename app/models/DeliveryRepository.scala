@@ -17,12 +17,12 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def transaction = column[Int]("name")
     def date: Rep[String] = column[String]("date")
-    def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
+    //def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
     def * = (id, transaction, date) <> ((Delivery.apply _).tupled, Delivery.unapply)
   }
 
   import transactionRepository.TransactionTable
-  private val trs = TableQuery[TransactionTable]
+  //private val trs = TableQuery[TransactionTable]
 
   private val delivery = TableQuery[DeliveryTable]
 
