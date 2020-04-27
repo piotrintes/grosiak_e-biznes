@@ -37,5 +37,12 @@ class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, user
   def list(): Future[Seq[Comment]] = db.run {
     comment.result
   }
+
+  def delete(id: Int): Future[Unit] = db.run(comment.filter(_.id === id).delete).map(_ => ())
+
+  def update(id: Int, new_comment: Comment): Future[Unit] = {
+    val commentToUpdate: Comment = new_comment.copy(id)
+    db.run(comment.filter(_.id === id).update(commentToUpdate)).map(_ => ())
+  }
 }
 

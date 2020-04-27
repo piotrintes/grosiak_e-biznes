@@ -41,5 +41,12 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   def list(): Future[Seq[PrOpinion]] = db.run {
     opinion.result
   }
+
+  def delete(id: Int): Future[Unit] = db.run(opinion.filter(_.id === id).delete).map(_ => ())
+
+  def update(id: Int, new_opinion: PrOpinion): Future[Unit] = {
+    val opinionToUpdate: PrOpinion = new_opinion.copy(id)
+    db.run(opinion.filter(_.id === id).update(opinionToUpdate)).map(_ => ())
+  }
 }
 

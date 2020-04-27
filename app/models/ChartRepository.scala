@@ -40,4 +40,11 @@ class ChartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRe
   def list(): Future[Seq[Chart]] = db.run {
     chart.result
   }
+
+  def delete(id: Int): Future[Unit] = db.run(chart.filter(_.id === id).delete).map(_ => ())
+
+  def update(id: Int, new_chart: Chart): Future[Unit] = {
+    val chartToUpdate: Chart = new_chart.copy(id)
+    db.run(chart.filter(_.id === id).update(chartToUpdate)).map(_ => ())
+  }
 }

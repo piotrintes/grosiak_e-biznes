@@ -42,5 +42,12 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
   def list(): Future[Seq[Transaction]] = db.run {
     transaction.result
   }
+
+  def delete(id: Int): Future[Unit] = db.run(transaction.filter(_.id === id).delete).map(_ => ())
+
+  def update(id: Int, new_transaction: Transaction): Future[Unit] = {
+    val transactionToUpdate: Transaction = new_transaction.copy(id)
+    db.run(transaction.filter(_.id === id).update(transactionToUpdate)).map(_ => ())
+  }
 }
 
