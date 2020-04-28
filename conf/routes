@@ -56,12 +56,12 @@ GET     /updateuserhandle           controllers.HomeController.updateUserHandle
 GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Long)
 GET     /user/:id                   controllers.HomeController.user(id: Long)
 
-# Chart
-GET     /addtochart/:productid/:number        controllers.HomeController.addToChart(productid: Long, number: Long)
-POST    /addtocharthandle                     controllers.HomeController.addToChartHandle
-GET     /updatechart/:productid/:number       controllers.HomeController.addToChart(productid: Long, number: Long)
-GET     /deletefromchart/:productid           controllers.HomeController.deleteFromChart(productid: Long)
-GET     /chart                                controllers.HomeController.chart
+# Cart
+GET     /addtocart/:productid/:number        controllers.HomeController.addToCart(productid: Long, number: Long)
+POST    /addtocarthandle                     controllers.HomeController.addToCartHandle
+GET     /updatecart/:productid/:number       controllers.HomeController.addToCart(productid: Long, number: Long)
+GET     /deletefromcart/:productid           controllers.HomeController.deleteFromCart(productid: Long)
+GET     /cart                                controllers.HomeController.cart
 
 # Transactions
 GET     /addtransaction                 controllers.HomeController.addTransaction

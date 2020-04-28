@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Tue Apr 07 21:48:29 CEST 2020
+// @DATE:Tue Apr 28 15:44:44 CEST 2020
 
 package controllers;
 

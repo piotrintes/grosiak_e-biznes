@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Tue Apr 07 21:48:29 CEST 2020
+// @DATE:Tue Apr 28 15:44:44 CEST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -37,6 +37,16 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:64
+    def cart: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.cart",
+      """
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cart"})
+        }
+      """
+    )
   
     // @LINE:67
     def addTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -148,22 +158,22 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:61
+    def addToCartHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addToCartHandle",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addtocarthandle"})
+        }
+      """
+    )
+  
     // @LINE:23
     def getProducts: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getProducts",
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "products"})
-        }
-      """
-    )
-  
-    // @LINE:63
-    def deleteFromChart: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.deleteFromChart",
-      """
-        function(productid0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deletefromchart/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("productid", productid0))})
         }
       """
     )
@@ -258,6 +268,20 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:60
+    def addToCart: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.addToCart",
+      """
+        function(productid0,number1) {
+        
+          if (true) {
+            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addtocart/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("productid", productid0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("number", number1))})
+          }
+        
+        }
+      """
+    )
+  
     // @LINE:40
     def deletePromotion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deletePromotion",
@@ -284,20 +308,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addproducthandle"})
-        }
-      """
-    )
-  
-    // @LINE:60
-    def addToChart: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addToChart",
-      """
-        function(productid0,number1) {
-        
-          if (true) {
-            return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "addtochart/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("productid", productid0)) + "/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("number", number1))})
-          }
-        
         }
       """
     )
@@ -332,6 +342,16 @@ package controllers.javascript {
       """
     )
   
+    // @LINE:63
+    def deleteFromCart: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deleteFromCart",
+      """
+        function(productid0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deletefromcart/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("productid", productid0))})
+        }
+      """
+    )
+  
     // @LINE:33
     def opinions: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.opinions",
@@ -358,16 +378,6 @@ package controllers.javascript {
       """
         function(id0) {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deleteuser/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
-        }
-      """
-    )
-  
-    // @LINE:61
-    def addToChartHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.addToChartHandle",
-      """
-        function() {
-          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "addtocharthandle"})
         }
       """
     )
@@ -568,16 +578,6 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "updateuserhandle"})
-        }
-      """
-    )
-  
-    // @LINE:64
-    def chart: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.chart",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "chart"})
         }
       """
     )

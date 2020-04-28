@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Tue Apr 07 21:48:29 CEST 2020
+// @DATE:Tue Apr 28 15:44:44 CEST 2020
 
 package router
 
@@ -86,11 +86,11 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updateuserhandle""", """controllers.HomeController.updateUserHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deleteuser/""" + "$" + """id<[^/]+>""", """controllers.HomeController.deleteUser(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """user/""" + "$" + """id<[^/]+>""", """controllers.HomeController.user(id:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtochart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""", """controllers.HomeController.addToChart(productid:Long, number:Long)"""),
-    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtocharthandle""", """controllers.HomeController.addToChartHandle"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatechart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""", """controllers.HomeController.addToChart(productid:Long, number:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deletefromchart/""" + "$" + """productid<[^/]+>""", """controllers.HomeController.deleteFromChart(productid:Long)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """chart""", """controllers.HomeController.chart"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtocart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""", """controllers.HomeController.addToCart(productid:Long, number:Long)"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtocarthandle""", """controllers.HomeController.addToCartHandle"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""", """controllers.HomeController.addToCart(productid:Long, number:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deletefromcart/""" + "$" + """productid<[^/]+>""", """controllers.HomeController.deleteFromCart(productid:Long)"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cart""", """controllers.HomeController.cart"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtransaction""", """controllers.HomeController.addTransaction"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtransactionhandle""", """controllers.HomeController.addTransactionHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatetransaction/""" + "$" + """id<[^/]+>""", """controllers.HomeController.updateTransaction(id:Long)"""),
@@ -822,90 +822,90 @@ class Routes(
   )
 
   // @LINE:60
-  private[this] lazy val controllers_HomeController_addToChart39_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtochart/"), DynamicPart("productid", """[^/]+""",true), StaticPart("/"), DynamicPart("number", """[^/]+""",true)))
+  private[this] lazy val controllers_HomeController_addToCart39_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtocart/"), DynamicPart("productid", """[^/]+""",true), StaticPart("/"), DynamicPart("number", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_addToChart39_invoker = createInvoker(
-    HomeController_3.addToChart(fakeValue[Long], fakeValue[Long]),
+  private[this] lazy val controllers_HomeController_addToCart39_invoker = createInvoker(
+    HomeController_3.addToCart(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "addToChart",
+      "addToCart",
       Seq(classOf[Long], classOf[Long]),
       "GET",
-      this.prefix + """addtochart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""",
-      """ Chart""",
+      this.prefix + """addtocart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""",
+      """ Cart""",
       Seq()
     )
   )
 
   // @LINE:61
-  private[this] lazy val controllers_HomeController_addToChartHandle40_route = Route("POST",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtocharthandle")))
+  private[this] lazy val controllers_HomeController_addToCartHandle40_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtocarthandle")))
   )
-  private[this] lazy val controllers_HomeController_addToChartHandle40_invoker = createInvoker(
-    HomeController_3.addToChartHandle,
+  private[this] lazy val controllers_HomeController_addToCartHandle40_invoker = createInvoker(
+    HomeController_3.addToCartHandle,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "addToChartHandle",
+      "addToCartHandle",
       Nil,
       "POST",
-      this.prefix + """addtocharthandle""",
+      this.prefix + """addtocarthandle""",
       """""",
       Seq()
     )
   )
 
   // @LINE:62
-  private[this] lazy val controllers_HomeController_addToChart41_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatechart/"), DynamicPart("productid", """[^/]+""",true), StaticPart("/"), DynamicPart("number", """[^/]+""",true)))
+  private[this] lazy val controllers_HomeController_addToCart41_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecart/"), DynamicPart("productid", """[^/]+""",true), StaticPart("/"), DynamicPart("number", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_addToChart41_invoker = createInvoker(
-    HomeController_3.addToChart(fakeValue[Long], fakeValue[Long]),
+  private[this] lazy val controllers_HomeController_addToCart41_invoker = createInvoker(
+    HomeController_3.addToCart(fakeValue[Long], fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "addToChart",
+      "addToCart",
       Seq(classOf[Long], classOf[Long]),
       "GET",
-      this.prefix + """updatechart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""",
+      this.prefix + """updatecart/""" + "$" + """productid<[^/]+>/""" + "$" + """number<[^/]+>""",
       """""",
       Seq()
     )
   )
 
   // @LINE:63
-  private[this] lazy val controllers_HomeController_deleteFromChart42_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletefromchart/"), DynamicPart("productid", """[^/]+""",true)))
+  private[this] lazy val controllers_HomeController_deleteFromCart42_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletefromcart/"), DynamicPart("productid", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_HomeController_deleteFromChart42_invoker = createInvoker(
-    HomeController_3.deleteFromChart(fakeValue[Long]),
+  private[this] lazy val controllers_HomeController_deleteFromCart42_invoker = createInvoker(
+    HomeController_3.deleteFromCart(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "deleteFromChart",
+      "deleteFromCart",
       Seq(classOf[Long]),
       "GET",
-      this.prefix + """deletefromchart/""" + "$" + """productid<[^/]+>""",
+      this.prefix + """deletefromcart/""" + "$" + """productid<[^/]+>""",
       """""",
       Seq()
     )
   )
 
   // @LINE:64
-  private[this] lazy val controllers_HomeController_chart43_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("chart")))
+  private[this] lazy val controllers_HomeController_cart43_route = Route("GET",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cart")))
   )
-  private[this] lazy val controllers_HomeController_chart43_invoker = createInvoker(
-    HomeController_3.chart,
+  private[this] lazy val controllers_HomeController_cart43_invoker = createInvoker(
+    HomeController_3.cart,
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
-      "chart",
+      "cart",
       Nil,
       "GET",
-      this.prefix + """chart""",
+      this.prefix + """cart""",
       """""",
       Seq()
     )
@@ -1527,33 +1527,33 @@ class Routes(
       }
   
     // @LINE:60
-    case controllers_HomeController_addToChart39_route(params@_) =>
+    case controllers_HomeController_addToCart39_route(params@_) =>
       call(params.fromPath[Long]("productid", None), params.fromPath[Long]("number", None)) { (productid, number) =>
-        controllers_HomeController_addToChart39_invoker.call(HomeController_3.addToChart(productid, number))
+        controllers_HomeController_addToCart39_invoker.call(HomeController_3.addToCart(productid, number))
       }
   
     // @LINE:61
-    case controllers_HomeController_addToChartHandle40_route(params@_) =>
+    case controllers_HomeController_addToCartHandle40_route(params@_) =>
       call { 
-        controllers_HomeController_addToChartHandle40_invoker.call(HomeController_3.addToChartHandle)
+        controllers_HomeController_addToCartHandle40_invoker.call(HomeController_3.addToCartHandle)
       }
   
     // @LINE:62
-    case controllers_HomeController_addToChart41_route(params@_) =>
+    case controllers_HomeController_addToCart41_route(params@_) =>
       call(params.fromPath[Long]("productid", None), params.fromPath[Long]("number", None)) { (productid, number) =>
-        controllers_HomeController_addToChart41_invoker.call(HomeController_3.addToChart(productid, number))
+        controllers_HomeController_addToCart41_invoker.call(HomeController_3.addToCart(productid, number))
       }
   
     // @LINE:63
-    case controllers_HomeController_deleteFromChart42_route(params@_) =>
+    case controllers_HomeController_deleteFromCart42_route(params@_) =>
       call(params.fromPath[Long]("productid", None)) { (productid) =>
-        controllers_HomeController_deleteFromChart42_invoker.call(HomeController_3.deleteFromChart(productid))
+        controllers_HomeController_deleteFromCart42_invoker.call(HomeController_3.deleteFromCart(productid))
       }
   
     // @LINE:64
-    case controllers_HomeController_chart43_route(params@_) =>
+    case controllers_HomeController_cart43_route(params@_) =>
       call { 
-        controllers_HomeController_chart43_invoker.call(HomeController_3.chart)
+        controllers_HomeController_cart43_invoker.call(HomeController_3.cart)
       }
   
     // @LINE:67

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Tue Apr 07 21:48:29 CEST 2020
+// @DATE:Tue Apr 28 15:44:44 CEST 2020
 
 import play.api.mvc.Call
 
@@ -31,6 +31,12 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
+  
+    // @LINE:64
+    def cart(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "cart")
+    }
   
     // @LINE:67
     def addTransaction(): Call = {
@@ -98,16 +104,16 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "adduser")
     }
   
+    // @LINE:61
+    def addToCartHandle(): Call = {
+      
+      Call("POST", _prefix + { _defaultPrefix } + "addtocarthandle")
+    }
+  
     // @LINE:23
     def getProducts(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "products")
-    }
-  
-    // @LINE:63
-    def deleteFromChart(productid:Long): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "deletefromchart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)))
     }
   
     // @LINE:49
@@ -164,6 +170,20 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "user/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
+    // @LINE:60
+    def addToCart(productid:Long, number:Long): Call = {
+    
+      (productid: @unchecked, number: @unchecked) match {
+      
+        // @LINE:60
+        case (productid, number)  =>
+          
+          Call("GET", _prefix + { _defaultPrefix } + "addtocart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("number", number)))
+      
+      }
+    
+    }
+  
     // @LINE:40
     def deletePromotion(productid:Long, id:Long): Call = {
       
@@ -180,20 +200,6 @@ package controllers {
     def addProductHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addproducthandle")
-    }
-  
-    // @LINE:60
-    def addToChart(productid:Long, number:Long): Call = {
-    
-      (productid: @unchecked, number: @unchecked) match {
-      
-        // @LINE:60
-        case (productid, number)  =>
-          
-          Call("GET", _prefix + { _defaultPrefix } + "addtochart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)) + "/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("number", number)))
-      
-      }
-    
     }
   
     // @LINE:87
@@ -214,6 +220,12 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addcomment")
     }
   
+    // @LINE:63
+    def deleteFromCart(productid:Long): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "deletefromcart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)))
+    }
+  
     // @LINE:33
     def opinions(productid:Long): Call = {
       
@@ -230,12 +242,6 @@ package controllers {
     def deleteUser(id:Long): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deleteuser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
-    }
-  
-    // @LINE:61
-    def addToChartHandle(): Call = {
-      
-      Call("POST", _prefix + { _defaultPrefix } + "addtocharthandle")
     }
   
     // @LINE:68
@@ -356,12 +362,6 @@ package controllers {
     def updateUserHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updateuserhandle")
-    }
-  
-    // @LINE:64
-    def chart(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "chart")
     }
   
     // @LINE:12

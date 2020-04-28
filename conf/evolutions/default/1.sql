@@ -22,7 +22,7 @@ CREATE TABLE "user" (
  "admin" BIT NOT NULL
 );
 
-CREATE TABLE "chart" (
+CREATE TABLE "cart" (
  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
  "user" INT NOT NULL,
  "product" INT NOT NULL,
@@ -46,6 +46,13 @@ CREATE TABLE "prOpinion" (
  "stars" INT NOT NULL,
  "text" TEXT NOT NULL,
  FOREIGN KEY(user) references user(id)
+ FOREIGN KEY(product) references product(id)
+);
+
+CREATE TABLE "promotion" (
+ "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+ "product" INT NOT NULL,
+ "discount" INT NOT NULL,
  FOREIGN KEY(product) references product(id)
 );
 
@@ -79,9 +86,10 @@ CREATE TABLE "delivery" (
 DROP TABLE "category"
 DROP TABLE "product"
 DROP TABLE "user"
-DROP TABLE "chart"
+DROP TABLE "cart"
 DROP TABLE "comment"
 DROP TABLE "prOpinion"
+DROP TABLE "promotion"
 DROP TABLE "transaction"
 DROP TABLE "payment"
 DROP TABLE "delivery"

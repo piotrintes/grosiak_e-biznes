@@ -2,15 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8f39bba-6a2b-4bd6-a729-0bc3fd211f82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/models/Cart.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/CartRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/Promotion.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/models/PromotionRepository.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CategoryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CategoryRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/ChartRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ChartRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CommentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CommentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PaymentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PaymentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/TransactionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/TransactionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/ProductController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ProductController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Chart.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/ChartRepository.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebiznes.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/ebiznes.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/routes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/Routes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/RoutesPrefix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/RoutesPrefix.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +212,8 @@
       <workItem from="1587558187040" duration="2576000" />
       <workItem from="1587646043726" duration="11460000" />
       <workItem from="1587818352686" duration="2955000" />
-      <workItem from="1587990413041" duration="626000" />
+      <workItem from="1587990413041" duration="836000" />
+      <workItem from="1588080315227" duration="3036000" />
     </task>
     <task id="LOCAL-00001" summary="Models part1">
       <created>1587142836460</created>
@@ -240,7 +257,14 @@
       <option name="project" value="LOCAL" />
       <updated>1587820930201</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Z4 Models">
+      <created>1587991214027</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1587991214027</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,59 +278,64 @@
     <MESSAGE value="Modele - BugFix 1" />
     <MESSAGE value="Modele - BugFix 2" />
     <MESSAGE value="Modele - BugFix - Hopefully final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modele - BugFix - Hopefully final" />
+    <MESSAGE value="Z4 Models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Z4 Models" />
   </component>
   <component name="WindowStateProjectService">
     <state x="560" y="198" key="#Notifications" timestamp="1587660464716">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="560" y="198" key="#Notifications/0.36.1920.1002@0.36.1920.1002" timestamp="1587660464716" />
+    <state x="698" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1588082836111">
+      <screen x="0" y="36" width="1920" height="1002" />
+    </state>
+    <state x="698" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1588082836111" />
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587660550631">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586277054647" />
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1587660550631" />
     <state x="424" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.3200.1002@0.36.3200.1002" timestamp="1586274177575" />
-    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2" timestamp="1587820929765">
+    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2" timestamp="1587991213830">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="445" y="76" width="1030" height="922" key="CommitChangelistDialog2/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1587383344279" />
-    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1587820929765" />
+    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1587991213830" />
     <state x="753" y="380" key="FileChooserDialogImpl" timestamp="1587667687830">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="753" y="380" key="FileChooserDialogImpl/0.36.1920.1002@0.36.1920.1002" timestamp="1587667687830" />
-    <state width="1870" height="261" key="GridCell.Tab.0.bottom" timestamp="1587991177584">
+    <state width="1870" height="261" key="GridCell.Tab.0.bottom" timestamp="1588080460678">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551102" />
-    <state width="1870" height="261" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1587991177584" />
+    <state width="1870" height="261" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1588080460678" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618178" />
-    <state width="1870" height="261" key="GridCell.Tab.0.center" timestamp="1587991177583">
+    <state width="1870" height="261" key="GridCell.Tab.0.center" timestamp="1588080460678">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1587991177583" />
+    <state width="1870" height="261" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1588080460678" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
-    <state width="1870" height="261" key="GridCell.Tab.0.left" timestamp="1587991177582">
+    <state width="1870" height="261" key="GridCell.Tab.0.left" timestamp="1588080460677">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1587991177582" />
+    <state width="1870" height="261" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1588080460677" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618176" />
-    <state width="1870" height="261" key="GridCell.Tab.0.right" timestamp="1587991177583">
+    <state width="1870" height="261" key="GridCell.Tab.0.right" timestamp="1588080460678">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1587991177583" />
+    <state width="1870" height="261" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1588080460678" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
     <state width="264" height="563" key="HiddenNamespacesPopup" timestamp="1587661537508">
       <screen x="0" y="36" width="1920" height="1002" />
@@ -322,11 +351,11 @@
     </state>
     <state x="432" y="178" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1587661483476" />
     <state x="446" y="156" key="SettingsEditor/0.36.3200.1002@0.36.3200.1002" timestamp="1586273550451" />
-    <state x="606" y="99" width="707" height="876" key="find.popup" timestamp="1587559565861">
+    <state x="606" y="99" width="867" height="876" key="find.popup" timestamp="1588081441076">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="606" y="99" width="707" height="876" key="find.popup/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586283811681" />
-    <state x="606" y="99" width="707" height="876" key="find.popup/0.36.1920.1002@0.36.1920.1002" timestamp="1587559565861" />
+    <state x="606" y="99" width="867" height="876" key="find.popup/0.36.1920.1002@0.36.1920.1002" timestamp="1588081441076" />
     <state x="478" y="345" width="975" height="530" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1587661478516">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>

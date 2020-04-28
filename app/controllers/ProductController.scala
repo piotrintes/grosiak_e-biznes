@@ -1,10 +1,11 @@
 package controllers
 
 import javax.inject._
-import models.{Category, CategoryRepository, Product, ProductRepository}
+import models.{CartRepository, Category, CategoryRepository, CommentRepository, DeliveryRepository, PaymentRepository, PrOpinionRepository, Product, ProductRepository, PromotionRepository, TransactionRepository, UserRepository}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
+
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
 import play.api.data.format.Formats._
@@ -13,7 +14,12 @@ import play.api.data.format.Formats._
  * application's home page.
  */
 @Singleton
-class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: CategoryRepository, cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
+class HomeController @Inject()(
+                                productsRepo: ProductRepository, categoryRepo: CategoryRepository,
+                                cartRepo: CartRepository, commentRepo: CommentRepository, deliveryRepo: DeliveryRepository,
+                                paymentRepo: PaymentRepository, prOpinionRepo: PrOpinionRepository, promotionRepo: PromotionRepository,
+                                transactionRepo: TransactionRepository, userRepo: UserRepository,
+                                cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
 
   val productForm: Form[CreateProductForm] = Form {
     mapping(
@@ -122,6 +128,19 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
 
   }
 
+  val categoryForm: Form[CreateCategoryForm] = Form {
+    mapping(
+      "name" -> nonEmptyText,
+    )(CreateCategoryForm.apply)(CreateCategoryForm.unapply)
+  }
+
+  val updateCategoryForm: Form[UpdateCategoryForm] = Form {
+    mapping(
+      "id" -> number,
+      "name" -> nonEmptyText,
+    )(UpdateCategoryForm.apply)(UpdateCategoryForm.unapply)
+  }
+
   def addCategory = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -145,6 +164,25 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
   }
 
 
+  val opinionForm: Form[CreatePrOpinionForm] = Form {
+    mapping(
+      "product" -> number,
+      "user" -> longNumber,
+      "stars" -> number,
+      "name" -> nonEmptyText,
+    )(CreatePrOpinionForm.apply)(CreatePrOpinionForm.unapply)
+  }
+
+  val updateOpinionForm: Form[UpdatePrOpinionForm] = Form {
+    mapping(
+      "id" -> number,
+      "product" -> number,
+      "user" -> longNumber,
+      "stars" -> number,
+      "name" -> nonEmptyText,
+    )(UpdatePrOpinionForm.apply)(UpdatePrOpinionForm.unapply)
+  }
+
   def addOpinion(productid: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -165,6 +203,22 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
   }
 
 
+
+  val promotionForm: Form[CreatePromotionForm] = Form {
+    mapping(
+      "product" -> longNumber,
+      "discount" -> number,
+    )(CreatePromotionForm.apply)(CreatePromotionForm.unapply)
+  }
+
+  val updatepromotionForm: Form[UpdatePromotionForm] = Form {
+    mapping(
+      "id" -> number,
+      "product" -> longNumber,
+      "discount" -> number,
+    )(UpdatePromotionForm.apply)(UpdatePromotionForm.unapply)
+  }
+
   def addPromotion(productid: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -182,6 +236,24 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
   }
   def promotion(productid: Long, id: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
+  }
+
+
+  val commentForm: Form[CreateCommentForm] = Form {
+    mapping(
+      "user" -> number,
+      "start" -> number,
+      "text" -> nonEmptyText,
+    )(CreateCommentForm.apply)(CreateCommentForm.unapply)
+  }
+
+  val updateCommentForm: Form[UpdateCommentForm] = Form {
+    mapping(
+      "id" -> number,
+      "user" -> number,
+      "start" -> number,
+      "text" -> nonEmptyText,
+    )(UpdateCommentForm.apply)(UpdateCommentForm.unapply)
   }
 
   def addComment = Action {
@@ -203,6 +275,25 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
     Ok(views.html.index("Your new application is ready."))
   }
 
+
+  val userForm: Form[CreateUserForm] = Form {
+    mapping(
+      "name" -> nonEmptyText,
+      "surname" -> nonEmptyText,
+      "email" -> nonEmptyText,
+      "admin" -> boolean,
+    )(CreateUserForm.apply)(CreateUserForm.unapply)
+  }
+
+  val updateUserForm: Form[UpdateUserForm] = Form {
+    mapping(
+      "id" -> number,
+      "name" -> nonEmptyText,
+      "surname" -> nonEmptyText,
+      "email" -> nonEmptyText,
+      "admin" -> boolean,
+    )(UpdateUserForm.apply)(UpdateUserForm.unapply)
+  }
   def addUser = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -222,20 +313,54 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
     Ok(views.html.index("Your new application is ready."))
   }
 
-  def addToChart(productid: Long, number: Long) = Action {
+
+  val cartForm: Form[CreateCartForm] = Form {
+    mapping(
+      "user" -> number,
+      "product" -> longNumber,
+      "count" -> number,
+    )(CreateCartForm.apply)(CreateCartForm.unapply)
+  }
+
+  val updateCartForm: Form[UpdateCartForm] = Form {
+    mapping(
+      "id" -> number,
+      "user" -> number,
+      "product" -> longNumber,
+      "count" -> number,
+    )(UpdateCartForm.apply)(UpdateCartForm.unapply)
+  }
+
+  def addToCart(productid: Long, number: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addToChartHandle = Action {
+  def addToCartHandle = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def updateChart(productid: Long, number: Long) = Action {
+  def updateCart(productid: Long, number: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def deleteFromChart(productid: Long) = Action {
+  def deleteFromCart(productid: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def chart = Action {
+  def cart = Action {
     Ok(views.html.index("Your new application is ready."))
+  }
+
+
+  val paymentForm: Form[CreatePaymentForm] = Form {
+    mapping(
+      "transaction" -> number,
+      "date" -> nonEmptyText,
+    )(CreatePaymentForm.apply)(CreatePaymentForm.unapply)
+  }
+
+  val updatePaymentForm: Form[UpdatePaymentForm] = Form {
+    mapping(
+      "id" -> number,
+      "transaction" -> number,
+      "date" -> nonEmptyText,
+    )(UpdatePaymentForm.apply)(UpdatePaymentForm.unapply)
   }
 
   def addPayment = Action {
@@ -257,6 +382,28 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
     Ok(views.html.index("Your new application is ready."))
   }
 
+
+  val transactionForm: Form[CreateTransactionForm] = Form {
+    mapping(
+      "user" -> number,
+      "product" -> longNumber,
+      "count" -> number,
+      "price" -> of(doubleFormat),
+      "date" -> nonEmptyText,
+    )(CreateTransactionForm.apply)(CreateTransactionForm.unapply)
+  }
+
+  val updateTransactionForm: Form[UpdateTransactionForm] = Form {
+    mapping(
+      "id" -> number,
+      "user" -> number,
+      "product" -> longNumber,
+      "count" -> number,
+      "price" -> of(doubleFormat),
+      "date" -> nonEmptyText,
+    )(UpdateTransactionForm.apply)(UpdateTransactionForm.unapply)
+  }
+
   def addTransaction = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -274,6 +421,22 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
   }
   def transaction(id: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
+  }
+
+
+  val deliveryForm: Form[CreateDeliveryForm] = Form {
+    mapping(
+      "transaction" -> number,
+      "date" -> nonEmptyText,
+    )(CreateDeliveryForm.apply)(CreateDeliveryForm.unapply)
+  }
+
+  val updateDeliveryForm: Form[UpdateDeliveryForm] = Form {
+    mapping(
+      "id" -> number,
+      "transaction" -> number,
+      "date" -> nonEmptyText,
+    )(UpdateDeliveryForm.apply)(UpdateDeliveryForm.unapply)
   }
 
   def addDelivery = Action {
@@ -298,5 +461,41 @@ class HomeController @Inject()(productsRepo: ProductRepository, categoryRepo: Ca
 
 case class CreateProductForm(name: String, description: String, category: Int, price: Double) {
 }
-
 case class UpdateProductForm(id: Long, name: String, description: String, category: Int, price: Double)
+
+case class CreateCategoryForm(name: String) {
+}
+case class UpdateCategoryForm(id: Int, name: String)
+
+case class CreateCartForm(user: Int, product: Long, count: Int) {
+}
+case class UpdateCartForm(id: Int, user: Int, product: Long, count: Int)
+
+case class CreateCommentForm(user: Int, stars: Int, text: String) {
+}
+case class UpdateCommentForm(id: Int, user: Int, stars: Int, text: String)
+
+case class CreateDeliveryForm(transaction: Int, date: String) {
+}
+case class UpdateDeliveryForm(id: Int, transaction: Int, date: String)
+
+case class CreatePaymentForm(transaction: Int, date: String) {
+}
+case class UpdatePaymentForm(id: Int, transaction: Int, date: String)
+
+case class CreatePromotionForm(product: Long, discount: Int) {
+}
+case class UpdatePromotionForm(id: Int, product: Long, discount: Int)
+
+case class CreatePrOpinionForm(user: Int, product: Long, stars: Int, text: String) {
+}
+case class UpdatePrOpinionForm(id: Int, user: Int, product: Long, stars: Int, text: String)
+
+case class CreateTransactionForm(user: Int, product: Long, count: Int, price: Double, date: String) {
+}
+case class UpdateTransactionForm(id: Int, user: Int, product: Long, count: Int, price: Double, date: String)
+
+case class CreateUserForm(name: String, surname: String, email: String, admin: Boolean) {
+}
+case class UpdateUserForm(id: Int, name: String, surname: String, email: String, admin: Boolean)
+
