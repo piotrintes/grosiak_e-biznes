@@ -38,8 +38,8 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
       ) += (user, product, stars, text)
   }
 
-  def list(): Future[Seq[PrOpinion]] = db.run {
-    opinion.result
+  def list(product_id: Long): Future[Seq[PrOpinion]] = db.run {
+    opinion.filter(_.product === product_id).result
   }
 
   def delete(id: Int): Future[Unit] = db.run(opinion.filter(_.id === id).delete).map(_ => ())
@@ -47,6 +47,14 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   def update(id: Int, new_opinion: PrOpinion): Future[Unit] = {
     val opinionToUpdate: PrOpinion = new_opinion.copy(id)
     db.run(opinion.filter(_.id === id).update(opinionToUpdate)).map(_ => ())
+  }
+
+  def getById(id: Int): Future[PrOpinion] = db.run {
+    opinion.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[PrOpinion]] = db.run {
+    opinion.filter(_.id === id).result.headOption
   }
 }
 

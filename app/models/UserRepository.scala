@@ -42,5 +42,13 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
     val userToUpdate: User = new_user.copy(id)
     db.run(user.filter(_.id === id).update(userToUpdate)).map(_ => ())
   }
+
+  def getById(id: Int): Future[User] = db.run {
+    user.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[User]] = db.run {
+    user.filter(_.id === id).result.headOption
+  }
 }
 

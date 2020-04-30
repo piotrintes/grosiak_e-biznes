@@ -9,10 +9,10 @@ GET     /                           controllers.HomeController.index
 # Categories
 GET     /addcategory                controllers.HomeController.addCategory
 POST    /addcategoryhandle          controllers.HomeController.addCategoryHandle
-GET     /updatecategory/:id         controllers.HomeController.updateCategory(id: Long)
+GET     /updatecategory/:id         controllers.HomeController.updateCategory(id: Int)
 GET     /updatecategoryhandle       controllers.HomeController.updateCategoryHandle
-GET     /deletecategory/:id         controllers.HomeController.deleteCategory(id: Long)
-GET     /category/:id               controllers.HomeController.getCategory(id: Long)
+GET     /deletecategory/:id         controllers.HomeController.deleteCategory(id: Int)
+GET     /category/:id               controllers.HomeController.getCategory(id: Int)
 GET     /categories                 controllers.HomeController.getCategorys
 
 # Products
@@ -27,65 +27,68 @@ GET     /delete/:id                 controllers.HomeController.delete(id: Long)
 # Product Opinions
 GET     /addopinion/:productid              controllers.HomeController.addOpinion(productid: Long)
 POST    /addopinionhandle                   controllers.HomeController.addOpinionHandle
-GET     /updateopinion/:productid/:id       controllers.HomeController.updateOpinion(productid: Long, id: Long)
+GET     /updateopinion/:id                  controllers.HomeController.updateOpinion(id: Int)
 POST    /updateopinionhandle                controllers.HomeController.updateOpinionHandle
-GET     /deleteopinion/:productid/:id       controllers.HomeController.deleteOpinion(productid: Long, id: Long)
+GET     /deleteopinion/:id                  controllers.HomeController.deleteOpinion(id: Int)
 GET     /opinions/:productid                controllers.HomeController.opinions(productid: Long)
 
 # Promotions
 GET     /addpromotion/:productid            controllers.HomeController.addPromotion(productid: Long)
 POST    /addpromotionhandle                 controllers.HomeController.addPromotionHandle
-GET     /updatepromotion/:productid/:id     controllers.HomeController.updatePromotion(productid: Long, id: Long)
+GET     /updatepromotion/:id                controllers.HomeController.updatePromotion(id: Int)
 POST    /updatepromotionhandle              controllers.HomeController.updatePromotionHandle
-GET     /deletepromotion/:productid/:id     controllers.HomeController.deletePromotion(productid: Long, id: Long)
-GET     /promotion/:productid/:id           controllers.HomeController.promotion(productid: Long, id: Long)
+GET     /deletepromotion/:id                controllers.HomeController.deletePromotion(id: Int)
+GET     /promotion/:id                      controllers.HomeController.promotion(id: Int)
 
 # Comments
 GET     /addcomment                 controllers.HomeController.addComment
 POST    /addcommenthandle           controllers.HomeController.addCommentHandle
-GET     /updatecomment/:id          controllers.HomeController.updateComment(id: Long)
+GET     /updatecomment/:id          controllers.HomeController.updateComment(id: Int)
 GET     /updatecommenthandle        controllers.HomeController.updateCommentHandle
-GET     /deletecomment/:id          controllers.HomeController.deleteComment(id: Long)
-GET     /comment/:id                controllers.HomeController.comment(id: Long)
+GET     /deletecomment/:id          controllers.HomeController.deleteComment(id: Int)
+GET     /comment/:id                controllers.HomeController.comment(id: Int)
 
 # Users
 GET     /adduser                    controllers.HomeController.addUser
 POST    /adduserhandle              controllers.HomeController.addUserHandle
-GET     /updateuser/:id             controllers.HomeController.updateUser(id: Long)
+GET     /updateuser/:id             controllers.HomeController.updateUser(id: Int)
 GET     /updateuserhandle           controllers.HomeController.updateUserHandle
-GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Long)
-GET     /user/:id                   controllers.HomeController.user(id: Long)
+GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Int)
+GET     /user/:id                   controllers.HomeController.user(id: Int)
+GET     /users                      controllers.HomeController.users
 
 # Cart
-GET     /addtocart/:productid/:number        controllers.HomeController.addToCart(productid: Long, number: Long)
+GET     /addtocart/:id                       controllers.HomeController.addToCart(id: Int)
 POST    /addtocarthandle                     controllers.HomeController.addToCartHandle
-GET     /updatecart/:productid/:number       controllers.HomeController.addToCart(productid: Long, number: Long)
-GET     /deletefromcart/:productid           controllers.HomeController.deleteFromCart(productid: Long)
+GET     /updatecart/:id                      controllers.HomeController.addToCart(id: Int)
+POST    /updatecarthandle                    controllers.HomeController.addToCartHandle
+GET     /deletefromcart/:id                  controllers.HomeController.deleteFromCart(id: Int)
 GET     /cart                                controllers.HomeController.cart
 
 # Transactions
 GET     /addtransaction                 controllers.HomeController.addTransaction
 POST    /addtransactionhandle           controllers.HomeController.addTransactionHandle
-GET     /updatetransaction/:id          controllers.HomeController.updateTransaction(id: Long)
+GET     /updatetransaction/:id          controllers.HomeController.updateTransaction(id: Int)
 GET     /updatetransactionhandle        controllers.HomeController.updateTransactionHandle
-GET     /deletetransaction/:id          controllers.HomeController.deleteTransaction(id: Long)
-GET     /transaction/:id                controllers.HomeController.transaction(id: Long)
+GET     /deletetransaction/:id          controllers.HomeController.deleteTransaction(id: Int)
+GET     /transaction/:id                controllers.HomeController.transaction(id: Int)
+GET     /transactions                   controllers.HomeController.transactions
 
 # Payments
 GET     /addpayment                 controllers.HomeController.addPayment
 POST    /addpaymenthandle           controllers.HomeController.addPaymentHandle
-GET     /updatepayment/:id          controllers.HomeController.updatePayment(id: Long)
+GET     /updatepayment/:id          controllers.HomeController.updatePayment(id: Int)
 GET     /updatepaymenthandle        controllers.HomeController.updatePaymentHandle
-GET     /deletepayment/:id          controllers.HomeController.deletePayment(id: Long)
-GET     /payment/:id                controllers.HomeController.payment(id: Long)
+GET     /deletepayment/:id          controllers.HomeController.deletePayment(id: Int)
+GET     /payment/:id                controllers.HomeController.payment(id: Int)
 
 # Deliverys
 GET     /adddelivery                controllers.HomeController.addDelivery
 POST    /adddeliveryhandle          controllers.HomeController.addDeliveryHandle
-GET     /updatedelivery/:id         controllers.HomeController.updateDelivery(id: Long)
+GET     /updatedelivery/:id         controllers.HomeController.updateDelivery(id: Int)
 GET     /updatedeliveryhandle       controllers.HomeController.updateDeliveryHandle
-GET     /deletedelivery/:id         controllers.HomeController.deleteDelivery(id: Long)
-GET     /delivery/:id               controllers.HomeController.delivery(id: Long)
+GET     /deletedelivery/:id         controllers.HomeController.deleteDelivery(id: Int)
+GET     /delivery/:id               controllers.HomeController.delivery(id: Int)
 
 
 # An example controller showing how to use dependency injection

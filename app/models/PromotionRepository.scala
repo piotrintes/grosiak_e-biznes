@@ -27,7 +27,7 @@ class PromotionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
 
   private val promotion = TableQuery[PromotionTable]
 
-  def create(id: Int, product: Long, discount: Int): Future[Promotion] = db.run {
+  def create(product: Long, discount: Int): Future[Promotion] = db.run {
     (promotion.map(t => (t.product, t.discount))
       returning promotion.map(_.id)
       into {case ((product,discount),id) => Promotion(id, product, discount)}
@@ -43,6 +43,14 @@ class PromotionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   def update(id: Int, new_promotion: Promotion): Future[Unit] = {
     val promotionToUpdate: Promotion = new_promotion.copy(id)
     db.run(promotion.filter(_.id === id).update(promotionToUpdate)).map(_ => ())
+  }
+
+  def getById(id: Int): Future[Promotion] = db.run {
+    promotion.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[Promotion]] = db.run {
+    promotion.filter(_.id === id).result.headOption
   }
 }
 

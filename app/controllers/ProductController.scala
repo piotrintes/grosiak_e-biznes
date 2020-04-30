@@ -1,7 +1,7 @@
 package controllers
 
 import javax.inject._
-import models.{CartRepository, Category, CategoryRepository, CommentRepository, DeliveryRepository, PaymentRepository, PrOpinionRepository, Product, ProductRepository, PromotionRepository, TransactionRepository, UserRepository}
+import models.{Cart, CartRepository, Category, CategoryRepository, Comment, CommentRepository, Delivery, DeliveryRepository, Payment, PaymentRepository, PrOpinion, PrOpinionRepository, Product, ProductRepository, Promotion, PromotionRepository, Transaction, TransactionRepository, User, UserRepository}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
@@ -32,7 +32,7 @@ class HomeController @Inject()(
 
   val updateProductForm: Form[UpdateProductForm] = Form {
     mapping(
-           "id" -> longNumber,
+      "id" -> longNumber,
       "name" -> nonEmptyText,
       "description" -> nonEmptyText,
       "category" -> number,
@@ -72,8 +72,6 @@ class HomeController @Inject()(
     val produkt = productsRepo.getById(id)
     produkt.map(product => {
       val prodForm = updateProductForm.fill(UpdateProductForm(product.id, product.name, product.description,product.category,product.price))
-      //  id, product.name, product.description, product.category)
-      //updateProductForm.fill(prodForm)
       Ok(views.html.productupdate(prodForm, categ))
     })
   }
@@ -101,7 +99,7 @@ class HomeController @Inject()(
   }
 
 
-  def addProduct: Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+  def addProduct: Action[AnyContent] = Action.async {implicit request: MessagesRequest[AnyContent] =>
     val categories = categoryRepo.list()
     categories.map (cat => Ok(views.html.productadd(productForm, cat)))
   }
@@ -144,22 +142,51 @@ class HomeController @Inject()(
   def addCategory = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addCategoryHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+
+  def addCategoryHandle = Action.async { implicit request =>
+    categoryForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        categoryRepo.create(data.name).asInstanceOf[Future[Result]]
+      })
   }
-  def updateCategory(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+
+  def updateCategory(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data = categoryRepo.getById(id)
+    data.map(category => {
+      val form = updateCategoryForm.fill(UpdateCategoryForm(category.id, category.name))
+      Ok(views.html.index("Your new application is ready."))
+    })
   }
-  def updateCategoryHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+
+  def updateCategoryHandle = Action.async { implicit request =>
+    updateCategoryForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        categoryRepo.update(data.id, Category(data.id, data.name)).asInstanceOf[Future[Result]]
+      })
   }
-  def deleteCategory(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def deleteCategory(id: Int) = Action {
+    categoryRepo.delete(id)
+    Redirect("/categorys")
   }
-  def getCategory(id: Long) = Action {
+  def getCategory(id: Int) = Action {
+    val category = categoryRepo.getByIdOption(id)
+    category.map(category => category match {
+      //case Some(p) => Ok(views.html.category(p))
+      case None => Redirect(routes.HomeController.getCategorys())
+    })
     Ok(views.html.index("Your new application is ready."))
   }
   def getCategorys = Action {
+    val cat = categoryRepo.list()
+    //cat.map( categories => Ok(views.html.categories(categories)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -179,26 +206,47 @@ class HomeController @Inject()(
       "product" -> number,
       "user" -> longNumber,
       "stars" -> number,
-      "name" -> nonEmptyText,
+      "text" -> nonEmptyText,
     )(UpdatePrOpinionForm.apply)(UpdatePrOpinionForm.unapply)
   }
 
   def addOpinion(productid: Long) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addOpinionHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def addOpinionHandle = Action.async { implicit request =>
+    opinionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        prOpinionRepo.create(data.user,data.product,data.stars,data.text).asInstanceOf[Future[Result]]
+      })
   }
-  def updateOpinion(productid: Long, id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateOpinion(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data = prOpinionRepo.getById(id)
+    data.map(opinion => {
+      val form = updateOpinionForm.fill(UpdatePrOpinionForm(opinion.id,opinion.user,opinion.product,opinion.stars,opinion.text))
+      Ok(views.html.index("Your new application is ready."))
+    })
   }
-  def updateOpinionHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateOpinionHandle = Action.async { implicit request =>
+    updateOpinionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        prOpinionRepo.update(data.id, PrOpinion(data.id,data.user,data.product,data.stars,data.text)).asInstanceOf[Future[Result]]
+      })
   }
-  def deleteOpinion(productid: Long, id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def deleteOpinion(id: Int) = Action {
+    prOpinionRepo.delete(id)
+    Redirect("/opinions")
   }
   def opinions(productid: Long) = Action {
+    val opi = prOpinionRepo.list(productid)
+    //opi.map( prOpinions => Ok(views.html.prOpinions(prOpinions)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -220,21 +268,52 @@ class HomeController @Inject()(
   }
 
   def addPromotion(productid: Long) = Action {
+    val pro = promotionRepo.list()
+    //pro.map( promotions => Ok(views.html.promotions(promotions)))
     Ok(views.html.index("Your new application is ready."))
   }
-  def addPromotionHandle = Action {
+  def addPromotionHandle = Action.async { implicit request =>
+    promotionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        promotionRepo.create(data.product,data.discount).asInstanceOf[Future[Result]]
+      })
+  }
+  def updatePromotion(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = promotionRepo.getById(id)
+    data_.map(data => {
+      val form = updatepromotionForm.fill(UpdatePromotionForm(data.id, data.product, data.discount))
+      Ok(views.html.index("Your new application is ready."))
+    })
+  }
+  def updatePromotionHandle = Action.async { implicit request =>
+    updatepromotionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        promotionRepo.update(data.id, Promotion(data.id, data.product, data.discount)).asInstanceOf[Future[Result]]
+      })
+  }
+  def deletePromotion(id: Int) = Action {
+    promotionRepo.delete(id)
+    Redirect("/promotions")
+  }
+  def promotion(id: Int) = Action {
+    val promotion = promotionRepo.getByIdOption(id)
+    /*promotion.map(promotion => promotion match {
+      case Some(p) => Ok(views.html.promotion(p))
+      case None => Redirect(routes.HomeController.promotions())
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
-  def updatePromotion(productid: Long, id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def updatePromotionHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def deletePromotion(productid: Long, id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def promotion(productid: Long, id: Long) = Action {
+  def promotions = Action {
+    val opi = promotionRepo.list()
+    //opi.map( prOpinions => Ok(views.html.prOpinions(prOpinions)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -242,7 +321,7 @@ class HomeController @Inject()(
   val commentForm: Form[CreateCommentForm] = Form {
     mapping(
       "user" -> number,
-      "start" -> number,
+      "stars" -> number,
       "text" -> nonEmptyText,
     )(CreateCommentForm.apply)(CreateCommentForm.unapply)
   }
@@ -251,7 +330,7 @@ class HomeController @Inject()(
     mapping(
       "id" -> number,
       "user" -> number,
-      "start" -> number,
+      "stars" -> number,
       "text" -> nonEmptyText,
     )(UpdateCommentForm.apply)(UpdateCommentForm.unapply)
   }
@@ -259,19 +338,48 @@ class HomeController @Inject()(
   def addComment = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addCommentHandle = Action {
+  def addCommentHandle = Action.async { implicit request =>
+    commentForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        commentRepo.create(data.user,data.stars,data.text).asInstanceOf[Future[Result]]
+      })
+  }
+  def updateComment(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = commentRepo.getById(id)
+    data_.map(data => {
+      val form = updateCommentForm.fill(UpdateCommentForm(data.id, data.user,data.stars,data.text))
+      Ok(views.html.index("Your new application is ready."))
+    })
+  }
+  def updateCommentHandle = Action.async { implicit request =>
+    updateCommentForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        commentRepo.update(data.id, Comment(data.id, data.user,data.stars,data.text)).asInstanceOf[Future[Result]]
+      })
+  }
+  def deleteComment(id: Int) = Action {
+    commentRepo.delete(id)
+    Redirect("/comments")
+  }
+  def comment(id: Int) = Action {
+    val comment = commentRepo.getByIdOption(id)
+    /*comment.map(comment => comment match {
+      case Some(p) => Ok(views.html.comment(p))
+      case None => Redirect(routes.HomeController.comments())
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
-  def updateComment(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def updateCommentHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def deleteComment(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def comment(id: Long) = Action {
+  def comments: Action[AnyContent] = Action {
+    val com = commentRepo.list()
+    //com.map( comments => Ok(views.html.comments(comments)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -297,19 +405,48 @@ class HomeController @Inject()(
   def addUser = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addUserHandle = Action {
+  def addUserHandle = Action.async { implicit request =>
+    userForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        userRepo.create(data.name,data.surname,data.email,data.admin).asInstanceOf[Future[Result]]
+      })
+  }
+  def updateUser(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = userRepo.getById(id)
+    data_.map(data => {
+      val form = updateUserForm.fill(UpdateUserForm(data.id, data.name,data.surname,data.email,data.admin))
+      Ok(views.html.index("Your new application is ready."))
+    })
+  }
+  def updateUserHandle = Action.async { implicit request =>
+    updateUserForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        userRepo.update(data.id, User(data.id,data.name,data.surname,data.email,data.admin)).asInstanceOf[Future[Result]]
+      })
+  }
+  def deleteUser(id: Int) = Action {
+    userRepo.delete(id)
+    Redirect("/users")
+  }
+  def user(id: Int) = Action {
+    val user = userRepo.getByIdOption(id)
+    /*user.map(user => user match {
+      case Some(p) => Ok(views.html.user(p))
+      case None => Redirect(routes.HomeController.users())
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
-  def updateUser(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def updateUserHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def deleteUser(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def user(id: Long) = Action {
+  def users = Action {
+    val usr = userRepo.list()
+    //usr.map( users => Ok(views.html.users(users)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -331,19 +468,43 @@ class HomeController @Inject()(
     )(UpdateCartForm.apply)(UpdateCartForm.unapply)
   }
 
-  def addToCart(productid: Long, number: Long) = Action {
+  def addToCart(id: Int) = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addToCartHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def addToCartHandle = Action.async { implicit request =>
+    updateCartForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        cartRepo.create(data.user,data.product,data.count).asInstanceOf[Future[Result]]
+      })
   }
-  def updateCart(productid: Long, number: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateCart(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = cartRepo.getById(id)
+    data_.map(data => {
+      val form = updateCartForm.fill(UpdateCartForm(data.id, data.user,data.product,data.count))
+      Ok(views.html.index("Your new application is ready."))
+    })
   }
-  def deleteFromCart(productid: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateCartHandle = Action.async { implicit request =>
+    updateCartForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        cartRepo.update(data.id, Cart(data.id, data.user,data.product,data.count)).asInstanceOf[Future[Result]]
+      })
+  }
+  def deleteFromCart(id: Int) = Action {
+    cartRepo.delete(id)
+    Redirect("/cart")
   }
   def cart = Action {
+    val cart = cartRepo.list()
+    //cart.map( cart => Ok(views.html.cart(cart)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -366,19 +527,42 @@ class HomeController @Inject()(
   def addPayment = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addPaymentHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def addPaymentHandle = Action.async { implicit request =>
+    paymentForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        paymentRepo.create(data.transaction,data.date).asInstanceOf[Future[Result]]
+      })
   }
-  def updatePayment(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updatePayment(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = paymentRepo.getById(id)
+    data_.map(data => {
+      val form = updatePaymentForm.fill(UpdatePaymentForm(data.id, data.transaction,data.date))
+      Ok(views.html.index("Your new application is ready."))
+    })
   }
-  def updatePaymentHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updatePaymentHandle = Action.async { implicit request =>
+    updatePaymentForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        paymentRepo.update(data.id, Payment(data.id, data.transaction,data.date)).asInstanceOf[Future[Result]]
+      })
   }
-  def deletePayment(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def deletePayment(id: Int) = Action {
+    paymentRepo.delete(id)
+    Redirect("/")
   }
-  def payment(id: Long) = Action {
+  def payment(id: Int) = Action {
+    val payment = paymentRepo.getByIdOption(id)
+    /*payment.map(payment => payment match {
+      case Some(p) => Ok(views.html.payment(p))
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -407,19 +591,48 @@ class HomeController @Inject()(
   def addTransaction = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addTransactionHandle = Action {
+  def addTransactionHandle = Action.async { implicit request =>
+    transactionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        transactionRepo.create(data.user,data.product,data.count,data.price,data.date).asInstanceOf[Future[Result]]
+      })
+  }
+  def updateTransaction(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = transactionRepo.getById(id)
+    data_.map(data => {
+      val form = updateTransactionForm.fill(UpdateTransactionForm(data.id, data.user,data.product,data.count,data.price,data.date))
+      Ok(views.html.index("Your new application is ready."))
+    })
+  }
+  def updateTransactionHandle = Action.async { implicit request =>
+    updateTransactionForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        transactionRepo.update(data.id, Transaction(data.id, data.user,data.product,data.count,data.price,data.date)).asInstanceOf[Future[Result]]
+      })
+  }
+  def deleteTransaction(id: Int) = Action {
+    transactionRepo.delete(id)
+    Redirect("/transactions")
+  }
+  def transaction(id: Int) = Action {
+    val transaction = transactionRepo.getByIdOption(id)
+    /*transaction.map(transaction => transaction match {
+      case Some(p) => Ok(views.html.transaction(p))
+      case None => Redirect(routes.HomeController.transactions())
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
-  def updateTransaction(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def updateTransactionHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def deleteTransaction(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
-  }
-  def transaction(id: Long) = Action {
+  def transactions() = Action {
+    val trs = transactionRepo.list()
+    //trs.map( transactions => Ok(views.html.transactions(transactions)))
     Ok(views.html.index("Your new application is ready."))
   }
 
@@ -442,19 +655,42 @@ class HomeController @Inject()(
   def addDelivery = Action {
     Ok(views.html.index("Your new application is ready."))
   }
-  def addDeliveryHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def addDeliveryHandle = Action.async { implicit request =>
+    deliveryForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        deliveryRepo.create(data.transaction,data.date).asInstanceOf[Future[Result]]
+      })
   }
-  def updateDelivery(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateDelivery(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
+    val data_ = deliveryRepo.getById(id)
+    data_.map(data => {
+      val form = updateDeliveryForm.fill(UpdateDeliveryForm(data.id, data.transaction,data.date))
+      Ok(views.html.index("Your new application is ready."))
+    })
   }
-  def updateDeliveryHandle = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def updateDeliveryHandle = Action.async { implicit request =>
+    updateDeliveryForm.bindFromRequest.fold(
+      // if any error in submitted data
+      errorForm => {
+        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
+      },
+      data => {
+        deliveryRepo.update(data.id, Delivery(data.id,data.transaction,data.date)).asInstanceOf[Future[Result]]
+      })
   }
-  def deleteDelivery(id: Long) = Action {
-    Ok(views.html.index("Your new application is ready."))
+  def deleteDelivery(id: Int) = Action {
+    deliveryRepo.delete(id)
+    Redirect("/")
   }
-  def delivery(id: Long) = Action {
+  def delivery(id: Int) = Action {
+    val delivery = deliveryRepo.getByIdOption(id)
+    /*delivery.map(delivery => delivery match {
+      case Some(p) => Ok(views.html.delivery(p))
+    })*/
     Ok(views.html.index("Your new application is ready."))
   }
 }

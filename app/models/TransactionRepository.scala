@@ -32,7 +32,7 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
 
   private val transaction = TableQuery[TransactionTable]
 
-  def create(id: Int, user: Int, product: Long, count: Int, price: Double, date: String): Future[Transaction] = db.run {
+  def create(user: Int, product: Long, count: Int, price: Double, date: String): Future[Transaction] = db.run {
     (transaction.map(t => (t.user, t.product, t.count, t.price, t.date))
       returning transaction.map(_.id)
       into {case ((user,product,count,price,date),id) => Transaction(id, user, product, count,price,date)}
@@ -48,6 +48,14 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
   def update(id: Int, new_transaction: Transaction): Future[Unit] = {
     val transactionToUpdate: Transaction = new_transaction.copy(id)
     db.run(transaction.filter(_.id === id).update(transactionToUpdate)).map(_ => ())
+  }
+
+  def getById(id: Int): Future[Transaction] = db.run {
+    transaction.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[Transaction]] = db.run {
+    transaction.filter(_.id === id).result.headOption
   }
 }
 

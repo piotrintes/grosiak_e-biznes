@@ -44,5 +44,13 @@ class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, user
     val commentToUpdate: Comment = new_comment.copy(id)
     db.run(comment.filter(_.id === id).update(commentToUpdate)).map(_ => ())
   }
+
+  def getById(id: Int): Future[Comment] = db.run {
+    comment.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[Comment]] = db.run {
+    comment.filter(_.id === id).result.headOption
+  }
 }
 

@@ -26,7 +26,7 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
 
   private val delivery = TableQuery[DeliveryTable]
 
-  def create(id: Int, transaction: Int, date: String): Future[Delivery] = db.run {
+  def create(transaction: Int, date: String): Future[Delivery] = db.run {
     (delivery.map(t => (t.transaction, t.date))
       returning delivery.map(_.id)
       into {case ((transaction, date),id) => Delivery(id, transaction, date)}
@@ -42,6 +42,14 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
   def update(id: Int, new_delivery: Delivery): Future[Unit] = {
     val deliveryToUpdate: Delivery = new_delivery.copy(id)
     db.run(delivery.filter(_.id === id).update(deliveryToUpdate)).map(_ => ())
+  }
+
+  def getById(id: Int): Future[Delivery] = db.run {
+    delivery.filter(_.id === id).result.head
+  }
+
+  def getByIdOption(id: Int): Future[Option[Delivery]] = db.run {
+    delivery.filter(_.id === id).result.headOption
   }
 }
 
