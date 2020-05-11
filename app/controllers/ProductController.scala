@@ -9,6 +9,7 @@ import play.api.mvc._
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
 import play.api.data.format.Formats._
+import play.api.libs.json.Json
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
@@ -46,15 +47,12 @@ class HomeController @Inject()(
 
   def getProducts: Action[AnyContent] = Action.async { implicit request =>
     val produkty = productsRepo.list()
-    produkty.map( products => Ok(views.html.products(products)))
+    produkty.map( products => Ok(Json.toJson(products)))
   }
 
   def getProduct(id: Long): Action[AnyContent] = Action.async { implicit request =>
     val produkt = productsRepo.getByIdOption(id)
-    produkt.map(product => product match {
-      case Some(p) => Ok(views.html.product(p))
-      case None => Redirect(routes.HomeController.getProducts())
-    })
+    produkt.map(product => Ok(Json.toJson(product)))
   }
 
   def delete(id: Long): Action[AnyContent] = Action {
@@ -176,25 +174,20 @@ class HomeController @Inject()(
     categoryRepo.delete(id)
     Redirect("/categorys")
   }
-  def getCategory(id: Int) = Action {
-    val category = categoryRepo.getByIdOption(id)
-    category.map(category => category match {
-      //case Some(p) => Ok(views.html.category(p))
-      case None => Redirect(routes.HomeController.getCategorys())
-    })
-    Ok(views.html.index("Your new application is ready."))
+  def getCategory(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val cat = categoryRepo.getByIdOption(id)
+    cat.map(category => Ok(Json.toJson(category)))
   }
-  def getCategorys = Action {
+  def getCategorys: Action[AnyContent] = Action.async { implicit request =>
     val cat = categoryRepo.list()
-    //cat.map( categories => Ok(views.html.categories(categories)))
-    Ok(views.html.index("Your new application is ready."))
+    cat.map( categories => Ok(Json.toJson(categories)))
   }
 
 
   val opinionForm: Form[CreatePrOpinionForm] = Form {
     mapping(
-      "product" -> number,
-      "user" -> longNumber,
+      "user" -> number,
+      "product" -> longNumber,
       "stars" -> number,
       "name" -> nonEmptyText,
     )(CreatePrOpinionForm.apply)(CreatePrOpinionForm.unapply)
@@ -203,8 +196,8 @@ class HomeController @Inject()(
   val updateOpinionForm: Form[UpdatePrOpinionForm] = Form {
     mapping(
       "id" -> number,
-      "product" -> number,
-      "user" -> longNumber,
+      "user" -> number,
+      "product" -> longNumber,
       "stars" -> number,
       "text" -> nonEmptyText,
     )(UpdatePrOpinionForm.apply)(UpdatePrOpinionForm.unapply)
@@ -244,10 +237,10 @@ class HomeController @Inject()(
     prOpinionRepo.delete(id)
     Redirect("/opinions")
   }
-  def opinions(productid: Long) = Action {
+  def opinions(productid: Long) = Action.async { implicit request =>
     val opi = prOpinionRepo.list(productid)
-    //opi.map( prOpinions => Ok(views.html.prOpinions(prOpinions)))
-    Ok(views.html.index("Your new application is ready."))
+    opi.map( prOpinions => Ok(Json.toJson(prOpinions)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -303,18 +296,14 @@ class HomeController @Inject()(
     promotionRepo.delete(id)
     Redirect("/promotions")
   }
-  def promotion(id: Int) = Action {
+  def promotion(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val promotion = promotionRepo.getByIdOption(id)
-    /*promotion.map(promotion => promotion match {
-      case Some(p) => Ok(views.html.promotion(p))
-      case None => Redirect(routes.HomeController.promotions())
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    promotion.map(promotion => Ok(Json.toJson(promotion)))
   }
-  def promotions = Action {
+  def promotions = Action.async { implicit request =>
     val opi = promotionRepo.list()
-    //opi.map( prOpinions => Ok(views.html.prOpinions(prOpinions)))
-    Ok(views.html.index("Your new application is ready."))
+    opi.map( promotions => Ok(Json.toJson(promotions)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -369,18 +358,14 @@ class HomeController @Inject()(
     commentRepo.delete(id)
     Redirect("/comments")
   }
-  def comment(id: Int) = Action {
+  def comment(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val comment = commentRepo.getByIdOption(id)
-    /*comment.map(comment => comment match {
-      case Some(p) => Ok(views.html.comment(p))
-      case None => Redirect(routes.HomeController.comments())
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    comment.map(comment => Ok(Json.toJson(comment)))
   }
-  def comments: Action[AnyContent] = Action {
+  def comments: Action[AnyContent] = Action.async { implicit request =>
     val com = commentRepo.list()
-    //com.map( comments => Ok(views.html.comments(comments)))
-    Ok(views.html.index("Your new application is ready."))
+    com.map( comments => Ok(Json.toJson(comments)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -436,18 +421,14 @@ class HomeController @Inject()(
     userRepo.delete(id)
     Redirect("/users")
   }
-  def user(id: Int) = Action {
+  def user(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val user = userRepo.getByIdOption(id)
-    /*user.map(user => user match {
-      case Some(p) => Ok(views.html.user(p))
-      case None => Redirect(routes.HomeController.users())
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    user.map(user => Ok(Json.toJson(user)))
   }
-  def users = Action {
+  def users = Action.async { implicit request =>
     val usr = userRepo.list()
-    //usr.map( users => Ok(views.html.users(users)))
-    Ok(views.html.index("Your new application is ready."))
+    usr.map( users => Ok(Json.toJson(users)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -502,10 +483,10 @@ class HomeController @Inject()(
     cartRepo.delete(id)
     Redirect("/cart")
   }
-  def cart = Action {
+  def cart: Action[AnyContent] = Action.async { implicit request =>
     val cart = cartRepo.list()
-    //cart.map( cart => Ok(views.html.cart(cart)))
-    Ok(views.html.index("Your new application is ready."))
+    cart.map( cart => Ok(Json.toJson(cart)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -558,12 +539,9 @@ class HomeController @Inject()(
     paymentRepo.delete(id)
     Redirect("/")
   }
-  def payment(id: Int) = Action {
+  def payment(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val payment = paymentRepo.getByIdOption(id)
-    /*payment.map(payment => payment match {
-      case Some(p) => Ok(views.html.payment(p))
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    payment.map(payment => Ok(Json.toJson(payment)))
   }
 
 
@@ -622,18 +600,14 @@ class HomeController @Inject()(
     transactionRepo.delete(id)
     Redirect("/transactions")
   }
-  def transaction(id: Int) = Action {
+  def transaction(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val transaction = transactionRepo.getByIdOption(id)
-    /*transaction.map(transaction => transaction match {
-      case Some(p) => Ok(views.html.transaction(p))
-      case None => Redirect(routes.HomeController.transactions())
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    transaction.map(transaction => Ok(Json.toJson(transaction)))
   }
-  def transactions() = Action {
+  def transactions(): Action[AnyContent] = Action.async { implicit request =>
     val trs = transactionRepo.list()
-    //trs.map( transactions => Ok(views.html.transactions(transactions)))
-    Ok(views.html.index("Your new application is ready."))
+    trs.map( transactions => Ok(Json.toJson(transactions)))
+    //Ok(views.html.index("Your new application is ready."))
   }
 
 
@@ -686,12 +660,9 @@ class HomeController @Inject()(
     deliveryRepo.delete(id)
     Redirect("/")
   }
-  def delivery(id: Int) = Action {
+  def delivery(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val delivery = deliveryRepo.getByIdOption(id)
-    /*delivery.map(delivery => delivery match {
-      case Some(p) => Ok(views.html.delivery(p))
-    })*/
-    Ok(views.html.index("Your new application is ready."))
+    delivery.map(delivery => Ok(Json.toJson(delivery)))
   }
 }
 

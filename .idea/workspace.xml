@@ -2,19 +2,74 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b8f39bba-6a2b-4bd6-a729-0bc3fd211f82" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/piotr.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/2/025cb39785fd6fe844b40301da75b133984ab1c9" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/d/2deacf56ffffaed9935dd2506d5134ae44ba4cb0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/6/467ff71e0caf936d21a2a968533a4b1683dcad6b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/4/d/4d943dfe4f0d5cefa48e62e4d20a195cb0a9959a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/0/607c8ca1e90c151a837bce666f05c941094b51fe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/2/6299fd306b2cbf3dfc0ee268a3630f024f830689" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/6/5/65609e1dece084b4a5e08fdb39c338acd58f234c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/7/4/74b95601c3a6d9d565cd312fac64094ec0f9d847" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/900058a6a783f200689643d1d949f25e891ffa45" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/0/90675922c80e7c491e92085ea5ae6b6dd3bb764f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/7/975623a412163533cac1b9a9501ff638ea4992c0" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/b/ab70518d98ea3a43030c4b3f775e70dc2215e04b" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/a/f/afa30d54541dc9d824e1209f11640af6016d4ca5" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/9/b914da17b42d2e284d67e2fd653e67f60154c254" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c36f270467a287fad5db603f935826420e5e517f" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/c/3/c3ab5e6321b476ab8862b10b2dd84ee517912910" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/e/9/e9aa69261ea45700e7e0e99dbb0bff6001369962" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/4/f4a00a17e6df30cb5d7df7db0e59646e151752dd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/categories.scala.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/react-sample.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/public/manifest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/App.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/App.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/Categories.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/CategoryForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/ProductForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/Products.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/index.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/src/serviceWorker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/scala-2.12/twirl/main/views/html/categories.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ProductController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ProductController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CartRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CartRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CategoryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CategoryRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/CommentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/CommentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/DeliveryRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PaymentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PaymentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PrOpinionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/PromotionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PromotionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/TransactionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/TransactionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/UserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Cart.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Cart.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Comment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Comment.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Delivery.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Delivery.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Payment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Payment.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/PrOpinion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/PrOpinion.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Promotion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Promotion.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Transaction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Transaction.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/User.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/conf/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/conf/evolutions/default/2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ebiznes.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/ebiznes.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/evolutions/default/2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/classes/routes" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
@@ -22,7 +77,12 @@
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/Routes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/RoutesPrefix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.12/routes/main/router/RoutesPrefix.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/$global/playCommonClassloader/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/playCommonClassloader/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/$global/streams/out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,13 +177,16 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../play-slick-crud" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/conf/evolutions/default/2.sql" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="database.data.views" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views" />
     </key>
   </component>
   <component name="RunManager">
@@ -188,6 +251,18 @@
       </map>
     </option>
   </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -211,7 +286,13 @@
       <workItem from="1587990413041" duration="836000" />
       <workItem from="1588080315227" duration="3146000" />
       <workItem from="1588166979587" duration="4308000" />
-      <workItem from="1588247723424" duration="14568000" />
+      <workItem from="1588247723424" duration="14928000" />
+      <workItem from="1588696843645" duration="1439000" />
+      <workItem from="1588700674104" duration="1340000" />
+      <workItem from="1588858305461" duration="4478000" />
+      <workItem from="1588942532334" duration="9249000" />
+      <workItem from="1589200870603" duration="2455000" />
+      <workItem from="1589203354061" duration="2888000" />
     </task>
     <task id="LOCAL-00001" summary="Models part1">
       <created>1587142836460</created>
@@ -269,7 +350,14 @@
       <option name="project" value="LOCAL" />
       <updated>1588083431581</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="CRUD">
+      <created>1588274223934</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1588274223934</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -285,7 +373,8 @@
     <MESSAGE value="Modele - BugFix - Hopefully final" />
     <MESSAGE value="Z4 Models" />
     <MESSAGE value="Forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="Forms" />
+    <MESSAGE value="CRUD" />
+    <option name="LAST_COMMIT_MESSAGE" value="CRUD" />
   </component>
   <component name="WindowStateProjectService">
     <state x="555" y="198" width="800" height="678" key="#Intentions" timestamp="1588256271034">
@@ -296,76 +385,93 @@
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="560" y="198" key="#Notifications/0.36.1920.1002@0.36.1920.1002" timestamp="1587660464716" />
+    <state x="2160" y="173" key="#Project_Settings" timestamp="1588700811348">
+      <screen x="1920" y="0" width="1280" height="1024" />
+    </state>
+    <state x="2160" y="173" key="#Project_Settings/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588700811348" />
     <state x="698" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1588082836111">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="698" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1588082836111" />
-    <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587660550631">
+    <state x="690" y="135" width="800" height="678" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589204243828">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586277054647" />
-    <state x="254" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1587660550631" />
+    <state x="690" y="135" width="800" height="678" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1589204243828" />
     <state x="424" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.36.3200.1002@0.36.3200.1002" timestamp="1586274177575" />
-    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2" timestamp="1588083431090">
+    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2" timestamp="1588274223681">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="445" y="76" width="1030" height="922" key="CommitChangelistDialog2/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1587383344279" />
-    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1588083431090" />
-    <state x="753" y="380" key="FileChooserDialogImpl" timestamp="1587667687830">
+    <state x="445" y="76" width="1053" height="922" key="CommitChangelistDialog2/0.36.1920.1002@0.36.1920.1002" timestamp="1588274223681" />
+    <state x="753" y="380" key="FileChooserDialogImpl" timestamp="1589203902396">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
-    <state x="753" y="380" key="FileChooserDialogImpl/0.36.1920.1002@0.36.1920.1002" timestamp="1587667687830" />
-    <state width="1870" height="261" key="GridCell.Tab.0.bottom" timestamp="1588269396675">
+    <state x="753" y="380" key="FileChooserDialogImpl/0.36.1920.1002@0.36.1920.1002" timestamp="1589203902396" />
+    <state width="1870" height="201" key="GridCell.Tab.0.bottom" timestamp="1589204040663">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551102" />
-    <state width="1870" height="261" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1588269396675" />
+    <state width="1870" height="201" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1589204040663" />
     <state width="1870" height="269" key="GridCell.Tab.0.bottom/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618178" />
-    <state width="1870" height="261" key="GridCell.Tab.0.center" timestamp="1588269396674">
+    <state width="1870" height="201" key="GridCell.Tab.0.center" timestamp="1589204040662">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.center/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1588269396674" />
+    <state width="1870" height="201" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1589204040662" />
     <state width="1870" height="269" key="GridCell.Tab.0.center/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
-    <state width="1870" height="261" key="GridCell.Tab.0.left" timestamp="1588269396674">
+    <state width="1870" height="201" key="GridCell.Tab.0.left" timestamp="1589204040662">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.left/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472648" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1588269396674" />
+    <state width="1870" height="201" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1589204040662" />
     <state width="1870" height="269" key="GridCell.Tab.0.left/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618176" />
-    <state width="1870" height="261" key="GridCell.Tab.0.right" timestamp="1588269396674">
+    <state width="1870" height="201" key="GridCell.Tab.0.right" timestamp="1589204040662">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="1230" height="276" key="GridCell.Tab.0.right/0.0.1920.1080/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587486472649" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586288072773" />
     <state width="1230" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1587483551101" />
-    <state width="1870" height="261" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1588269396674" />
+    <state width="1870" height="201" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1589204040662" />
     <state width="1870" height="269" key="GridCell.Tab.0.right/0.36.3200.1002@0.36.3200.1002" timestamp="1586275618177" />
-    <state width="264" height="563" key="HiddenNamespacesPopup" timestamp="1588273351489">
+    <state width="264" height="563" key="HiddenNamespacesPopup" timestamp="1588962583592">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="264" height="563" key="HiddenNamespacesPopup/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586277260461" />
-    <state width="264" height="563" key="HiddenNamespacesPopup/0.36.1920.1002@0.36.1920.1002" timestamp="1588273351489" />
+    <state width="264" height="563" key="HiddenNamespacesPopup/0.36.1920.1002@0.36.1920.1002" timestamp="1588962583592" />
     <state x="730" y="382" key="NewModule_or_Project.wizard" timestamp="1586273072957">
       <screen x="0" y="36" width="3200" height="1002" />
     </state>
     <state x="730" y="382" key="NewModule_or_Project.wizard/0.36.3200.1002@0.36.3200.1002" timestamp="1586273072957" />
-    <state x="432" y="178" key="SettingsEditor" timestamp="1587661483476">
+    <state x="432" y="178" width="1037" height="731" key="SettingsEditor" timestamp="1589203880771">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
-    <state x="432" y="178" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1587661483476" />
+    <state x="1986" y="128" width="1037" height="731" key="SettingsEditor/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588700733575" />
+    <state x="432" y="178" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1589203880771" />
     <state x="446" y="156" key="SettingsEditor/0.36.3200.1002@0.36.3200.1002" timestamp="1586273550451" />
-    <state x="606" y="99" width="867" height="876" key="find.popup" timestamp="1588081441076">
+    <state x="833" y="369" width="376" height="336" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1589203527592">
+      <screen x="0" y="36" width="1920" height="1002" />
+    </state>
+    <state x="833" y="369" width="376" height="336" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.36.1920.1002@0.36.1920.1002" timestamp="1589203527592" />
+    <state x="901" y="149" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1589201429793">
+      <screen x="0" y="36" width="1920" height="1002" />
+    </state>
+    <state x="901" y="149" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.36.1920.1002@0.36.1920.1002" timestamp="1589201429793" />
+    <state x="810" y="428" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1" timestamp="1588962559355">
+      <screen x="0" y="36" width="1920" height="1002" />
+    </state>
+    <state x="810" y="428" key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1/0.36.1920.1002@0.36.1920.1002" timestamp="1588962559355" />
+    <state x="606" y="99" width="867" height="876" key="find.popup" timestamp="1589201734161">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state x="606" y="99" width="707" height="876" key="find.popup/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1586283811681" />
-    <state x="606" y="99" width="867" height="876" key="find.popup/0.36.1920.1002@0.36.1920.1002" timestamp="1588081441076" />
+    <state x="606" y="99" width="867" height="876" key="find.popup/0.36.1920.1002@0.36.1920.1002" timestamp="1589201734161" />
     <state x="478" y="345" width="975" height="530" key="org.intellij.images.editor.actions.BackgroundImageDialog" timestamp="1587661478516">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu Apr 30 21:09:17 CEST 2020
+// @DATE:Mon May 11 15:52:38 CEST 2020
 
 import play.api.mvc.Call
 
@@ -10,14 +10,14 @@ import _root_.controllers.Assets.Asset
 // @LINE:7
 package controllers {
 
-  // @LINE:97
+  // @LINE:99
   class ReverseAsyncController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:97
+    // @LINE:99
     def message(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "message")
@@ -32,19 +32,19 @@ package controllers {
     }
 
   
-    // @LINE:66
+    // @LINE:68
     def cart(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "cart")
     }
   
-    // @LINE:69
+    // @LINE:71
     def addTransaction(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addtransaction")
     }
   
-    // @LINE:65
+    // @LINE:67
     def deleteFromCart(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deletefromcart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -62,13 +62,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "promotion/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:86
+    // @LINE:88
     def addDelivery(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "adddelivery")
     }
   
-    // @LINE:78
+    // @LINE:80
     def addPayment(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addpayment")
@@ -80,30 +80,30 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "product/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:53
+    // @LINE:55
     def addUserHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "adduserhandle")
     }
   
-    // @LINE:52
+    // @LINE:54
     def addUser(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "adduser")
     }
   
-    // @LINE:73
+    // @LINE:75
     def deleteTransaction(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deletetransaction/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:62
+    // @LINE:64
     def addToCartHandle(): Call = {
     
       () match {
       
-        // @LINE:62
+        // @LINE:64
         case ()  =>
           
           Call("POST", _prefix + { _defaultPrefix } + "addtocarthandle")
@@ -124,7 +124,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "updatecategory/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:79
+    // @LINE:81
     def addPaymentHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addpaymenthandle")
@@ -136,7 +136,7 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "updateproducthandle")
     }
   
-    // @LINE:72
+    // @LINE:74
     def updateTransactionHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatetransactionhandle")
@@ -148,13 +148,13 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "addopinionhandle")
     }
   
-    // @LINE:88
+    // @LINE:90
     def updateDelivery(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatedelivery/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:54
+    // @LINE:56
     def updateUser(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updateuser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -166,13 +166,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "updateopinion/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:90
+    // @LINE:92
     def deleteDelivery(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deletedelivery/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:57
+    // @LINE:59
     def user(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "user/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -196,13 +196,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "deleteopinion/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:47
+    // @LINE:48
     def updateCommentHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatecommenthandle")
     }
   
-    // @LINE:44
+    // @LINE:45
     def addComment(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "addcomment")
@@ -214,19 +214,19 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "opinions/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)))
     }
   
-    // @LINE:87
+    // @LINE:89
     def addDeliveryHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "adddeliveryhandle")
     }
   
-    // @LINE:83
+    // @LINE:85
     def payment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "payment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:70
+    // @LINE:72
     def addTransactionHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addtransactionhandle")
@@ -250,13 +250,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "updateproduct/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("id", id)))
     }
   
-    // @LINE:48
+    // @LINE:49
     def deleteComment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deletecomment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:71
+    // @LINE:73
     def updateTransaction(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatetransaction/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -268,7 +268,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "deletepromotion/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:45
+    // @LINE:46
     def addCommentHandle(): Call = {
       
       Call("POST", _prefix + { _defaultPrefix } + "addcommenthandle")
@@ -280,19 +280,19 @@ package controllers {
       Call("POST", _prefix + { _defaultPrefix } + "updatepromotionhandle")
     }
   
-    // @LINE:58
+    // @LINE:60
     def users(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "users")
     }
   
-    // @LINE:75
+    // @LINE:77
     def transactions(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "transactions")
     }
   
-    // @LINE:56
+    // @LINE:58
     def deleteUser(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deleteuser/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -310,7 +310,7 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "categories")
     }
   
-    // @LINE:49
+    // @LINE:50
     def comment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "comment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -340,10 +340,16 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "updatecategoryhandle")
     }
   
-    // @LINE:80
+    // @LINE:82
     def updatePayment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatepayment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
+    }
+  
+    // @LINE:42
+    def promotions(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "promotions")
     }
   
     // @LINE:36
@@ -352,25 +358,25 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "addpromotion/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Long]].unbind("productid", productid)))
     }
   
-    // @LINE:55
+    // @LINE:57
     def updateUserHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updateuserhandle")
     }
   
-    // @LINE:91
+    // @LINE:93
     def delivery(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "delivery/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:74
+    // @LINE:76
     def transaction(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "transaction/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:82
+    // @LINE:84
     def deletePayment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "deletepayment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -388,12 +394,18 @@ package controllers {
       Call("GET", _prefix)
     }
   
-    // @LINE:61
+    // @LINE:51
+    def comments(): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "comments")
+    }
+  
+    // @LINE:63
     def addToCart(id:Int): Call = {
     
       (id: @unchecked) match {
       
-        // @LINE:61
+        // @LINE:63
         case (id)  =>
           
           Call("GET", _prefix + { _defaultPrefix } + "addtocart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -402,7 +414,7 @@ package controllers {
     
     }
   
-    // @LINE:81
+    // @LINE:83
     def updatePaymentHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatepaymenthandle")
@@ -414,13 +426,13 @@ package controllers {
       Call("GET", _prefix + { _defaultPrefix } + "deletecategory/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
     }
   
-    // @LINE:89
+    // @LINE:91
     def updateDeliveryHandle(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatedeliveryhandle")
     }
   
-    // @LINE:46
+    // @LINE:47
     def updateComment(id:Int): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "updatecomment/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("id", id)))
@@ -428,14 +440,14 @@ package controllers {
   
   }
 
-  // @LINE:100
+  // @LINE:102
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:100
+    // @LINE:102
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
@@ -443,14 +455,14 @@ package controllers {
   
   }
 
-  // @LINE:95
+  // @LINE:97
   class ReverseCountController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:95
+    // @LINE:97
     def count(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "count")

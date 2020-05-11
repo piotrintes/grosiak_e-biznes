@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu Apr 30 21:09:17 CEST 2020
+// @DATE:Mon May 11 15:52:38 CEST 2020
 
 
 package router {

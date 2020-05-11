@@ -39,6 +39,7 @@ GET     /updatepromotion/:id                controllers.HomeController.updatePro
 POST    /updatepromotionhandle              controllers.HomeController.updatePromotionHandle
 GET     /deletepromotion/:id                controllers.HomeController.deletePromotion(id: Int)
 GET     /promotion/:id                      controllers.HomeController.promotion(id: Int)
+GET     /promotions                         controllers.HomeController.promotions
 
 # Comments
 GET     /addcomment                 controllers.HomeController.addComment
@@ -47,6 +48,7 @@ GET     /updatecomment/:id          controllers.HomeController.updateComment(id:
 GET     /updatecommenthandle        controllers.HomeController.updateCommentHandle
 GET     /deletecomment/:id          controllers.HomeController.deleteComment(id: Int)
 GET     /comment/:id                controllers.HomeController.comment(id: Int)
+GET     /comments                   controllers.HomeController.comments
 
 # Users
 GET     /adduser                    controllers.HomeController.addUser

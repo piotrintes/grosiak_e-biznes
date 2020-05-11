@@ -16,9 +16,9 @@ CREATE TABLE "product" (
 
 CREATE TABLE "user" (
  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
- "name" VARCHAR NOT NULL
- "surname" VARCHAR NOT NULL
- "email" VARCHAR NOT NULL
+ "name" VARCHAR NOT NULL,
+ "surname" VARCHAR NOT NULL,
+ "email" VARCHAR NOT NULL,
  "admin" BIT NOT NULL
 );
 
@@ -27,7 +27,7 @@ CREATE TABLE "cart" (
  "user" INT NOT NULL,
  "product" INT NOT NULL,
  "count" INT NOT NULL,
- FOREIGN KEY(user) references user(id)
+ FOREIGN KEY(user) references user(id),
  FOREIGN KEY(product) references product(id)
 );
 
@@ -45,7 +45,7 @@ CREATE TABLE "prOpinion" (
  "product" INT NOT NULL,
  "stars" INT NOT NULL,
  "text" TEXT NOT NULL,
- FOREIGN KEY(user) references user(id)
+ FOREIGN KEY(user) references user(id),
  FOREIGN KEY(product) references product(id)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE "transaction" (
  "count" INT NOT NULL,
  "price" DOUBLE NOT NULL,
  "date" VARCHAR NOT NULL,
- FOREIGN KEY(user) references user(id)
+ FOREIGN KEY(user) references user(id),
  FOREIGN KEY(product) references product(id)
 );
 
@@ -71,25 +71,25 @@ CREATE TABLE "payment" (
  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
  "transaction" INT NOT NULL,
  "date" VARCHAR NOT NULL,
- FOREIGN KEY(transaction) references transaction(id)
+ FOREIGN KEY("transaction") references "transaction"(id)
 );
 
 CREATE TABLE "delivery" (
  "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
  "transaction" INT NOT NULL,
  "date" VARCHAR NOT NULL,
- FOREIGN KEY(transaction) references transaction(id)
+ FOREIGN KEY("transaction") references "transaction"(id)
 );
 
 # --- !Downs
 
-DROP TABLE "category"
-DROP TABLE "product"
-DROP TABLE "user"
-DROP TABLE "cart"
-DROP TABLE "comment"
-DROP TABLE "prOpinion"
-DROP TABLE "promotion"
-DROP TABLE "transaction"
-DROP TABLE "payment"
-DROP TABLE "delivery"
+DROP TABLE "category";
+DROP TABLE "product";
+DROP TABLE "user";
+DROP TABLE "cart";
+DROP TABLE "comment";
+DROP TABLE "prOpinion";
+DROP TABLE "promotion";
+DROP TABLE "transaction";
+DROP TABLE "payment";
+DROP TABLE "delivery";
