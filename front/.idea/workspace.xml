@@ -2,36 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54c7c2b2-c7c3-465e-acb8-5aa5c468e1f7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/react-sample.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Categories.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CategoryForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProductForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Products.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ebiznes.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../ebiznes.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +47,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -97,6 +83,7 @@
       <workItem from="1588697063410" duration="377000" />
       <workItem from="1588697507439" duration="2993000" />
       <workItem from="1588858454714" duration="1266000" />
+      <workItem from="1590068649726" duration="4160000" />
     </task>
     <servers />
   </component>
@@ -141,9 +128,10 @@
     </state>
     <state width="413" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1588703087813" />
     <state width="626" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753450" />
-    <state x="189" y="164" width="1556" height="731" key="SettingsEditor" timestamp="1588858495075">
+    <state x="189" y="164" width="1556" height="731" key="SettingsEditor" timestamp="1590071400148">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
+    <state x="189" y="164" key="SettingsEditor/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590071400147" />
     <state x="2046" y="131" width="1037" height="731" key="SettingsEditor/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697702156" />
     <state x="189" y="164" width="1556" height="731" key="SettingsEditor/0.36.1920.1002@0.36.1920.1002" timestamp="1588858495075" />
   </component>

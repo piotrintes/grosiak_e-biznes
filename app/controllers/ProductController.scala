@@ -60,40 +60,21 @@ class HomeController @Inject()(
     Redirect("/products")
   }
 
-  def updateProduct(id: Long): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    var categ:Seq[Category] = Seq[Category]()
-    val categories = categoryRepo.list().onComplete{
-      case Success(cat) => categ = cat
-      case Failure(_) => print("fail")
-    }
-
-    val produkt = productsRepo.getById(id)
-    produkt.map(product => {
-      val prodForm = updateProductForm.fill(UpdateProductForm(product.id, product.name, product.description,product.category,product.price))
-      Ok(views.html.productupdate(prodForm, categ))
-    })
+  def updateProduct(id: Long): Action[AnyContent] = Action.async { implicit request =>
+    val produkt = productsRepo.getByIdOption(id)
+    produkt.map(product => Ok(Json.toJson(product)))
   }
 
   def updateProductHandle = Action.async { implicit request =>
-    var categ:Seq[Category] = Seq[Category]()
-    val categories = categoryRepo.list().onComplete{
-      case Success(cat) => categ = cat
-      case Failure(_) => print("fail")
+    val id = request.body.asJson.get("id").as[Long]
+    val name = request.body.asJson.get("name").as[String]
+    val description = request.body.asJson.get("description").as[String]
+    val category = request.body.asJson.get("category").as[Int]
+    val price = request.body.asJson.get("price").as[Double]
+
+    productsRepo.update(id, Product(id,name,description,category,price)).map { product =>
+      Ok(Json.toJson(Product(id,name,description,category,price)))
     }
-
-    updateProductForm.bindFromRequest.fold(
-      errorForm => {
-        Future.successful(
-          BadRequest(views.html.productupdate(errorForm, categ))
-        )
-      },
-      product => {
-        productsRepo.update(product.id, Product(product.id, product.name, product.description, product.category, product.price)).map { _ =>
-          Redirect(routes.HomeController.updateProduct(product.id)).flashing("success" -> "product updated")
-        }
-      }
-    )
-
   }
 
 
@@ -103,25 +84,14 @@ class HomeController @Inject()(
   }
 
   def addProductHandle = Action.async { implicit request =>
-    var categ:Seq[Category] = Seq[Category]()
-    val categories = categoryRepo.list().onComplete{
-      case Success(cat) => categ = cat
-      case Failure(_) => print("fail")
+    val name = request.body.asJson.get("name").as[String]
+    val description = request.body.asJson.get("description").as[String]
+    val category = request.body.asJson.get("category").as[Int]
+    val price = request.body.asJson.get("price").as[Double]
+
+    productsRepo.create(name,description,category,price).map { product =>
+      Ok(Json.toJson(product))
     }
-
-    productForm.bindFromRequest.fold(
-      errorForm => {
-        Future.successful(
-          BadRequest(views.html.productadd(errorForm, categ))
-        )
-      },
-      product => {
-        productsRepo.create(product.name, product.description, product.category, product.price).map { _ =>
-          Redirect(routes.HomeController.addProduct()).flashing("success" -> "product.created")
-        }
-      }
-    )
-
   }
 
   val categoryForm: Form[CreateCategoryForm] = Form {
@@ -142,33 +112,25 @@ class HomeController @Inject()(
   }
 
   def addCategoryHandle = Action.async { implicit request =>
-    categoryForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        categoryRepo.create(data.name).asInstanceOf[Future[Result]]
-      })
+    val name = request.body.asJson.get("name").as[String]
+
+    categoryRepo.create(name).map { category =>
+      Ok(Json.toJson(category))
+    }
   }
 
-  def updateCategory(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data = categoryRepo.getById(id)
-    data.map(category => {
-      val form = updateCategoryForm.fill(UpdateCategoryForm(category.id, category.name))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateCategory(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val cat = categoryRepo.getByIdOption(id)
+    cat.map(category => Ok(Json.toJson(category)))
   }
 
   def updateCategoryHandle = Action.async { implicit request =>
-    updateCategoryForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        categoryRepo.update(data.id, Category(data.id, data.name)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val name = request.body.asJson.get("name").as[String]
+
+    categoryRepo.update(id,Category(id,name)).map { category =>
+      Ok(Json.toJson(Category(id,name)))
+    }
   }
   def deleteCategory(id: Int) = Action {
     categoryRepo.delete(id)
@@ -207,31 +169,29 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addOpinionHandle = Action.async { implicit request =>
-    opinionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        prOpinionRepo.create(data.user,data.product,data.stars,data.text).asInstanceOf[Future[Result]]
-      })
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val stars = request.body.asJson.get("stars").as[Int]
+    val text = request.body.asJson.get("text").as[String]
+
+    prOpinionRepo.create(user,product,stars,text).map { opinion =>
+      Ok(Json.toJson(opinion))
+    }
   }
-  def updateOpinion(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data = prOpinionRepo.getById(id)
-    data.map(opinion => {
-      val form = updateOpinionForm.fill(UpdatePrOpinionForm(opinion.id,opinion.user,opinion.product,opinion.stars,opinion.text))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateOpinion(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val op = prOpinionRepo.getByIdOption(id)
+    op.map(opinion => Ok(Json.toJson(opinion)))
   }
   def updateOpinionHandle = Action.async { implicit request =>
-    updateOpinionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        prOpinionRepo.update(data.id, PrOpinion(data.id,data.user,data.product,data.stars,data.text)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val stars = request.body.asJson.get("stars").as[Int]
+    val text = request.body.asJson.get("text").as[String]
+
+    prOpinionRepo.update(id,PrOpinion(id,user,product,stars,text)).map { opinion =>
+      Ok(Json.toJson(PrOpinion(id,user,product,stars,text)))
+    }
   }
   def deleteOpinion(id: Int) = Action {
     prOpinionRepo.delete(id)
@@ -266,32 +226,27 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addPromotionHandle = Action.async { implicit request =>
-    promotionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        promotionRepo.create(data.product,data.discount).asInstanceOf[Future[Result]]
-      })
+    val product = request.body.asJson.get("product").as[Long]
+    val discount = request.body.asJson.get("discount").as[Int]
+
+    promotionRepo.create(product,discount).map { promotion =>
+      Ok(Json.toJson(promotion))
+    }
   }
-  def updatePromotion(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = promotionRepo.getById(id)
-    data_.map(data => {
-      val form = updatepromotionForm.fill(UpdatePromotionForm(data.id, data.product, data.discount))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updatePromotion(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val promotion = promotionRepo.getByIdOption(id)
+    promotion.map(promotion => Ok(Json.toJson(promotion)))
   }
   def updatePromotionHandle = Action.async { implicit request =>
-    updatepromotionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        promotionRepo.update(data.id, Promotion(data.id, data.product, data.discount)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val discount = request.body.asJson.get("discount").as[Int]
+
+    promotionRepo.update(id, Promotion(id, product, discount)).map { promotion =>
+      Ok(Json.toJson(Promotion(id, product, discount)))
+    }
   }
+
   def deletePromotion(id: Int) = Action {
     promotionRepo.delete(id)
     Redirect("/promotions")
@@ -328,31 +283,27 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addCommentHandle = Action.async { implicit request =>
-    commentForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        commentRepo.create(data.user,data.stars,data.text).asInstanceOf[Future[Result]]
-      })
+    val user = request.body.asJson.get("user").as[Int]
+    val stars = request.body.asJson.get("stars").as[Int]
+    val text = request.body.asJson.get("text").as[String]
+
+    commentRepo.create(user,stars,text).map { comment =>
+      Ok(Json.toJson(comment))
+    }
   }
-  def updateComment(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = commentRepo.getById(id)
-    data_.map(data => {
-      val form = updateCommentForm.fill(UpdateCommentForm(data.id, data.user,data.stars,data.text))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateComment(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val comment = commentRepo.getByIdOption(id)
+    comment.map(comment => Ok(Json.toJson(comment)))
   }
   def updateCommentHandle = Action.async { implicit request =>
-    updateCommentForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        commentRepo.update(data.id, Comment(data.id, data.user,data.stars,data.text)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val user = request.body.asJson.get("user").as[Int]
+    val stars = request.body.asJson.get("stars").as[Int]
+    val text = request.body.asJson.get("text").as[String]
+
+    commentRepo.update(id, Comment(id,user,stars,text)).map { comment =>
+      Ok(Json.toJson(Comment(id,user,stars,text)))
+    }
   }
   def deleteComment(id: Int) = Action {
     commentRepo.delete(id)
@@ -391,31 +342,29 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addUserHandle = Action.async { implicit request =>
-    userForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        userRepo.create(data.name,data.surname,data.email,data.admin).asInstanceOf[Future[Result]]
-      })
+    val name = request.body.asJson.get("name").as[String]
+    val surname = request.body.asJson.get("surname").as[String]
+    val email = request.body.asJson.get("email").as[String]
+    val admin = request.body.asJson.get("admin").as[Boolean]
+
+    userRepo.create(name,surname,email,admin).map { user =>
+      Ok(Json.toJson(user))
+    }
   }
-  def updateUser(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = userRepo.getById(id)
-    data_.map(data => {
-      val form = updateUserForm.fill(UpdateUserForm(data.id, data.name,data.surname,data.email,data.admin))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateUser(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val user = userRepo.getByIdOption(id)
+    user.map(user => Ok(Json.toJson(user)))
   }
   def updateUserHandle = Action.async { implicit request =>
-    updateUserForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        userRepo.update(data.id, User(data.id,data.name,data.surname,data.email,data.admin)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val name = request.body.asJson.get("name").as[String]
+    val surname = request.body.asJson.get("surname").as[String]
+    val email = request.body.asJson.get("email").as[String]
+    val admin = request.body.asJson.get("admin").as[Boolean]
+
+    userRepo.update(id,User(id,name,surname,email,admin)).map { user =>
+      Ok(Json.toJson(User(id,name,surname,email,admin)))
+    }
   }
   def deleteUser(id: Int) = Action {
     userRepo.delete(id)
@@ -453,31 +402,27 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addToCartHandle = Action.async { implicit request =>
-    updateCartForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        cartRepo.create(data.user,data.product,data.count).asInstanceOf[Future[Result]]
-      })
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val count = request.body.asJson.get("count").as[Int]
+
+    cartRepo.create(user,product,count).map { cart =>
+      Ok(Json.toJson(cart))
+    }
   }
-  def updateCart(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = cartRepo.getById(id)
-    data_.map(data => {
-      val form = updateCartForm.fill(UpdateCartForm(data.id, data.user,data.product,data.count))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateCart(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val cart = cartRepo.list()
+    cart.map( cart => Ok(Json.toJson(cart)))
   }
   def updateCartHandle = Action.async { implicit request =>
-    updateCartForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        cartRepo.update(data.id, Cart(data.id, data.user,data.product,data.count)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val count = request.body.asJson.get("count").as[Int]
+
+    cartRepo.update(id,Cart(id,user,product,count)).map { cart =>
+      Ok(Json.toJson(Cart(id,user,product,count)))
+    }
   }
   def deleteFromCart(id: Int) = Action {
     cartRepo.delete(id)
@@ -509,31 +454,25 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addPaymentHandle = Action.async { implicit request =>
-    paymentForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        paymentRepo.create(data.transaction,data.date).asInstanceOf[Future[Result]]
-      })
+    val transaction = request.body.asJson.get("transaction").as[Int]
+    val date = request.body.asJson.get("date").as[String]
+
+    paymentRepo.create(transaction,date).map { payment =>
+      Ok(Json.toJson(payment))
+    }
   }
-  def updatePayment(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = paymentRepo.getById(id)
-    data_.map(data => {
-      val form = updatePaymentForm.fill(UpdatePaymentForm(data.id, data.transaction,data.date))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updatePayment(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val payment = paymentRepo.getByIdOption(id)
+    payment.map(payment => Ok(Json.toJson(payment)))
   }
   def updatePaymentHandle = Action.async { implicit request =>
-    updatePaymentForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        paymentRepo.update(data.id, Payment(data.id, data.transaction,data.date)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val transaction = request.body.asJson.get("transaction").as[Int]
+    val date = request.body.asJson.get("date").as[String]
+
+    paymentRepo.update(id,Payment(id,transaction,date)).map { payment =>
+      Ok(Json.toJson(Payment(id,transaction,date)))
+    }
   }
   def deletePayment(id: Int) = Action {
     paymentRepo.delete(id)
@@ -570,31 +509,31 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addTransactionHandle = Action.async { implicit request =>
-    transactionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        transactionRepo.create(data.user,data.product,data.count,data.price,data.date).asInstanceOf[Future[Result]]
-      })
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val count = request.body.asJson.get("count").as[Int]
+    val price = request.body.asJson.get("price").as[Double]
+    val date = request.body.asJson.get("date").as[String]
+
+    transactionRepo.create(user,product,count,price,date).map { transaction =>
+      Ok(Json.toJson(transaction))
+    }
   }
-  def updateTransaction(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = transactionRepo.getById(id)
-    data_.map(data => {
-      val form = updateTransactionForm.fill(UpdateTransactionForm(data.id, data.user,data.product,data.count,data.price,data.date))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateTransaction(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val transaction = transactionRepo.getByIdOption(id)
+    transaction.map(transaction => Ok(Json.toJson(transaction)))
   }
   def updateTransactionHandle = Action.async { implicit request =>
-    updateTransactionForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        transactionRepo.update(data.id, Transaction(data.id, data.user,data.product,data.count,data.price,data.date)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val user = request.body.asJson.get("user").as[Int]
+    val product = request.body.asJson.get("product").as[Long]
+    val count = request.body.asJson.get("count").as[Int]
+    val price = request.body.asJson.get("price").as[Double]
+    val date = request.body.asJson.get("date").as[String]
+
+    transactionRepo.update(id,Transaction(id,user,product,count,price,date)).map { transaction =>
+      Ok(Json.toJson(Transaction(id,user,product,count,price,date)))
+    }
   }
   def deleteTransaction(id: Int) = Action {
     transactionRepo.delete(id)
@@ -630,31 +569,25 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addDeliveryHandle = Action.async { implicit request =>
-    deliveryForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        deliveryRepo.create(data.transaction,data.date).asInstanceOf[Future[Result]]
-      })
+    val transaction = request.body.asJson.get("transaction").as[Int]
+    val date = request.body.asJson.get("date").as[String]
+
+    deliveryRepo.create(transaction,date).map { delivery =>
+      Ok(Json.toJson(delivery))
+    }
   }
-  def updateDelivery(id: Int): Action[AnyContent] = Action.async { implicit request: MessagesRequest[AnyContent] =>
-    val data_ = deliveryRepo.getById(id)
-    data_.map(data => {
-      val form = updateDeliveryForm.fill(UpdateDeliveryForm(data.id, data.transaction,data.date))
-      Ok(views.html.index("Your new application is ready."))
-    })
+  def updateDelivery(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val delivery = deliveryRepo.getByIdOption(id)
+    delivery.map(delivery => Ok(Json.toJson(delivery)))
   }
   def updateDeliveryHandle = Action.async { implicit request =>
-    updateDeliveryForm.bindFromRequest.fold(
-      // if any error in submitted data
-      errorForm => {
-        Future.successful(Ok("Form submission with error: ${errorForm.errors}"))
-      },
-      data => {
-        deliveryRepo.update(data.id, Delivery(data.id,data.transaction,data.date)).asInstanceOf[Future[Result]]
-      })
+    val id = request.body.asJson.get("id").as[Int]
+    val transaction = request.body.asJson.get("transaction").as[Int]
+    val date = request.body.asJson.get("date").as[String]
+
+    deliveryRepo.update(id,Delivery(id,transaction,date)).map { delivery =>
+      Ok(Json.toJson(Delivery(id,transaction,date)))
+    }
   }
   def deleteDelivery(id: Int) = Action {
     deliveryRepo.delete(id)

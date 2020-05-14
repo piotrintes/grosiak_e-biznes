@@ -30,6 +30,7 @@ class Products extends Component {
                         <div className="title">{prod.name}</div>
                         <div>{prod.description}</div>
                         <div>{prod.category}</div>
+                        <div>{prod.price}</div>
                     </div>
                 )
             })

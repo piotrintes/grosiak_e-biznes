@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Mon May 11 15:52:38 CEST 2020
+// @DATE:Thu May 14 17:00:07 CEST 2020
 
 package router
 
@@ -15,11 +15,11 @@ class Routes(
   override val errorHandler: play.api.http.HttpErrorHandler, 
   // @LINE:7
   HomeController_3: controllers.HomeController,
-  // @LINE:97
+  // @LINE:112
   CountController_2: controllers.CountController,
-  // @LINE:99
+  // @LINE:114
   AsyncController_0: controllers.AsyncController,
-  // @LINE:102
+  // @LINE:117
   Assets_1: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -28,11 +28,11 @@ class Routes(
    def this(errorHandler: play.api.http.HttpErrorHandler,
     // @LINE:7
     HomeController_3: controllers.HomeController,
-    // @LINE:97
+    // @LINE:112
     CountController_2: controllers.CountController,
-    // @LINE:99
+    // @LINE:114
     AsyncController_0: controllers.AsyncController,
-    // @LINE:102
+    // @LINE:117
     Assets_1: controllers.Assets
   ) = this(errorHandler, HomeController_3, CountController_2, AsyncController_0, Assets_1, "/")
 
@@ -51,7 +51,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addcategory""", """controllers.HomeController.addCategory"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addcategoryhandle""", """controllers.HomeController.addCategoryHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecategory/""" + "$" + """id<[^/]+>""", """controllers.HomeController.updateCategory(id:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecategoryhandle""", """controllers.HomeController.updateCategoryHandle"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecategoryhandle""", """controllers.HomeController.updateCategoryHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deletecategory/""" + "$" + """id<[^/]+>""", """controllers.HomeController.deleteCategory(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """category/""" + "$" + """id<[^/]+>""", """controllers.HomeController.getCategory(id:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """categories""", """controllers.HomeController.getCategorys"""),
@@ -160,7 +160,7 @@ class Routes(
     )
   )
 
-  // @LINE:11
+  // @LINE:12
   private[this] lazy val controllers_HomeController_addCategoryHandle2_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addcategoryhandle")))
   )
@@ -174,11 +174,11 @@ class Routes(
       "POST",
       this.prefix + """addcategoryhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:12
+  // @LINE:13
   private[this] lazy val controllers_HomeController_updateCategory3_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecategory/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -196,8 +196,8 @@ class Routes(
     )
   )
 
-  // @LINE:13
-  private[this] lazy val controllers_HomeController_updateCategoryHandle4_route = Route("GET",
+  // @LINE:15
+  private[this] lazy val controllers_HomeController_updateCategoryHandle4_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecategoryhandle")))
   )
   private[this] lazy val controllers_HomeController_updateCategoryHandle4_invoker = createInvoker(
@@ -207,14 +207,14 @@ class Routes(
       "controllers.HomeController",
       "updateCategoryHandle",
       Nil,
-      "GET",
+      "POST",
       this.prefix + """updatecategoryhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:14
+  // @LINE:16
   private[this] lazy val controllers_HomeController_deleteCategory5_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletecategory/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -232,7 +232,7 @@ class Routes(
     )
   )
 
-  // @LINE:15
+  // @LINE:17
   private[this] lazy val controllers_HomeController_getCategory6_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("category/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -250,7 +250,7 @@ class Routes(
     )
   )
 
-  // @LINE:16
+  // @LINE:18
   private[this] lazy val controllers_HomeController_getCategorys7_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("categories")))
   )
@@ -268,7 +268,7 @@ class Routes(
     )
   )
 
-  // @LINE:19
+  // @LINE:21
   private[this] lazy val controllers_HomeController_addProduct8_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addproduct")))
   )
@@ -286,7 +286,7 @@ class Routes(
     )
   )
 
-  // @LINE:20
+  // @LINE:23
   private[this] lazy val controllers_HomeController_addProductHandle9_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addproducthandle")))
   )
@@ -300,11 +300,11 @@ class Routes(
       "POST",
       this.prefix + """addproducthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:21
+  // @LINE:24
   private[this] lazy val controllers_HomeController_updateProduct10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateproduct/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -322,7 +322,7 @@ class Routes(
     )
   )
 
-  // @LINE:22
+  // @LINE:26
   private[this] lazy val controllers_HomeController_updateProductHandle11_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateproducthandle")))
   )
@@ -336,11 +336,11 @@ class Routes(
       "POST",
       this.prefix + """updateproducthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:23
+  // @LINE:27
   private[this] lazy val controllers_HomeController_getProducts12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("products")))
   )
@@ -358,7 +358,7 @@ class Routes(
     )
   )
 
-  // @LINE:24
+  // @LINE:28
   private[this] lazy val controllers_HomeController_getProduct13_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("product/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -376,7 +376,7 @@ class Routes(
     )
   )
 
-  // @LINE:25
+  // @LINE:29
   private[this] lazy val controllers_HomeController_delete14_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delete/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -394,7 +394,7 @@ class Routes(
     )
   )
 
-  // @LINE:28
+  // @LINE:32
   private[this] lazy val controllers_HomeController_addOpinion15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addopinion/"), DynamicPart("productid", """[^/]+""",true)))
   )
@@ -412,7 +412,7 @@ class Routes(
     )
   )
 
-  // @LINE:29
+  // @LINE:34
   private[this] lazy val controllers_HomeController_addOpinionHandle16_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addopinionhandle")))
   )
@@ -426,11 +426,11 @@ class Routes(
       "POST",
       this.prefix + """addopinionhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:30
+  // @LINE:35
   private[this] lazy val controllers_HomeController_updateOpinion17_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateopinion/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -448,7 +448,7 @@ class Routes(
     )
   )
 
-  // @LINE:31
+  // @LINE:37
   private[this] lazy val controllers_HomeController_updateOpinionHandle18_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateopinionhandle")))
   )
@@ -462,11 +462,11 @@ class Routes(
       "POST",
       this.prefix + """updateopinionhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:32
+  // @LINE:38
   private[this] lazy val controllers_HomeController_deleteOpinion19_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteopinion/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -484,7 +484,7 @@ class Routes(
     )
   )
 
-  // @LINE:33
+  // @LINE:39
   private[this] lazy val controllers_HomeController_opinions20_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("opinions/"), DynamicPart("productid", """[^/]+""",true)))
   )
@@ -502,7 +502,7 @@ class Routes(
     )
   )
 
-  // @LINE:36
+  // @LINE:42
   private[this] lazy val controllers_HomeController_addPromotion21_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addpromotion/"), DynamicPart("productid", """[^/]+""",true)))
   )
@@ -520,7 +520,7 @@ class Routes(
     )
   )
 
-  // @LINE:37
+  // @LINE:44
   private[this] lazy val controllers_HomeController_addPromotionHandle22_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addpromotionhandle")))
   )
@@ -534,11 +534,11 @@ class Routes(
       "POST",
       this.prefix + """addpromotionhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:38
+  // @LINE:45
   private[this] lazy val controllers_HomeController_updatePromotion23_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatepromotion/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -556,7 +556,7 @@ class Routes(
     )
   )
 
-  // @LINE:39
+  // @LINE:47
   private[this] lazy val controllers_HomeController_updatePromotionHandle24_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatepromotionhandle")))
   )
@@ -570,11 +570,11 @@ class Routes(
       "POST",
       this.prefix + """updatepromotionhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:40
+  // @LINE:48
   private[this] lazy val controllers_HomeController_deletePromotion25_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletepromotion/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -592,7 +592,7 @@ class Routes(
     )
   )
 
-  // @LINE:41
+  // @LINE:49
   private[this] lazy val controllers_HomeController_promotion26_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("promotion/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -610,7 +610,7 @@ class Routes(
     )
   )
 
-  // @LINE:42
+  // @LINE:50
   private[this] lazy val controllers_HomeController_promotions27_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("promotions")))
   )
@@ -628,7 +628,7 @@ class Routes(
     )
   )
 
-  // @LINE:45
+  // @LINE:53
   private[this] lazy val controllers_HomeController_addComment28_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addcomment")))
   )
@@ -646,7 +646,7 @@ class Routes(
     )
   )
 
-  // @LINE:46
+  // @LINE:55
   private[this] lazy val controllers_HomeController_addCommentHandle29_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addcommenthandle")))
   )
@@ -660,11 +660,11 @@ class Routes(
       "POST",
       this.prefix + """addcommenthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:47
+  // @LINE:56
   private[this] lazy val controllers_HomeController_updateComment30_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecomment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -682,7 +682,7 @@ class Routes(
     )
   )
 
-  // @LINE:48
+  // @LINE:57
   private[this] lazy val controllers_HomeController_updateCommentHandle31_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecommenthandle")))
   )
@@ -700,7 +700,7 @@ class Routes(
     )
   )
 
-  // @LINE:49
+  // @LINE:58
   private[this] lazy val controllers_HomeController_deleteComment32_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletecomment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -718,7 +718,7 @@ class Routes(
     )
   )
 
-  // @LINE:50
+  // @LINE:59
   private[this] lazy val controllers_HomeController_comment33_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -736,7 +736,7 @@ class Routes(
     )
   )
 
-  // @LINE:51
+  // @LINE:60
   private[this] lazy val controllers_HomeController_comments34_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comments")))
   )
@@ -754,7 +754,7 @@ class Routes(
     )
   )
 
-  // @LINE:54
+  // @LINE:63
   private[this] lazy val controllers_HomeController_addUser35_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adduser")))
   )
@@ -772,7 +772,7 @@ class Routes(
     )
   )
 
-  // @LINE:55
+  // @LINE:65
   private[this] lazy val controllers_HomeController_addUserHandle36_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adduserhandle")))
   )
@@ -786,11 +786,11 @@ class Routes(
       "POST",
       this.prefix + """adduserhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:56
+  // @LINE:66
   private[this] lazy val controllers_HomeController_updateUser37_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateuser/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -808,7 +808,7 @@ class Routes(
     )
   )
 
-  // @LINE:57
+  // @LINE:67
   private[this] lazy val controllers_HomeController_updateUserHandle38_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updateuserhandle")))
   )
@@ -826,7 +826,7 @@ class Routes(
     )
   )
 
-  // @LINE:58
+  // @LINE:68
   private[this] lazy val controllers_HomeController_deleteUser39_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deleteuser/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -844,7 +844,7 @@ class Routes(
     )
   )
 
-  // @LINE:59
+  // @LINE:69
   private[this] lazy val controllers_HomeController_user40_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("user/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -862,7 +862,7 @@ class Routes(
     )
   )
 
-  // @LINE:60
+  // @LINE:70
   private[this] lazy val controllers_HomeController_users41_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("users")))
   )
@@ -880,7 +880,7 @@ class Routes(
     )
   )
 
-  // @LINE:63
+  // @LINE:73
   private[this] lazy val controllers_HomeController_addToCart42_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtocart/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -898,7 +898,7 @@ class Routes(
     )
   )
 
-  // @LINE:64
+  // @LINE:75
   private[this] lazy val controllers_HomeController_addToCartHandle43_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtocarthandle")))
   )
@@ -912,11 +912,11 @@ class Routes(
       "POST",
       this.prefix + """addtocarthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:65
+  // @LINE:76
   private[this] lazy val controllers_HomeController_addToCart44_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecart/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -934,7 +934,7 @@ class Routes(
     )
   )
 
-  // @LINE:66
+  // @LINE:78
   private[this] lazy val controllers_HomeController_addToCartHandle45_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatecarthandle")))
   )
@@ -948,11 +948,11 @@ class Routes(
       "POST",
       this.prefix + """updatecarthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:67
+  // @LINE:79
   private[this] lazy val controllers_HomeController_deleteFromCart46_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletefromcart/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -970,7 +970,7 @@ class Routes(
     )
   )
 
-  // @LINE:68
+  // @LINE:80
   private[this] lazy val controllers_HomeController_cart47_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cart")))
   )
@@ -988,7 +988,7 @@ class Routes(
     )
   )
 
-  // @LINE:71
+  // @LINE:83
   private[this] lazy val controllers_HomeController_addTransaction48_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtransaction")))
   )
@@ -1006,7 +1006,7 @@ class Routes(
     )
   )
 
-  // @LINE:72
+  // @LINE:85
   private[this] lazy val controllers_HomeController_addTransactionHandle49_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addtransactionhandle")))
   )
@@ -1020,11 +1020,11 @@ class Routes(
       "POST",
       this.prefix + """addtransactionhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:73
+  // @LINE:86
   private[this] lazy val controllers_HomeController_updateTransaction50_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatetransaction/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1042,7 +1042,7 @@ class Routes(
     )
   )
 
-  // @LINE:74
+  // @LINE:87
   private[this] lazy val controllers_HomeController_updateTransactionHandle51_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatetransactionhandle")))
   )
@@ -1060,7 +1060,7 @@ class Routes(
     )
   )
 
-  // @LINE:75
+  // @LINE:88
   private[this] lazy val controllers_HomeController_deleteTransaction52_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletetransaction/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1078,7 +1078,7 @@ class Routes(
     )
   )
 
-  // @LINE:76
+  // @LINE:89
   private[this] lazy val controllers_HomeController_transaction53_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("transaction/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1096,7 +1096,7 @@ class Routes(
     )
   )
 
-  // @LINE:77
+  // @LINE:90
   private[this] lazy val controllers_HomeController_transactions54_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("transactions")))
   )
@@ -1114,7 +1114,7 @@ class Routes(
     )
   )
 
-  // @LINE:80
+  // @LINE:93
   private[this] lazy val controllers_HomeController_addPayment55_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addpayment")))
   )
@@ -1132,7 +1132,7 @@ class Routes(
     )
   )
 
-  // @LINE:81
+  // @LINE:95
   private[this] lazy val controllers_HomeController_addPaymentHandle56_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("addpaymenthandle")))
   )
@@ -1146,11 +1146,11 @@ class Routes(
       "POST",
       this.prefix + """addpaymenthandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:82
+  // @LINE:96
   private[this] lazy val controllers_HomeController_updatePayment57_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatepayment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1168,7 +1168,7 @@ class Routes(
     )
   )
 
-  // @LINE:83
+  // @LINE:97
   private[this] lazy val controllers_HomeController_updatePaymentHandle58_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatepaymenthandle")))
   )
@@ -1186,7 +1186,7 @@ class Routes(
     )
   )
 
-  // @LINE:84
+  // @LINE:98
   private[this] lazy val controllers_HomeController_deletePayment59_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletepayment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1204,7 +1204,7 @@ class Routes(
     )
   )
 
-  // @LINE:85
+  // @LINE:99
   private[this] lazy val controllers_HomeController_payment60_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("payment/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1222,7 +1222,7 @@ class Routes(
     )
   )
 
-  // @LINE:88
+  // @LINE:102
   private[this] lazy val controllers_HomeController_addDelivery61_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adddelivery")))
   )
@@ -1240,7 +1240,7 @@ class Routes(
     )
   )
 
-  // @LINE:89
+  // @LINE:104
   private[this] lazy val controllers_HomeController_addDeliveryHandle62_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("adddeliveryhandle")))
   )
@@ -1254,11 +1254,11 @@ class Routes(
       "POST",
       this.prefix + """adddeliveryhandle""",
       """""",
-      Seq()
+      Seq("""nocsrf""")
     )
   )
 
-  // @LINE:90
+  // @LINE:105
   private[this] lazy val controllers_HomeController_updateDelivery63_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatedelivery/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1276,7 +1276,7 @@ class Routes(
     )
   )
 
-  // @LINE:91
+  // @LINE:106
   private[this] lazy val controllers_HomeController_updateDeliveryHandle64_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("updatedeliveryhandle")))
   )
@@ -1294,7 +1294,7 @@ class Routes(
     )
   )
 
-  // @LINE:92
+  // @LINE:107
   private[this] lazy val controllers_HomeController_deleteDelivery65_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("deletedelivery/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1312,7 +1312,7 @@ class Routes(
     )
   )
 
-  // @LINE:93
+  // @LINE:108
   private[this] lazy val controllers_HomeController_delivery66_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("delivery/"), DynamicPart("id", """[^/]+""",true)))
   )
@@ -1330,7 +1330,7 @@ class Routes(
     )
   )
 
-  // @LINE:97
+  // @LINE:112
   private[this] lazy val controllers_CountController_count67_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("count")))
   )
@@ -1348,7 +1348,7 @@ class Routes(
     )
   )
 
-  // @LINE:99
+  // @LINE:114
   private[this] lazy val controllers_AsyncController_message68_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("message")))
   )
@@ -1366,7 +1366,7 @@ class Routes(
     )
   )
 
-  // @LINE:102
+  // @LINE:117
   private[this] lazy val controllers_Assets_versioned69_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
@@ -1399,409 +1399,409 @@ class Routes(
         controllers_HomeController_addCategory1_invoker.call(HomeController_3.addCategory)
       }
   
-    // @LINE:11
+    // @LINE:12
     case controllers_HomeController_addCategoryHandle2_route(params@_) =>
       call { 
         controllers_HomeController_addCategoryHandle2_invoker.call(HomeController_3.addCategoryHandle)
       }
   
-    // @LINE:12
+    // @LINE:13
     case controllers_HomeController_updateCategory3_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateCategory3_invoker.call(HomeController_3.updateCategory(id))
       }
   
-    // @LINE:13
+    // @LINE:15
     case controllers_HomeController_updateCategoryHandle4_route(params@_) =>
       call { 
         controllers_HomeController_updateCategoryHandle4_invoker.call(HomeController_3.updateCategoryHandle)
       }
   
-    // @LINE:14
+    // @LINE:16
     case controllers_HomeController_deleteCategory5_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteCategory5_invoker.call(HomeController_3.deleteCategory(id))
       }
   
-    // @LINE:15
+    // @LINE:17
     case controllers_HomeController_getCategory6_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_getCategory6_invoker.call(HomeController_3.getCategory(id))
       }
   
-    // @LINE:16
+    // @LINE:18
     case controllers_HomeController_getCategorys7_route(params@_) =>
       call { 
         controllers_HomeController_getCategorys7_invoker.call(HomeController_3.getCategorys)
       }
   
-    // @LINE:19
+    // @LINE:21
     case controllers_HomeController_addProduct8_route(params@_) =>
       call { 
         controllers_HomeController_addProduct8_invoker.call(HomeController_3.addProduct)
       }
   
-    // @LINE:20
+    // @LINE:23
     case controllers_HomeController_addProductHandle9_route(params@_) =>
       call { 
         controllers_HomeController_addProductHandle9_invoker.call(HomeController_3.addProductHandle)
       }
   
-    // @LINE:21
+    // @LINE:24
     case controllers_HomeController_updateProduct10_route(params@_) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
         controllers_HomeController_updateProduct10_invoker.call(HomeController_3.updateProduct(id))
       }
   
-    // @LINE:22
+    // @LINE:26
     case controllers_HomeController_updateProductHandle11_route(params@_) =>
       call { 
         controllers_HomeController_updateProductHandle11_invoker.call(HomeController_3.updateProductHandle)
       }
   
-    // @LINE:23
+    // @LINE:27
     case controllers_HomeController_getProducts12_route(params@_) =>
       call { 
         controllers_HomeController_getProducts12_invoker.call(HomeController_3.getProducts)
       }
   
-    // @LINE:24
+    // @LINE:28
     case controllers_HomeController_getProduct13_route(params@_) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
         controllers_HomeController_getProduct13_invoker.call(HomeController_3.getProduct(id))
       }
   
-    // @LINE:25
+    // @LINE:29
     case controllers_HomeController_delete14_route(params@_) =>
       call(params.fromPath[Long]("id", None)) { (id) =>
         controllers_HomeController_delete14_invoker.call(HomeController_3.delete(id))
       }
   
-    // @LINE:28
+    // @LINE:32
     case controllers_HomeController_addOpinion15_route(params@_) =>
       call(params.fromPath[Long]("productid", None)) { (productid) =>
         controllers_HomeController_addOpinion15_invoker.call(HomeController_3.addOpinion(productid))
       }
   
-    // @LINE:29
+    // @LINE:34
     case controllers_HomeController_addOpinionHandle16_route(params@_) =>
       call { 
         controllers_HomeController_addOpinionHandle16_invoker.call(HomeController_3.addOpinionHandle)
       }
   
-    // @LINE:30
+    // @LINE:35
     case controllers_HomeController_updateOpinion17_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateOpinion17_invoker.call(HomeController_3.updateOpinion(id))
       }
   
-    // @LINE:31
+    // @LINE:37
     case controllers_HomeController_updateOpinionHandle18_route(params@_) =>
       call { 
         controllers_HomeController_updateOpinionHandle18_invoker.call(HomeController_3.updateOpinionHandle)
       }
   
-    // @LINE:32
+    // @LINE:38
     case controllers_HomeController_deleteOpinion19_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteOpinion19_invoker.call(HomeController_3.deleteOpinion(id))
       }
   
-    // @LINE:33
+    // @LINE:39
     case controllers_HomeController_opinions20_route(params@_) =>
       call(params.fromPath[Long]("productid", None)) { (productid) =>
         controllers_HomeController_opinions20_invoker.call(HomeController_3.opinions(productid))
       }
   
-    // @LINE:36
+    // @LINE:42
     case controllers_HomeController_addPromotion21_route(params@_) =>
       call(params.fromPath[Long]("productid", None)) { (productid) =>
         controllers_HomeController_addPromotion21_invoker.call(HomeController_3.addPromotion(productid))
       }
   
-    // @LINE:37
+    // @LINE:44
     case controllers_HomeController_addPromotionHandle22_route(params@_) =>
       call { 
         controllers_HomeController_addPromotionHandle22_invoker.call(HomeController_3.addPromotionHandle)
       }
   
-    // @LINE:38
+    // @LINE:45
     case controllers_HomeController_updatePromotion23_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updatePromotion23_invoker.call(HomeController_3.updatePromotion(id))
       }
   
-    // @LINE:39
+    // @LINE:47
     case controllers_HomeController_updatePromotionHandle24_route(params@_) =>
       call { 
         controllers_HomeController_updatePromotionHandle24_invoker.call(HomeController_3.updatePromotionHandle)
       }
   
-    // @LINE:40
+    // @LINE:48
     case controllers_HomeController_deletePromotion25_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deletePromotion25_invoker.call(HomeController_3.deletePromotion(id))
       }
   
-    // @LINE:41
+    // @LINE:49
     case controllers_HomeController_promotion26_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_promotion26_invoker.call(HomeController_3.promotion(id))
       }
   
-    // @LINE:42
+    // @LINE:50
     case controllers_HomeController_promotions27_route(params@_) =>
       call { 
         controllers_HomeController_promotions27_invoker.call(HomeController_3.promotions)
       }
   
-    // @LINE:45
+    // @LINE:53
     case controllers_HomeController_addComment28_route(params@_) =>
       call { 
         controllers_HomeController_addComment28_invoker.call(HomeController_3.addComment)
       }
   
-    // @LINE:46
+    // @LINE:55
     case controllers_HomeController_addCommentHandle29_route(params@_) =>
       call { 
         controllers_HomeController_addCommentHandle29_invoker.call(HomeController_3.addCommentHandle)
       }
   
-    // @LINE:47
+    // @LINE:56
     case controllers_HomeController_updateComment30_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateComment30_invoker.call(HomeController_3.updateComment(id))
       }
   
-    // @LINE:48
+    // @LINE:57
     case controllers_HomeController_updateCommentHandle31_route(params@_) =>
       call { 
         controllers_HomeController_updateCommentHandle31_invoker.call(HomeController_3.updateCommentHandle)
       }
   
-    // @LINE:49
+    // @LINE:58
     case controllers_HomeController_deleteComment32_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteComment32_invoker.call(HomeController_3.deleteComment(id))
       }
   
-    // @LINE:50
+    // @LINE:59
     case controllers_HomeController_comment33_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_comment33_invoker.call(HomeController_3.comment(id))
       }
   
-    // @LINE:51
+    // @LINE:60
     case controllers_HomeController_comments34_route(params@_) =>
       call { 
         controllers_HomeController_comments34_invoker.call(HomeController_3.comments)
       }
   
-    // @LINE:54
+    // @LINE:63
     case controllers_HomeController_addUser35_route(params@_) =>
       call { 
         controllers_HomeController_addUser35_invoker.call(HomeController_3.addUser)
       }
   
-    // @LINE:55
+    // @LINE:65
     case controllers_HomeController_addUserHandle36_route(params@_) =>
       call { 
         controllers_HomeController_addUserHandle36_invoker.call(HomeController_3.addUserHandle)
       }
   
-    // @LINE:56
+    // @LINE:66
     case controllers_HomeController_updateUser37_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateUser37_invoker.call(HomeController_3.updateUser(id))
       }
   
-    // @LINE:57
+    // @LINE:67
     case controllers_HomeController_updateUserHandle38_route(params@_) =>
       call { 
         controllers_HomeController_updateUserHandle38_invoker.call(HomeController_3.updateUserHandle)
       }
   
-    // @LINE:58
+    // @LINE:68
     case controllers_HomeController_deleteUser39_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteUser39_invoker.call(HomeController_3.deleteUser(id))
       }
   
-    // @LINE:59
+    // @LINE:69
     case controllers_HomeController_user40_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_user40_invoker.call(HomeController_3.user(id))
       }
   
-    // @LINE:60
+    // @LINE:70
     case controllers_HomeController_users41_route(params@_) =>
       call { 
         controllers_HomeController_users41_invoker.call(HomeController_3.users)
       }
   
-    // @LINE:63
+    // @LINE:73
     case controllers_HomeController_addToCart42_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_addToCart42_invoker.call(HomeController_3.addToCart(id))
       }
   
-    // @LINE:64
+    // @LINE:75
     case controllers_HomeController_addToCartHandle43_route(params@_) =>
       call { 
         controllers_HomeController_addToCartHandle43_invoker.call(HomeController_3.addToCartHandle)
       }
   
-    // @LINE:65
+    // @LINE:76
     case controllers_HomeController_addToCart44_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_addToCart44_invoker.call(HomeController_3.addToCart(id))
       }
   
-    // @LINE:66
+    // @LINE:78
     case controllers_HomeController_addToCartHandle45_route(params@_) =>
       call { 
         controllers_HomeController_addToCartHandle45_invoker.call(HomeController_3.addToCartHandle)
       }
   
-    // @LINE:67
+    // @LINE:79
     case controllers_HomeController_deleteFromCart46_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteFromCart46_invoker.call(HomeController_3.deleteFromCart(id))
       }
   
-    // @LINE:68
+    // @LINE:80
     case controllers_HomeController_cart47_route(params@_) =>
       call { 
         controllers_HomeController_cart47_invoker.call(HomeController_3.cart)
       }
   
-    // @LINE:71
+    // @LINE:83
     case controllers_HomeController_addTransaction48_route(params@_) =>
       call { 
         controllers_HomeController_addTransaction48_invoker.call(HomeController_3.addTransaction)
       }
   
-    // @LINE:72
+    // @LINE:85
     case controllers_HomeController_addTransactionHandle49_route(params@_) =>
       call { 
         controllers_HomeController_addTransactionHandle49_invoker.call(HomeController_3.addTransactionHandle)
       }
   
-    // @LINE:73
+    // @LINE:86
     case controllers_HomeController_updateTransaction50_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateTransaction50_invoker.call(HomeController_3.updateTransaction(id))
       }
   
-    // @LINE:74
+    // @LINE:87
     case controllers_HomeController_updateTransactionHandle51_route(params@_) =>
       call { 
         controllers_HomeController_updateTransactionHandle51_invoker.call(HomeController_3.updateTransactionHandle)
       }
   
-    // @LINE:75
+    // @LINE:88
     case controllers_HomeController_deleteTransaction52_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteTransaction52_invoker.call(HomeController_3.deleteTransaction(id))
       }
   
-    // @LINE:76
+    // @LINE:89
     case controllers_HomeController_transaction53_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_transaction53_invoker.call(HomeController_3.transaction(id))
       }
   
-    // @LINE:77
+    // @LINE:90
     case controllers_HomeController_transactions54_route(params@_) =>
       call { 
         controllers_HomeController_transactions54_invoker.call(HomeController_3.transactions)
       }
   
-    // @LINE:80
+    // @LINE:93
     case controllers_HomeController_addPayment55_route(params@_) =>
       call { 
         controllers_HomeController_addPayment55_invoker.call(HomeController_3.addPayment)
       }
   
-    // @LINE:81
+    // @LINE:95
     case controllers_HomeController_addPaymentHandle56_route(params@_) =>
       call { 
         controllers_HomeController_addPaymentHandle56_invoker.call(HomeController_3.addPaymentHandle)
       }
   
-    // @LINE:82
+    // @LINE:96
     case controllers_HomeController_updatePayment57_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updatePayment57_invoker.call(HomeController_3.updatePayment(id))
       }
   
-    // @LINE:83
+    // @LINE:97
     case controllers_HomeController_updatePaymentHandle58_route(params@_) =>
       call { 
         controllers_HomeController_updatePaymentHandle58_invoker.call(HomeController_3.updatePaymentHandle)
       }
   
-    // @LINE:84
+    // @LINE:98
     case controllers_HomeController_deletePayment59_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deletePayment59_invoker.call(HomeController_3.deletePayment(id))
       }
   
-    // @LINE:85
+    // @LINE:99
     case controllers_HomeController_payment60_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_payment60_invoker.call(HomeController_3.payment(id))
       }
   
-    // @LINE:88
+    // @LINE:102
     case controllers_HomeController_addDelivery61_route(params@_) =>
       call { 
         controllers_HomeController_addDelivery61_invoker.call(HomeController_3.addDelivery)
       }
   
-    // @LINE:89
+    // @LINE:104
     case controllers_HomeController_addDeliveryHandle62_route(params@_) =>
       call { 
         controllers_HomeController_addDeliveryHandle62_invoker.call(HomeController_3.addDeliveryHandle)
       }
   
-    // @LINE:90
+    // @LINE:105
     case controllers_HomeController_updateDelivery63_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_updateDelivery63_invoker.call(HomeController_3.updateDelivery(id))
       }
   
-    // @LINE:91
+    // @LINE:106
     case controllers_HomeController_updateDeliveryHandle64_route(params@_) =>
       call { 
         controllers_HomeController_updateDeliveryHandle64_invoker.call(HomeController_3.updateDeliveryHandle)
       }
   
-    // @LINE:92
+    // @LINE:107
     case controllers_HomeController_deleteDelivery65_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_deleteDelivery65_invoker.call(HomeController_3.deleteDelivery(id))
       }
   
-    // @LINE:93
+    // @LINE:108
     case controllers_HomeController_delivery66_route(params@_) =>
       call(params.fromPath[Int]("id", None)) { (id) =>
         controllers_HomeController_delivery66_invoker.call(HomeController_3.delivery(id))
       }
   
-    // @LINE:97
+    // @LINE:112
     case controllers_CountController_count67_route(params@_) =>
       call { 
         controllers_CountController_count67_invoker.call(CountController_2.count)
       }
   
-    // @LINE:99
+    // @LINE:114
     case controllers_AsyncController_message68_route(params@_) =>
       call { 
         controllers_AsyncController_message68_invoker.call(AsyncController_0.message)
       }
   
-    // @LINE:102
+    // @LINE:117
     case controllers_Assets_versioned69_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
         controllers_Assets_versioned69_invoker.call(Assets_1.versioned(path, file))
