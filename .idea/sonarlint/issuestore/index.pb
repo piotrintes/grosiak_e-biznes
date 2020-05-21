@@ -110,4 +110,12 @@ e
 H
 app/models/Product.scala,4/a/4a1a4018a93073081d9150f102724337d3b4c630
 R
+<<<<<<< HEAD
 "app/models/ProductRepository.scala,0/6/06a42a9e195dd55c1ed20fee10839d53dae34fc3
+R
+"app/models/PaymentRepository.scala,a/7/a7ae74f258186c67a17aff60a10f93ba99f24e2a
+E
+conf/application.conf,6/4/644f59db746795ef1538ef95c4cbc0eab6663e28
+=======
+"app/models/ProductRepository.scala,0/6/06a42a9e195dd55c1ed20fee10839d53dae34fc3
+>>>>>>> c9d36330b1d7e0ca080e4c4b14fc5ff53a4ee549
