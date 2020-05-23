@@ -41,6 +41,10 @@ class CartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRep
     cart.result
   }
 
+  def list(user_id: Int): Future[Seq[Cart]] = db.run {
+    cart.filter(_.user === user_id).result
+  }
+
   def delete(id: Int): Future[Unit] = db.run(cart.filter(_.id === id).delete).map(_ => ())
 
   def update(id: Int, new_cart: Cart): Future[Unit] = {

@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu May 14 17:00:07 CEST 2020
+// @DATE:Sat May 23 16:44:42 CEST 2020
 
 package router
 
@@ -94,7 +94,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecart/""" + "$" + """id<[^/]+>""", """controllers.HomeController.addToCart(id:Int)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatecarthandle""", """controllers.HomeController.addToCartHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """deletefromcart/""" + "$" + """id<[^/]+>""", """controllers.HomeController.deleteFromCart(id:Int)"""),
-    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cart""", """controllers.HomeController.cart"""),
+    ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """cart/""" + "$" + """userId<[^/]+>""", """controllers.HomeController.cart(userId:Int)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtransaction""", """controllers.HomeController.addTransaction"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """addtransactionhandle""", """controllers.HomeController.addTransactionHandle"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """updatetransaction/""" + "$" + """id<[^/]+>""", """controllers.HomeController.updateTransaction(id:Int)"""),
@@ -972,17 +972,17 @@ class Routes(
 
   // @LINE:80
   private[this] lazy val controllers_HomeController_cart47_route = Route("GET",
-    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cart")))
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("cart/"), DynamicPart("userId", """[^/]+""",true)))
   )
   private[this] lazy val controllers_HomeController_cart47_invoker = createInvoker(
-    HomeController_3.cart,
+    HomeController_3.cart(fakeValue[Int]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
       "controllers.HomeController",
       "cart",
-      Nil,
+      Seq(classOf[Int]),
       "GET",
-      this.prefix + """cart""",
+      this.prefix + """cart/""" + "$" + """userId<[^/]+>""",
       """""",
       Seq()
     )
@@ -1671,8 +1671,8 @@ class Routes(
   
     // @LINE:80
     case controllers_HomeController_cart47_route(params@_) =>
-      call { 
-        controllers_HomeController_cart47_invoker.call(HomeController_3.cart)
+      call(params.fromPath[Int]("userId", None)) { (userId) =>
+        controllers_HomeController_cart47_invoker.call(HomeController_3.cart(userId))
       }
   
     // @LINE:83

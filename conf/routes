@@ -77,7 +77,7 @@ GET     /updatecart/:id                      controllers.HomeController.addToCar
 +nocsrf
 POST    /updatecarthandle                    controllers.HomeController.addToCartHandle
 GET     /deletefromcart/:id                  controllers.HomeController.deleteFromCart(id: Int)
-GET     /cart                                controllers.HomeController.cart
+GET     /cart/:userId                        controllers.HomeController.cart(userId: Int)
 
 # Transactions
 GET     /addtransaction                 controllers.HomeController.addTransaction

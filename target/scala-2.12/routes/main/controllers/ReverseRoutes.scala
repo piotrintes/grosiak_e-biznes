@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu May 14 17:00:07 CEST 2020
+// @DATE:Sat May 23 16:44:42 CEST 2020
 
 import play.api.mvc.Call
 
@@ -31,12 +31,6 @@ package controllers {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:80
-    def cart(): Call = {
-      
-      Call("GET", _prefix + { _defaultPrefix } + "cart")
-    }
   
     // @LINE:83
     def addTransaction(): Call = {
@@ -290,6 +284,12 @@ package controllers {
     def transactions(): Call = {
       
       Call("GET", _prefix + { _defaultPrefix } + "transactions")
+    }
+  
+    // @LINE:80
+    def cart(userId:Int): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "cart/" + play.core.routing.dynamicString(implicitly[play.api.mvc.PathBindable[Int]].unbind("userId", userId)))
     }
   
     // @LINE:68

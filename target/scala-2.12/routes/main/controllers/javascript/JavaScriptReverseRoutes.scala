@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu May 14 17:00:07 CEST 2020
+// @DATE:Sat May 23 16:44:42 CEST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -37,16 +37,6 @@ package controllers.javascript {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
-  
-    // @LINE:80
-    def cart: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.cart",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cart"})
-        }
-      """
-    )
   
     // @LINE:83
     def addTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
@@ -458,6 +448,16 @@ package controllers.javascript {
       """
         function() {
           return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "transactions"})
+        }
+      """
+    )
+  
+    // @LINE:80
+    def cart: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.cart",
+      """
+        function(userId0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "cart/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("userId", userId0))})
         }
       """
     )

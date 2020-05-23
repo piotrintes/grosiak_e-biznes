@@ -428,8 +428,8 @@ class HomeController @Inject()(
     cartRepo.delete(id)
     Redirect("/cart")
   }
-  def cart: Action[AnyContent] = Action.async { implicit request =>
-    val cart = cartRepo.list()
+  def cart(userID: Int): Action[AnyContent] = Action.async { implicit request =>
+    val cart = cartRepo.list(userID)
     cart.map( cart => Ok(Json.toJson(cart)))
     //Ok(views.html.index("Your new application is ready."))
   }
