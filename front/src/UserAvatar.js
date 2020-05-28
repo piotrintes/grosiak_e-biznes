@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 
-class Category extends Component {
+class UserAvatar extends Component {
 
     constructor() {
         super();
         this.state = {
-            category: [],
+            user: [],
         };
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/category/" + this.props.category
+        var url = "http://localhost:9000/user/" + this.props.user
 
         fetch(url, {
             mode: 'cors',
@@ -21,22 +21,24 @@ class Category extends Component {
             },
             method: 'GET',
         }).then(response => response.json())
-            .then(cat => {
-                console.log(cat);
-                let lnkBackToCategory = "/category/" + cat.id;
-                let category =
-                    <a href={lnkBackToCategory}>{this.props.beforeText}{cat.name}</a>
-                this.setState({ category: category });
+            .then(usr => {
+                console.log(usr);
+                let lnkUserPage = "/user/" + usr.id;
+                let adminBadge = "";
+                if(usr.admin) adminBadge = "[Admin]"
+                let user =
+                    <a href={lnkUserPage}>{adminBadge}  {usr.usrName}</a>
+                this.setState({ user: user });
             });
     }
 
     render() {
         return (
-            <div className="category">
-                {this.state.category}
+            <div className="user">
+                {this.state.user}
             </div>
         )
     }
 }
 
-export default Category;
+export default UserAvatar;

@@ -13340,7 +13340,7 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
 [debug] 	[NOT REQUIRED] org.scala-lang#jline;2.10.7!jline.jar
 [debug] 	[NOT REQUIRED] org.fusesource.jansi#jansi;1.4!jansi.jar
-[debug] :: resolution report :: resolve 2266ms :: artifacts dl 71ms
+[debug] :: resolution report :: resolve 2968ms :: artifacts dl 45ms
 [debug] 	report for default#project-build;0.1-SNAPSHOT compile produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-compile.xml
 [debug] 	report for default#project-build;0.1-SNAPSHOT runtime produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-runtime.xml
 [debug] 	report for default#project-build;0.1-SNAPSHOT test produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test.xml
@@ -13354,7 +13354,7 @@
 [debug] 	report for default#project-build;0.1-SNAPSHOT docs produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-docs.xml
 [debug] 	report for default#project-build;0.1-SNAPSHOT pom produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-pom.xml
 [debug] 	report for default#project-build;0.1-SNAPSHOT scala-tool produced in /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-scala-tool.xml
-[debug] 	resolve done (2266ms resolve - 71ms download)
+[debug] 	resolve done (2968ms resolve - 45ms download)
 [info] Done updating.
 [warn] Found version conflict(s) in library dependencies; some are suspected to be binary incompatible:
 [warn] 

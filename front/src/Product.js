@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
+import Category from './Category'
 
-class Products extends Component {
+class Product extends Component {
 
     constructor() {
         super();
@@ -10,7 +11,7 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/products/" + this.props.match.params.cat
+        var url = "http://localhost:9000/product/" + this.props.match.params.product
 
         fetch(url, {
             mode: 'cors',
@@ -20,22 +21,19 @@ class Products extends Component {
                 'Access-Control-Allow-Origin':'http://localhost:3000',
             },
             method: 'GET',
-        })
-            .then(results => {
-                return results.json();
-            }).then(data => {
-            let products = data.map((prod) => {
-                return (
+        }).then(response => response.json())
+            .then(prod => {
+                console.log(prod);
+                let lnkBackToCategory = "/category/" + prod.category;
+                let products =
                     <div key={prod.id}>
+                        <Category beforeText="Inne produkty z kategorii " category={prod.category}/>
                         <div className="title">{prod.name}</div>
-                        <div>{prod.description}</div>
-                        <div>{prod.category}</div>
                         <div>{prod.price}</div>
+                        <div>{prod.description}</div>
                     </div>
-                )
-            })
-            this.setState({products: products})
-        })
+                this.setState({ products: products });
+            });
     }
 
     render() {
@@ -47,4 +45,4 @@ class Products extends Component {
     }
 }
 
-export default Products;
+export default Product;

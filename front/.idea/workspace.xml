@@ -19,21 +19,27 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c7c2b2-c7c3-465e-acb8-5aa5c468e1f7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Comments.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Opinions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Payment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Promotions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Transactions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/play2_settings.xml" beforeDir="false" />
+    <list default="true" id="54c7c2b2-c7c3-465e-acb8-5aa5c468e1f7" name="Default" comment="React views">
+      <change afterPath="$PROJECT_DIR$/src/Category.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UserAvatar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/UserPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/5/6/56b86967e2832e6a8ed0bbff569cd767314a2c9c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/2/82ca690539d21e2770ba3163a9391843c2c3a739" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/controllers/ProductController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/ProductController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/CartRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/CartRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/PrOpinionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/PrOpinionRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/User.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/User.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/UserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../conf/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../conf/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/evolutions/default/2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ebiznes.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../ebiznes.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Categories.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Opinions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Opinions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/application.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterDir="false" />
@@ -52,10 +58,60 @@
       <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/update_cache_2.10/output" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCommentForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCommentForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCommentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCommentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateDeliveryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateDeliveryForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateDeliveryForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateDeliveryForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePaymentForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePaymentForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePaymentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePaymentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePrOpinionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePrOpinionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePrOpinionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePrOpinionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateProductForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateProductForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateProductForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateProductForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePromotionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePromotionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePromotionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreatePromotionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateTransactionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateTransactionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateTransactionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateTransactionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseAssets.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseAssets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseCountController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseHomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCommentForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCommentForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCommentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCommentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateDeliveryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateDeliveryForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateDeliveryForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateDeliveryForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePaymentForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePaymentForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePaymentForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePaymentForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePrOpinionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePrOpinionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePrOpinionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePrOpinionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateProductForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateProductForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateProductForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateProductForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePromotionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePromotionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePromotionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdatePromotionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseAssets.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseAssets.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseCountController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/1.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/1.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository$PrOpinionTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository$PrOpinionTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/User$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/User$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/UserRepository$UserTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/UserRepository$UserTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" afterDir="false" />
@@ -65,10 +121,11 @@
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/Routes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/RoutesPrefix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/RoutesPrefix.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/out" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,8 +192,18 @@
       <workItem from="1588697507439" duration="2993000" />
       <workItem from="1588858454714" duration="1266000" />
       <workItem from="1590068649726" duration="5341000" />
-      <workItem from="1590241243305" duration="3958000" />
+      <workItem from="1590241243305" duration="4235000" />
+      <workItem from="1590504316300" duration="756000" />
+      <workItem from="1590668853250" duration="15687000" />
     </task>
+    <task id="LOCAL-00001" summary="React views">
+      <created>1590245947601</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590245947601</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,11 +219,14 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="React views" />
+    <option name="LAST_COMMIT_MESSAGE" value="React views" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2343" y="362" key="#Usage_Scope" timestamp="1588697418804">
@@ -171,30 +241,34 @@
       <screen x="1920" y="0" width="1280" height="1024" />
     </state>
     <state x="2347" y="238" key="FileChooserDialogImpl/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697389903" />
-    <state width="945" height="222" key="GridCell.Tab.0.bottom" timestamp="1590243265447">
+    <state width="945" height="222" key="GridCell.Tab.0.bottom" timestamp="1590694365041">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753450" />
-    <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1590243265447" />
-    <state width="945" height="222" key="GridCell.Tab.0.center" timestamp="1590243265446">
+    <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1590694365041" />
+    <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953563" />
+    <state width="945" height="222" key="GridCell.Tab.0.center" timestamp="1590694365040">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753449" />
-    <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1590243265446" />
-    <state width="945" height="222" key="GridCell.Tab.0.left" timestamp="1590243265446">
+    <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1590694365040" />
+    <state width="945" height="222" key="GridCell.Tab.0.center/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953542" />
+    <state width="945" height="222" key="GridCell.Tab.0.left" timestamp="1590694365040">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753448" />
-    <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1590243265446" />
-    <state width="945" height="222" key="GridCell.Tab.0.right" timestamp="1590243265447">
+    <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1590694365040" />
+    <state width="945" height="222" key="GridCell.Tab.0.left/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953540" />
+    <state width="945" height="222" key="GridCell.Tab.0.right" timestamp="1590694365041">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753450" />
-    <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1590243265447" />
+    <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1590694365041" />
+    <state width="945" height="222" key="GridCell.Tab.0.right/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953552" />
     <state x="189" y="164" width="1556" height="731" key="SettingsEditor" timestamp="1590071400148">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>

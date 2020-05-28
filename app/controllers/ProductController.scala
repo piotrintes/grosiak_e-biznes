@@ -50,6 +50,11 @@ class HomeController @Inject()(
     produkty.map( products => Ok(Json.toJson(products)))
   }
 
+  def getProductsByCat(category: Int): Action[AnyContent] = Action.async { implicit request =>
+    val produkty = productsRepo.getByCategory(category)
+    produkty.map( products => Ok(Json.toJson(products)))
+  }
+
   def getProduct(id: Long): Action[AnyContent] = Action.async { implicit request =>
     val produkt = productsRepo.getByIdOption(id)
     produkt.map(product => Ok(Json.toJson(product)))
@@ -322,6 +327,7 @@ class HomeController @Inject()(
 
   val userForm: Form[CreateUserForm] = Form {
     mapping(
+      "usrName" -> nonEmptyText,
       "name" -> nonEmptyText,
       "surname" -> nonEmptyText,
       "email" -> nonEmptyText,
@@ -332,6 +338,7 @@ class HomeController @Inject()(
   val updateUserForm: Form[UpdateUserForm] = Form {
     mapping(
       "id" -> number,
+      "usrName" -> nonEmptyText,
       "name" -> nonEmptyText,
       "surname" -> nonEmptyText,
       "email" -> nonEmptyText,
@@ -342,12 +349,13 @@ class HomeController @Inject()(
     Ok(views.html.index("Your new application is ready."))
   }
   def addUserHandle = Action.async { implicit request =>
+    val usrName = request.body.asJson.get("usrName").as[String]
     val name = request.body.asJson.get("name").as[String]
     val surname = request.body.asJson.get("surname").as[String]
     val email = request.body.asJson.get("email").as[String]
     val admin = request.body.asJson.get("admin").as[Boolean]
 
-    userRepo.create(name,surname,email,admin).map { user =>
+    userRepo.create(usrName,name,surname,email,admin).map { user =>
       Ok(Json.toJson(user))
     }
   }
@@ -357,13 +365,14 @@ class HomeController @Inject()(
   }
   def updateUserHandle = Action.async { implicit request =>
     val id = request.body.asJson.get("id").as[Int]
+    val usrName = request.body.asJson.get("usrName").as[String]
     val name = request.body.asJson.get("name").as[String]
     val surname = request.body.asJson.get("surname").as[String]
     val email = request.body.asJson.get("email").as[String]
     val admin = request.body.asJson.get("admin").as[Boolean]
 
-    userRepo.update(id,User(id,name,surname,email,admin)).map { user =>
-      Ok(Json.toJson(User(id,name,surname,email,admin)))
+    userRepo.update(id,User(id,usrName,name,surname,email,admin)).map { user =>
+      Ok(Json.toJson(User(id,usrName,name,surname,email,admin)))
     }
   }
   def deleteUser(id: Int) = Action {
@@ -635,7 +644,7 @@ case class CreateTransactionForm(user: Int, product: Long, count: Int, price: Do
 }
 case class UpdateTransactionForm(id: Int, user: Int, product: Long, count: Int, price: Double, date: String)
 
-case class CreateUserForm(name: String, surname: String, email: String, admin: Boolean) {
+case class CreateUserForm(usrName: String, name: String, surname: String, email: String, admin: Boolean) {
 }
-case class UpdateUserForm(id: Int, name: String, surname: String, email: String, admin: Boolean)
+case class UpdateUserForm(id: Int, usrName: String, name: String, surname: String, email: String, admin: Boolean)
 

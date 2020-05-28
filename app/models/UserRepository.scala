@@ -15,21 +15,22 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
 
   class UserTable(tag: Tag) extends Table[User](tag, "user") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
+    def usrName = column[String]("usrName")
     def name = column[String]("name")
     def surname: Rep[String] = column[String]("surname")
     def email: Rep[String] = column[String]("email")
     def admin: Rep[Boolean] = column[Boolean]("admin")
-    def * = (id, name, surname, email, admin) <> ((User.apply _).tupled, User.unapply)
+    def * = (id, usrName, name, surname, email, admin) <> ((User.apply _).tupled, User.unapply)
   }
 
 
   val user = TableQuery[UserTable]
 
-  def create(name: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {
-    (user.map(u => (u.name, u.surname,u.email, u.admin))
+  def create(name: String, usrName: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {
+    (user.map(u => (u.usrName, u.name, u.surname,u.email, u.admin))
       returning user.map(_.id)
-      into {case ((name,surname,email,admin),id) => User(id, name, surname, email, admin)}
-      ) += (name, surname, email, admin)
+      into {case ((usrName, name,surname,email,admin),id) => User(id, usrName, name, surname, email, admin)}
+      ) += (usrName, name, surname, email, admin)
   }
 
   def list(): Future[Seq[User]] = db.run {

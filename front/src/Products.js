@@ -10,7 +10,7 @@ class Products extends Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/products"
+        var url = "http://localhost:9000/products/" + this.props.match.params.cat
 
         fetch(url, {
             mode: 'cors',
@@ -25,11 +25,10 @@ class Products extends Component {
                 return results.json();
             }).then(data => {
             let products = data.map((prod) => {
+                let link = "/product/" + prod.id;
                 return (
                     <div key={prod.id}>
-                        <div className="title">{prod.name}</div>
-                        <div>{prod.description}</div>
-                        <div>{prod.category}</div>
+                        <div className="title"><a href={link}>{prod.name}</a></div>
                         <div>{prod.price}</div>
                     </div>
                 )

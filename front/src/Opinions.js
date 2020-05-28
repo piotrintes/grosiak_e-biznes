@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import UserAvatar from "./UserAvatar";
 
 class Opinions extends Component {
 
@@ -25,10 +26,16 @@ class Opinions extends Component {
                 return results.json();
             }).then(data => {
             let opinions = data.map((op) => {
+                let starsDisp = "°°°°°";
+                if (op.stars == 1) starsDisp = "*°°°°";
+                if (op.stars == 2) starsDisp = "**°°°";
+                if (op.stars == 3) starsDisp = "***°°";
+                if (op.stars == 4) starsDisp = "****°";
+                if (op.stars == 5) starsDisp = "*****";
                 return (
                     <div key={op.id}>
-                        <div className="title">{op.user}</div>
-                        <div>{op.stars}</div>
+                        <UserAvatar user={op.user}/>
+                        <div>{starsDisp}</div>
                         <div>{op.text}</div>
                     </div>
                 )

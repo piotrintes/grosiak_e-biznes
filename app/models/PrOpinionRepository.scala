@@ -15,7 +15,7 @@ class PrOpinionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
 
   private class PrOpinionTable(tag: Tag) extends Table[PrOpinion](tag, "prOpinion") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[Int]("name")
+    def user = column[Int]("user")
     def product: Rep[Long] = column[Long]("product")
     def stars: Rep[Int] = column[Int]("stars")
     def text: Rep[String] = column[String]("text")

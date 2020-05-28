@@ -10,7 +10,7 @@ class UserAvatar extends Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/user/" + this.props.user
+        var url = "http://localhost:9000/user/" + this.props.match.params.user
 
         fetch(url, {
             mode: 'cors',
@@ -27,7 +27,11 @@ class UserAvatar extends Component {
                 let adminBadge = "";
                 if(usr.admin) adminBadge = "[Admin]"
                 let user =
-                    <a href={lnkUserPage}>{adminBadge}  {usr.usrName}</a>
+                    <div>
+                        <div>{adminBadge}  {usr.usrName}</div>
+                        <div>{usr.name} {usr.surname}</div>
+                        <div>{usr.email}</div>
+                    </div>
                 this.setState({ user: user });
             });
     }

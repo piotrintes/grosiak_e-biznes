@@ -25,9 +25,10 @@ class Categories extends Component {
                 return results.json();
             }).then(data => {
             let categories = data.map((cat) => {
+                let link = "/category/" + cat.id;
                 return (
                     <div key={cat.id}>
-                        <div className="name">{cat.name}</div>
+                        <div className="name"><a href={link}>{cat.name}</a></div>
                     </div>
                 )
             })

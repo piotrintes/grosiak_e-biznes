@@ -1,16 +1,16 @@
 import React, {Component} from 'react';
 
-class Product extends Component {
+class Category extends Component {
 
     constructor() {
         super();
         this.state = {
-            products: [],
+            category: [],
         };
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/product/" + this.props.match.params.product
+        var url = "http://localhost:9000/category/" + this.props.category
 
         fetch(url, {
             mode: 'cors',
@@ -21,27 +21,22 @@ class Product extends Component {
             },
             method: 'GET',
         }).then(response => response.json())
-            .then(prod => {
-                console.log(prod);
-                let lnkBackToCategory = "/category/" + prod.category;
-                let products =
-                    <div key={prod.id}>
-                        <div><a href={lnkBackToCategory}>back to category {prod.category}</a></div>
-                        <div className="title">{prod.name}</div>
-                        <div>{prod.description}</div>
-                        <div>{prod.price}</div>
-                    </div>
-                this.setState({ products: products });
+            .then(cat => {
+                console.log(cat);
+                let lnkBackToCategory = "/category/" + cat.id;
+                let category =
+                    <a href={lnkBackToCategory}>{this.props.beforeText}{cat.name}</a>
+                this.setState({ category: category });
             });
     }
 
     render() {
         return (
-            <div className="products">
-                {this.state.products}
+            <div className="category">
+                {this.state.category}
             </div>
         )
     }
 }
 
-export default Product;
+export default Category;

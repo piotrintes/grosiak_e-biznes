@@ -25,6 +25,7 @@ GET     /updateproduct/:id          controllers.HomeController.updateProduct(id:
 +nocsrf
 POST    /updateproducthandle        controllers.HomeController.updateProductHandle
 GET     /products                   controllers.HomeController.getProducts
+GET     /products/:category         controllers.HomeController.getProductsByCat(category: Int)
 GET     /product/:id                controllers.HomeController.getProduct(id: Long)
 GET     /delete/:id                 controllers.HomeController.delete(id: Long)
 

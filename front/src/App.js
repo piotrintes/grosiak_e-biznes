@@ -6,7 +6,9 @@ import {
 } from 'react-router-dom';
 import Categories from './Categories'
 import Products from './Products'
+import Product from './Product'
 import Opinions from './Opinions'
+import UserPage from './UserPage'
 import Promotions from './Promotions'
 import Comments from './Comments'
 import Users from './Users'
@@ -18,6 +20,22 @@ import './App.css';
 
 function App() {
     return <Router>
+        <div id="categoryList">
+            <a href="/">Main</a>
+            <Route component={Categories}/>
+        </div>
+        <div id="main">
+            <Route path="/category/:cat" component={Products}/>
+            <Route path="/user/:user" component={UserPage}/>
+            <Route path="/product/:product" component={Product}/>
+            <Route path="/product/:product" component={Opinions}/>
+        </div>
+    </Router>
+}
+
+export default App;
+
+/*
         <div id="menu">
             <ul>
                 <li>
@@ -58,7 +76,4 @@ function App() {
             <Route path="/transactions" component={Transactions}/>
             <Route path="/productadd" component={ProductForm}/>
         </div>
-    </Router>
-}
-
-export default App;
+ */
