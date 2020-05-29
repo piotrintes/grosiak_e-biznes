@@ -22,10 +22,9 @@ class Category extends Component {
             method: 'GET',
         }).then(response => response.json())
             .then(cat => {
-                console.log(cat);
                 let lnkBackToCategory = "/category/" + cat.id;
                 let category =
-                    <a href={lnkBackToCategory}>{this.props.beforeText}{cat.name}</a>
+                    <a id="button" href={lnkBackToCategory}>{this.props.beforeText}{cat.name}</a>
                 this.setState({ category: category });
             });
     }

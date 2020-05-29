@@ -7,6 +7,7 @@ class Opinions extends Component {
         super();
         this.state = {
             opinions: [],
+            exists: false,
         };
     }
 
@@ -26,17 +27,23 @@ class Opinions extends Component {
                 return results.json();
             }).then(data => {
             let opinions = data.map((op) => {
-                let starsDisp = "°°°°°";
-                if (op.stars == 1) starsDisp = "*°°°°";
-                if (op.stars == 2) starsDisp = "**°°°";
-                if (op.stars == 3) starsDisp = "***°°";
-                if (op.stars == 4) starsDisp = "****°";
-                if (op.stars == 5) starsDisp = "*****";
+                this.setState({exists: true})
+                let starsDisp = "/img/stars/" + op.stars + ".png";
                 return (
                     <div key={op.id}>
-                        <UserAvatar user={op.user}/>
-                        <div>{starsDisp}</div>
-                        <div>{op.text}</div>
+                        <table id="opinion">
+                            <tr>
+                                <td width="250px">
+                                    <UserAvatar user={op.user}/>
+                                </td>
+                                <td>
+                                    <div id="opinion">{op.text}</div>
+                                </td>
+                                <td id="right">
+                                    <img id="stars" src={starsDisp}/>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 )
             })
@@ -45,11 +52,14 @@ class Opinions extends Component {
     }
 
     render() {
-        return (
-            <div className="opinions">
-                {this.state.opinions}
-            </div>
-        )
+        if(this.state.exists)
+            return (
+                <div id="frame">
+                    {this.state.opinions}
+                </div>
+            )
+        else
+            return ("");
     }
 }
 

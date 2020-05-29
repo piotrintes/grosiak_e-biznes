@@ -26,9 +26,11 @@ class Categories extends Component {
             }).then(data => {
             let categories = data.map((cat) => {
                 let link = "/category/" + cat.id;
+                let linkid = "listbutton";
+                if(this.props.location.pathname == link) linkid = "listbuttonSelected"
                 return (
                     <div key={cat.id}>
-                        <div className="name"><a href={link}>{cat.name}</a></div>
+                        <div className="name"><a id={linkid} href={link}>{cat.name}</a></div>
                     </div>
                 )
             })

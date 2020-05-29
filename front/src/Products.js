@@ -26,11 +26,23 @@ class Products extends Component {
             }).then(data => {
             let products = data.map((prod) => {
                 let link = "/product/" + prod.id;
+                let img = "/img/products/" + prod.id + ".png";
                 return (
-                    <div key={prod.id}>
-                        <div className="title"><a href={link}>{prod.name}</a></div>
-                        <div>{prod.price}</div>
-                    </div>
+                    <a id="clearunderline" href={link}>
+                        <div id="framebutton" key={prod.id}>
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <img src={img} width="256" height="256"/>
+                                        </td>
+                                        <td>
+                                            <div id="productname">{prod.name}</div>
+                                            <div id="productprice">Cena: {prod.price} Zł</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                        </div>
+                    </a>
                 )
             })
             this.setState({products: products})

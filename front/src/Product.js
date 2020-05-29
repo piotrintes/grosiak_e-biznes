@@ -23,13 +23,26 @@ class Product extends Component {
             method: 'GET',
         }).then(response => response.json())
             .then(prod => {
-                console.log(prod);
                 let lnkBackToCategory = "/category/" + prod.category;
+                let img = "/img/products/" + prod.id + ".png";
                 let products =
                     <div key={prod.id}>
                         <Category beforeText="Inne produkty z kategorii " category={prod.category}/>
-                        <div className="title">{prod.name}</div>
-                        <div>{prod.price}</div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src={img} width="256" height="256"/>
+                                </td>
+                                <td>
+                                    <div id="productname">{prod.name}</div>
+                                    <div id="productprice">Cena: {prod.price} Zł</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <div id="productbuttons">
+                            <a id="button" href="/addtocart">Dodaj do koszyka</a>
+                            <a id="button" href="#opinions">Opinie o produkcie</a>
+                        </div>
                         <div>{prod.description}</div>
                     </div>
                 this.setState({ products: products });
@@ -38,8 +51,9 @@ class Product extends Component {
 
     render() {
         return (
-            <div className="products">
+            <div id="frame">
                 {this.state.products}
+                <a name="opinions"/>
             </div>
         )
     }

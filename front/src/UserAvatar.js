@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 
+
 class UserAvatar extends Component {
 
     constructor() {
@@ -22,12 +23,17 @@ class UserAvatar extends Component {
             method: 'GET',
         }).then(response => response.json())
             .then(usr => {
-                console.log(usr);
                 let lnkUserPage = "/user/" + usr.id;
+                let lnkImage = "/img/user/" + usr.id + ".png";
                 let adminBadge = "";
                 if(usr.admin) adminBadge = "[Admin]"
                 let user =
-                    <a href={lnkUserPage}>{adminBadge}  {usr.usrName}</a>
+                    <a href={lnkUserPage}>
+                        <div id="userAvatar">
+                                <img id='circle' src={lnkImage} width='48px' height='48px'/>
+                                <p>{adminBadge}  {usr.usrName}</p>
+                        </div>
+                    </a>
                 this.setState({ user: user });
             });
     }

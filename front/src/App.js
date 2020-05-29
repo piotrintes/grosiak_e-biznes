@@ -9,6 +9,7 @@ import Products from './Products'
 import Product from './Product'
 import Opinions from './Opinions'
 import UserPage from './UserPage'
+import TopBar from './TopBar'
 import Promotions from './Promotions'
 import Comments from './Comments'
 import Users from './Users'
@@ -19,9 +20,12 @@ import ProductForm from './ProductForm'
 import './App.css';
 
 function App() {
+
     return <Router>
+        <Route component={TopBar}/>
+        <a name="top"/>
         <div id="categoryList">
-            <a href="/">Main</a>
+            <a id="listbutton" href="/">Strona główna</a>
             <Route component={Categories}/>
         </div>
         <div id="main">
@@ -30,50 +34,8 @@ function App() {
             <Route path="/product/:product" component={Product}/>
             <Route path="/product/:product" component={Opinions}/>
         </div>
+        <a href="#top"><img id="topbutton" src="/img/buttons/up.png" width='50px' height='50px'/></a>
     </Router>
 }
 
 export default App;
-
-/*
-        <div id="menu">
-            <ul>
-                <li>
-                    <Link to="/categories">Categories</Link>
-                </li>
-                <li>
-                    <Link to="/products">Products</Link>
-                </li>
-                <li>
-                    <Link to="/opinions/1">Opinions</Link>
-                </li>
-                <li>
-                    <Link to="/promotions">Promotions</Link>
-                </li>
-                <li>
-                    <Link to="/comments">Comments</Link>
-                </li>
-                <li>
-                    <Link to="/users">Users</Link>
-                </li>
-                <li>
-                    <Link to="/cart">Cart</Link>
-                </li>
-                <li>
-                    <Link to="/transactions">Transactions</Link>
-                </li>
-                <li>
-                    <Link to="/productadd">Add Product</Link>
-                </li>
-            </ul>
-            <Route path="/categories" component={Categories}/>
-            <Route path="/products" component={Products}/>
-            <Route path="/opinions/:product" component={Opinions}/>
-            <Route path="/promotions" component={Promotions}/>
-            <Route path="/comments" component={Comments}/>
-            <Route path="/users" component={Users}/>
-            <Route path="/cart/:user" component={Cart}/>
-            <Route path="/transactions" component={Transactions}/>
-            <Route path="/productadd" component={ProductForm}/>
-        </div>
- */

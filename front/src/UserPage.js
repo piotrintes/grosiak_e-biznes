@@ -24,11 +24,17 @@ class UserAvatar extends Component {
             .then(usr => {
                 console.log(usr);
                 let lnkUserPage = "/user/" + usr.id;
+                let lnkImage = "/img/user/" + usr.id + ".png";
                 let adminBadge = "";
                 if(usr.admin) adminBadge = "[Admin]"
                 let user =
                     <div>
-                        <div>{adminBadge}  {usr.usrName}</div>
+                        <a href={lnkUserPage}>
+                            <div id="userAvatar">
+                                <img id='circle' src={lnkImage} width='48px' height='48px'/>
+                                <p>{adminBadge}  {usr.usrName}</p>
+                            </div>
+                        </a>
                         <div>{usr.name} {usr.surname}</div>
                         <div>{usr.email}</div>
                     </div>
@@ -38,7 +44,7 @@ class UserAvatar extends Component {
 
     render() {
         return (
-            <div className="user">
+            <div id="frame">
                 {this.state.user}
             </div>
         )
