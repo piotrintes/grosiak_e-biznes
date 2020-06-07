@@ -6,6 +6,15 @@
 # An example controller showing a sample home page
 GET     /                           controllers.HomeController.index
 
+# Authentication
+#GET         /logOut                 controllers.HomeController.logOut
+#GET         /authenticate/:provider controllers.SocialAuthController.authenticate(provider)
+
+GET        /register                 controllers.SignUpController.view
+POST       /register                 controllers.SignUpController.submit
+GET        /logIn                    controllers.SignInController.view
+POST       /logIn                    controllers.SignInController.submit
+
 # Categories
 GET     /addcategory                controllers.HomeController.addCategory
 +nocsrf
@@ -48,6 +57,7 @@ GET     /updatepromotion/:id                controllers.HomeController.updatePro
 POST    /updatepromotionhandle              controllers.HomeController.updatePromotionHandle
 GET     /deletepromotion/:id                controllers.HomeController.deletePromotion(id: Int)
 GET     /promotion/:id                      controllers.HomeController.promotion(id: Int)
+GET     /promotionpr/:id                    controllers.HomeController.promotionpr(id: Long)
 GET     /promotions                         controllers.HomeController.promotions
 
 # Comments
@@ -89,6 +99,7 @@ GET     /updatetransactionhandle        controllers.HomeController.updateTransac
 GET     /deletetransaction/:id          controllers.HomeController.deleteTransaction(id: Int)
 GET     /transaction/:id                controllers.HomeController.transaction(id: Int)
 GET     /transactions                   controllers.HomeController.transactions
+GET     /transactionsusr/:id            controllers.HomeController.transactionsUsr(id: Int)
 
 # Payments
 GET     /addpayment                 controllers.HomeController.addPayment
@@ -98,6 +109,7 @@ GET     /updatepayment/:id          controllers.HomeController.updatePayment(id:
 GET     /updatepaymenthandle        controllers.HomeController.updatePaymentHandle
 GET     /deletepayment/:id          controllers.HomeController.deletePayment(id: Int)
 GET     /payment/:id                controllers.HomeController.payment(id: Int)
+GET     /paymentbyt/:id             controllers.HomeController.paymentTrans(id: Int)
 
 # Deliverys
 GET     /adddelivery                controllers.HomeController.addDelivery
@@ -107,6 +119,7 @@ GET     /updatedelivery/:id         controllers.HomeController.updateDelivery(id
 GET     /updatedeliveryhandle       controllers.HomeController.updateDeliveryHandle
 GET     /deletedelivery/:id         controllers.HomeController.deleteDelivery(id: Int)
 GET     /delivery/:id               controllers.HomeController.delivery(id: Int)
+GET     /deliverybyt/:id            controllers.HomeController.deliveryTrans(id: Int)
 
 
 # An example controller showing how to use dependency injection

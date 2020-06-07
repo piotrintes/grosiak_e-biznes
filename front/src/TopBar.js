@@ -90,7 +90,7 @@ class TopBar extends Component {
                         <td id="right">
                             <a href="/"><img id="circlebutton" src="/img/buttons/home.png" width='38px' height='38px'/></a>
                             <a href="/cart"><img id="circlebutton" src="/img/buttons/cart.png" width='38px' height='38px'/></a>
-                            <a href="/user"><img id="circlebutton" src="/img/buttons/user.png" width='40px' height='38px'/></a>
+                            <a href="/user/1"><img id="circlebutton" src="/img/buttons/user.png" width='40px' height='38px'/></a>
                             <a id="button" href="#" onClick={this.showLogin}>Zaloguj się</a>
                         </td>
                     </tr>

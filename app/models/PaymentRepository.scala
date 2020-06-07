@@ -15,7 +15,7 @@ class PaymentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tran
 
   private class PaymentTable(tag: Tag) extends Table[Payment](tag, "payment") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def transaction = column[Int]("name")
+    def transaction = column[Int]("transaction")
     def date: Rep[String] = column[String]("date")
     //def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
     def * = (id, transaction, date) <> ((Payment.apply _).tupled, Payment.unapply)
@@ -46,6 +46,10 @@ class PaymentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tran
 
   def getById(id: Int): Future[Payment] = db.run {
     payment.filter(_.id === id).result.head
+  }
+
+  def getByTIdOption(id: Int): Future[Option[Payment]] = db.run {
+    payment.filter(_.transaction === id).result.headOption
   }
 
   def getByIdOption(id: Int): Future[Option[Payment]] = db.run {

@@ -35,8 +35,20 @@ class UserAvatar extends Component {
                                 <p>{adminBadge}  {usr.usrName}</p>
                             </div>
                         </a>
-                        <div>{usr.name} {usr.surname}</div>
-                        <div>{usr.email}</div>
+                        <table id="fullWidth">
+                            <tr>
+                                <td>
+                                    <h2>
+                                        {usr.name} {usr.surname}
+                                    </h2>
+                                </td>
+                                <td id="right">
+                                    <h2>
+                                        {usr.email}
+                                    </h2>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                 this.setState({ user: user });
             });

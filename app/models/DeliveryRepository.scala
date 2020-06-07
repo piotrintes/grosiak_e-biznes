@@ -15,7 +15,7 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
 
   private class DeliveryTable(tag: Tag) extends Table[Delivery](tag, "delivery") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def transaction = column[Int]("name")
+    def transaction = column[Int]("transaction")
     def date: Rep[String] = column[String]("date")
     //def transaction_fk = foreignKey("user_fk",transaction, trs)(_.id)
     def * = (id, transaction, date) <> ((Delivery.apply _).tupled, Delivery.unapply)
@@ -50,6 +50,10 @@ class DeliveryRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, tra
 
   def getByIdOption(id: Int): Future[Option[Delivery]] = db.run {
     delivery.filter(_.id === id).result.headOption
+  }
+
+  def getByTIdOption(id: Int): Future[Option[Delivery]] = db.run {
+    delivery.filter(_.transaction === id).result.headOption
   }
 }
 

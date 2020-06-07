@@ -15,7 +15,7 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
 
   private class TransactionTable(tag: Tag) extends Table[Transaction](tag, "transaction") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[Int]("name")
+    def user = column[Int]("user")
     def product: Rep[Long] = column[Long]("product")
     def count: Rep[Int] = column[Int]("count")
     def price: Rep[Double] = column[Double]("price")
@@ -56,6 +56,10 @@ class TransactionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, 
 
   def getByIdOption(id: Int): Future[Option[Transaction]] = db.run {
     transaction.filter(_.id === id).result.headOption
+  }
+
+  def getByUser(id: Int): Future[Seq[Transaction]] = db.run {
+    transaction.filter(_.user === id).result
   }
 }
 

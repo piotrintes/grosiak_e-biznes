@@ -12,7 +12,7 @@ class Opinions extends Component {
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/opinions/" + this.props.match.params.product
+        var url = "http://localhost:9000/opinions/" + this.props.product
 
         fetch(url, {
             mode: 'cors',

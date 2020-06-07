@@ -15,7 +15,7 @@ class CartRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, userRep
 
   private class CartTable(tag: Tag) extends Table[Cart](tag, "cart") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[Int]("name")
+    def user = column[Int]("user")
     def product: Rep[Long] = column[Long]("product")
     def count: Rep[Int] = column[Int]("count")
     def user_fk = foreignKey("user_fk",user, usr)(_.id)

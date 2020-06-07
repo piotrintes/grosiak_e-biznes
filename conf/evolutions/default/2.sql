@@ -38,6 +38,10 @@ VALUES ("produkt14","opis14",5,10.20);
 INSERT INTO "product" ("name","description","category","price")
 VALUES ("produkt15","opis15",5,10.20);
 
+
+INSERT INTO "promotion" ("product","discount")
+VALUES (1,20);
+
 INSERT INTO "user" ("usrName","name","surname","email","admin")
 VALUES ("user1","imie","nazwisko","niepodam@gmail.com",0);
 

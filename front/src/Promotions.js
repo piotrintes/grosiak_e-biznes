@@ -5,12 +5,12 @@ class Promotions extends Component {
     constructor() {
         super();
         this.state = {
-            promotions: [],
+            products: [],
         };
     }
 
     componentDidMount() {
-        var url = "http://localhost:9000/promotions"
+        var url = "http://localhost:9000/products"
 
         fetch(url, {
             mode: 'cors',
@@ -24,22 +24,64 @@ class Promotions extends Component {
             .then(results => {
                 return results.json();
             }).then(data => {
-            let promotions = data.map((prom) => {
-                return (
-                    <div key={prom.id}>
-                        <div className="title">{prom.product}</div>
-                        <div>{prom.discount}</div>
-                    </div>
-                )
+            let products = data.map((prod) => {
+                var url1 = "http://localhost:9000/promotionpr/" + prod.id
+                fetch(url1, {
+                    mode: 'cors',
+                    headers:{
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Access-Control-Allow-Origin':'http://localhost:3000',
+                    },
+                    method: 'GET',
+                }).then(response => response.json())
+                    .then(pro => {
+                        if(pro != null)
+                            this.setState({ discount: pro.discount });
+                        let link = "/product/" + prod.id;
+                        let img = "/img/products/" + prod.id + ".png";
+                        let priceDisp = (prod.price).toFixed(2) + " zł"
+                        if(pro != null) {
+                            priceDisp = [<b>
+                                <del>{prod.price} zł</del>
+                                <t/>
+                                PROMOCJA - {pro.discount}%
+                                <t/>
+                                {(prod.price * (100 - pro.discount) / 100).toFixed(2)} zł <t/></b>]
+
+                            products.push([
+                                <a id="clearunderline" href={link} key={prod.id}>
+                                    <div id="framebutton">
+                                        <table>
+                                            <tr>
+                                                <td>
+                                                    <img src={img} width="256" height="256"/>
+                                                </td>
+                                                <td>
+                                                    <div id="productname">{prod.name}</div>
+                                                    <div id="productprice">Cena: {priceDisp}</div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </a>
+                            ])
+                            this.setState({products: products})
+                        }
+                    })
             })
-            this.setState({promotions: promotions})
         })
     }
 
     render() {
         return (
             <div className="promotions">
-                {this.state.promotions}
+                <div id="frame">
+                    <h3>
+                        <t/><t/>PROMOCJE
+                    </h3>
+                </div>
+                {this.state.products}
             </div>
         )
     }

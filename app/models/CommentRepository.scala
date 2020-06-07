@@ -15,7 +15,7 @@ class CommentRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, user
 
   private class CommentTable(tag: Tag) extends Table[Comment](tag, "comment") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[Int]("name")
+    def user = column[Int]("user")
     def stars: Rep[Int] = column[Int]("stars")
     def text: Rep[String] = column[String]("text")
     def user_fk = foreignKey("user_fk",user, usr)(_.id)

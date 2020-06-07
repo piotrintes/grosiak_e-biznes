@@ -1,21 +1,17 @@
 import React from 'react';
 import {
     BrowserRouter as Router,
-    Route,
-    Link
+    Route
 } from 'react-router-dom';
 import Categories from './Categories'
 import Products from './Products'
 import Product from './Product'
-import Opinions from './Opinions'
-import UserPage from './UserPage'
-import TopBar from './TopBar'
 import Promotions from './Promotions'
 import Comments from './Comments'
-import Users from './Users'
-import Cart from './Cart'
+import UserPage from './UserPage'
 import Transactions from './Transactions'
-import ProductForm from './ProductForm'
+import TopBar from './TopBar'
+import Cart from './Cart'
 
 import './App.css';
 
@@ -29,10 +25,13 @@ function App() {
             <Route component={Categories}/>
         </div>
         <div id="main">
+            <Route exact path="/" component={Promotions}/>
+            <Route exact path="/" component={Comments}/>
             <Route path="/category/:cat" component={Products}/>
             <Route path="/user/:user" component={UserPage}/>
+            <Route path="/user/:user" component={Transactions}/>
             <Route path="/product/:product" component={Product}/>
-            <Route path="/product/:product" component={Opinions}/>
+            <Route path="/cart" component={Cart}/>
         </div>
         <a href="#top"><img id="topbutton" src="/img/buttons/up.png" width='50px' height='50px'/></a>
     </Router>

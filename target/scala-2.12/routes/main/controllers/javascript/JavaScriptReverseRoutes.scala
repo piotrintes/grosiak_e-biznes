@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
-// @DATE:Thu May 28 16:25:19 CEST 2020
+// @DATE:Sun Jun 07 17:55:37 CEST 2020
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -10,20 +10,40 @@ import _root_.controllers.Assets.Asset
 // @LINE:7
 package controllers.javascript {
 
-  // @LINE:115
-  class ReverseAsyncController(_prefix: => String) {
+  // @LINE:129
+  class ReverseAssets(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:115
-    def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.AsyncController.message",
+    // @LINE:129
+    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.Assets.versioned",
+      """
+        function(file1) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        }
+      """
+    )
+  
+  }
+
+  // @LINE:124
+  class ReverseCountController(_prefix: => String) {
+
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:124
+    def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.CountController.count",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "count"})
         }
       """
     )
@@ -38,7 +58,7 @@ package controllers.javascript {
     }
 
   
-    // @LINE:84
+    // @LINE:92
     def addTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addTransaction",
       """
@@ -48,7 +68,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:80
+    // @LINE:88
     def deleteFromCart: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteFromCart",
       """
@@ -58,7 +78,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:28
+    // @LINE:35
     def getProductsByCat: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getProductsByCat",
       """
@@ -68,7 +88,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:30
+    // @LINE:37
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.delete",
       """
@@ -78,7 +98,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:50
+    // @LINE:57
     def promotion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.promotion",
       """
@@ -88,7 +108,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:103
+    // @LINE:113
     def addDelivery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addDelivery",
       """
@@ -98,7 +118,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:94
+    // @LINE:103
     def addPayment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addPayment",
       """
@@ -108,7 +128,27 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:29
+    // @LINE:110
+    def paymentTrans: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.paymentTrans",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "paymentbyt/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:58
+    def promotionpr: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.promotionpr",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "promotionpr/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Long]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:36
     def getProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getProduct",
       """
@@ -118,7 +158,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:66
+    // @LINE:100
+    def transactionsUsr: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.transactionsUsr",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "transactionsusr/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:74
     def addUserHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addUserHandle",
       """
@@ -128,7 +178,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:64
+    // @LINE:72
     def addUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addUser",
       """
@@ -138,7 +188,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:89
+    // @LINE:97
     def deleteTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteTransaction",
       """
@@ -148,7 +198,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:76
+    // @LINE:84
     def addToCartHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToCartHandle",
       """
@@ -162,7 +212,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:27
+    // @LINE:34
     def getProducts: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getProducts",
       """
@@ -172,7 +222,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:13
+    // @LINE:20
     def updateCategory: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateCategory",
       """
@@ -182,7 +232,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:96
+    // @LINE:105
     def addPaymentHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addPaymentHandle",
       """
@@ -192,7 +242,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:26
+    // @LINE:33
     def updateProductHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateProductHandle",
       """
@@ -202,7 +252,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:88
+    // @LINE:96
     def updateTransactionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateTransactionHandle",
       """
@@ -212,7 +262,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:42
     def addOpinionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addOpinionHandle",
       """
@@ -222,7 +272,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:106
+    // @LINE:116
     def updateDelivery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateDelivery",
       """
@@ -232,7 +282,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:67
+    // @LINE:75
     def updateUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateUser",
       """
@@ -242,7 +292,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:36
+    // @LINE:43
     def updateOpinion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateOpinion",
       """
@@ -252,7 +302,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:108
+    // @LINE:118
     def deleteDelivery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteDelivery",
       """
@@ -262,7 +312,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:70
+    // @LINE:78
     def user: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.user",
       """
@@ -272,7 +322,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:38
+    // @LINE:45
     def updateOpinionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateOpinionHandle",
       """
@@ -282,7 +332,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:23
+    // @LINE:30
     def addProductHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addProductHandle",
       """
@@ -292,7 +342,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:46
     def deleteOpinion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteOpinion",
       """
@@ -302,7 +352,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:58
+    // @LINE:66
     def updateCommentHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateCommentHandle",
       """
@@ -312,7 +362,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:54
+    // @LINE:62
     def addComment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addComment",
       """
@@ -322,7 +372,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:40
+    // @LINE:47
     def opinions: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.opinions",
       """
@@ -332,7 +382,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:105
+    // @LINE:115
     def addDeliveryHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addDeliveryHandle",
       """
@@ -342,7 +392,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:100
+    // @LINE:109
     def payment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.payment",
       """
@@ -352,7 +402,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:86
+    // @LINE:94
     def addTransactionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addTransactionHandle",
       """
@@ -362,7 +412,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:45
+    // @LINE:52
     def addPromotionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addPromotionHandle",
       """
@@ -372,7 +422,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:10
+    // @LINE:17
     def addCategory: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addCategory",
       """
@@ -382,7 +432,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:24
+    // @LINE:31
     def updateProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateProduct",
       """
@@ -392,7 +442,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:59
+    // @LINE:67
     def deleteComment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteComment",
       """
@@ -402,7 +452,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:87
+    // @LINE:95
     def updateTransaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateTransaction",
       """
@@ -412,7 +462,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:49
+    // @LINE:56
     def deletePromotion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deletePromotion",
       """
@@ -422,7 +472,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:56
+    // @LINE:64
     def addCommentHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addCommentHandle",
       """
@@ -432,7 +482,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:48
+    // @LINE:55
     def updatePromotionHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updatePromotionHandle",
       """
@@ -442,7 +492,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:71
+    // @LINE:79
     def users: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.users",
       """
@@ -452,7 +502,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:91
+    // @LINE:99
     def transactions: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.transactions",
       """
@@ -462,7 +512,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:81
+    // @LINE:89
     def cart: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.cart",
       """
@@ -472,7 +522,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:69
+    // @LINE:77
     def deleteUser: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteUser",
       """
@@ -482,7 +532,17 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:12
+    // @LINE:120
+    def deliveryTrans: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.deliveryTrans",
+      """
+        function(id0) {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "deliverybyt/" + encodeURIComponent((""" + implicitly[play.api.mvc.PathBindable[Int]].javascriptUnbind + """)("id", id0))})
+        }
+      """
+    )
+  
+    // @LINE:19
     def addCategoryHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addCategoryHandle",
       """
@@ -492,7 +552,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:18
+    // @LINE:25
     def getCategorys: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getCategorys",
       """
@@ -502,7 +562,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:60
+    // @LINE:68
     def comment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.comment",
       """
@@ -512,7 +572,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:46
+    // @LINE:53
     def updatePromotion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updatePromotion",
       """
@@ -522,7 +582,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:21
+    // @LINE:28
     def addProduct: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addProduct",
       """
@@ -532,7 +592,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:33
+    // @LINE:40
     def addOpinion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addOpinion",
       """
@@ -542,7 +602,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:15
+    // @LINE:22
     def updateCategoryHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateCategoryHandle",
       """
@@ -552,7 +612,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:97
+    // @LINE:106
     def updatePayment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updatePayment",
       """
@@ -562,7 +622,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:51
+    // @LINE:59
     def promotions: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.promotions",
       """
@@ -572,7 +632,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:43
+    // @LINE:50
     def addPromotion: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addPromotion",
       """
@@ -582,7 +642,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:68
+    // @LINE:76
     def updateUserHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateUserHandle",
       """
@@ -592,7 +652,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:109
+    // @LINE:119
     def delivery: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.delivery",
       """
@@ -602,7 +662,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:90
+    // @LINE:98
     def transaction: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.transaction",
       """
@@ -612,7 +672,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:99
+    // @LINE:108
     def deletePayment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deletePayment",
       """
@@ -622,7 +682,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:17
+    // @LINE:24
     def getCategory: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.getCategory",
       """
@@ -642,7 +702,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:61
+    // @LINE:69
     def comments: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.comments",
       """
@@ -652,7 +712,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:74
+    // @LINE:82
     def addToCart: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.addToCart",
       """
@@ -666,7 +726,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:98
+    // @LINE:107
     def updatePaymentHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updatePaymentHandle",
       """
@@ -676,7 +736,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:16
+    // @LINE:23
     def deleteCategory: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.deleteCategory",
       """
@@ -686,7 +746,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:107
+    // @LINE:117
     def updateDeliveryHandle: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateDeliveryHandle",
       """
@@ -696,7 +756,7 @@ package controllers.javascript {
       """
     )
   
-    // @LINE:57
+    // @LINE:65
     def updateComment: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.HomeController.updateComment",
       """
@@ -708,40 +768,40 @@ package controllers.javascript {
   
   }
 
-  // @LINE:118
-  class ReverseAssets(_prefix: => String) {
+  // @LINE:126
+  class ReverseAsyncController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:118
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
+    // @LINE:126
+    def message: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.AsyncController.message",
       """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
+        function() {
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "message"})
         }
       """
     )
   
   }
 
-  // @LINE:113
-  class ReverseCountController(_prefix: => String) {
+  // @LINE:13
+  class ReverseSignUpController(_prefix: => String) {
 
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:113
-    def count: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.CountController.count",
+    // @LINE:13
+    def submit: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.SignUpController.submit",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "count"})
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "register"})
         }
       """
     )

@@ -260,6 +260,10 @@ class HomeController @Inject()(
     val promotion = promotionRepo.getByIdOption(id)
     promotion.map(promotion => Ok(Json.toJson(promotion)))
   }
+  def promotionpr(id: Long): Action[AnyContent] = Action.async { implicit request =>
+    val promotion = promotionRepo.getByProductId(id)
+    promotion.map(promotion => Ok(Json.toJson(promotion)))
+  }
   def promotions = Action.async { implicit request =>
     val opi = promotionRepo.list()
     opi.map( promotions => Ok(Json.toJson(promotions)))
@@ -491,6 +495,10 @@ class HomeController @Inject()(
     val payment = paymentRepo.getByIdOption(id)
     payment.map(payment => Ok(Json.toJson(payment)))
   }
+  def paymentTrans(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val payment = paymentRepo.getByTIdOption(id)
+    payment.map(payment => Ok(Json.toJson(payment)))
+  }
 
 
   val transactionForm: Form[CreateTransactionForm] = Form {
@@ -555,7 +563,10 @@ class HomeController @Inject()(
   def transactions(): Action[AnyContent] = Action.async { implicit request =>
     val trs = transactionRepo.list()
     trs.map( transactions => Ok(Json.toJson(transactions)))
-    //Ok(views.html.index("Your new application is ready."))
+  }
+  def transactionsUsr(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val trs = transactionRepo.getByUser(id)
+    trs.map( transactions => Ok(Json.toJson(transactions)))
   }
 
 
@@ -604,6 +615,10 @@ class HomeController @Inject()(
   }
   def delivery(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val delivery = deliveryRepo.getByIdOption(id)
+    delivery.map(delivery => Ok(Json.toJson(delivery)))
+  }
+  def deliveryTrans(id: Int): Action[AnyContent] = Action.async { implicit request =>
+    val delivery = deliveryRepo.getByTIdOption(id)
     delivery.map(delivery => Ok(Json.toJson(delivery)))
   }
 }

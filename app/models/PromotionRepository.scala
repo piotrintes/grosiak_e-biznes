@@ -16,7 +16,7 @@ class PromotionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
   private class PromotionTable(tag: Tag) extends Table[Promotion](tag, "promotion") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def product: Rep[Long] = column[Long]("product")
-    def discount: Rep[Int] = column[Int]("price")
+    def discount: Rep[Int] = column[Int]("discount")
     def product_fk = foreignKey("product_fk",product, prd)(_.id)
     def * = (id, product, discount) <> ((Promotion.apply _).tupled, Promotion.unapply)
   }
@@ -47,6 +47,10 @@ class PromotionRepository @Inject()(dbConfigProvider: DatabaseConfigProvider, us
 
   def getById(id: Int): Future[Promotion] = db.run {
     promotion.filter(_.id === id).result.head
+  }
+
+  def getByProductId(id: Long): Future[Option[Promotion]] = db.run {
+    promotion.filter(_.product === id).result.headOption
   }
 
   def getByIdOption(id: Int): Future[Option[Promotion]] = db.run {

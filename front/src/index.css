@@ -169,6 +169,51 @@ code {
   transition: 0.2s;
 }
 
+#textbox {
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 12px;
+  border: 0px;
+  border-radius: var(--buttonRadiaus);
+  display: inline-block;
+  background-color: var(--buttonColor);
+  color: var(--linkColor);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.5s;
+}
+#textbox:focus {
+  outline: none;
+  background-color: var(--backgroundColor);
+  box-shadow: 0px 0px var(--lightShadowSize) var(--lightShadowColor);
+  transition: 0.2s;
+}
+
+textarea {
+  position: relative;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 12px;
+  border: 0px;
+  border-radius: var(--buttonRadiaus);
+  display: inline-block;
+  background-color: var(--buttonColor);
+  color: var(--linkColor);
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.5s;
+}
+textarea:focus {
+  outline: none;
+  background-color: var(--backgroundColor);
+  box-shadow: 0px 0px var(--lightShadowSize) var(--lightShadowColor);
+  transition: 0.2s;
+}
+
 #button {
   position: relative;
   margin-bottom: 20px;
@@ -215,14 +260,14 @@ code {
   right: 22px;
   display: inline-block;
   border-radius:50%;
-  background-color: var(--buttonColor);
+  background-color: var(--backgroundColor);
+  box-shadow: 0px 0px var(--lightShadowSize) var(--lightShadowColor);
   transition: 0.5s;
   z-index: 2;
 }
 
 #topbutton:hover {
-  background-color: var(--backgroundColor);
-  box-shadow: 0px 0px var(--lightShadowSize) var(--lightShadowColor);
+  background-color: var(--buttonColor);
   transition: 0.2s;
 }
 
@@ -342,8 +387,26 @@ code {
   text-align:left;
 }
 
+#fullWidth {
+  width: 100%;
+}
+
 #clearunderline{
   text-decoration: none;
+}
+
+#linkh2{
+  margin: 40px;
+  text-decoration: none;
+  color: var(--linkColor);
+  font-size: 23px;
+  font-weight: bold;
+  transition: 0.5s;
+}
+
+#linkh2:hover{
+  color: var(--accentColor);
+  transition: 0.2s;
 }
 
 h1{
@@ -352,10 +415,33 @@ h1{
   font-weight: bold;
   text-align: center;
 }
+
 h2{
   margin: 40px;
   font-size: 23px;
   font-weight: bold;
+}
+
+h3{
+  font-size: 23px;
+  font-weight: bold;
+}
+
+#fontlarger{
+  font-size: 20px;
+}
+
+th{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+t::before {
+  content: "\00a0 \00a0 \00a0 \00a0 ";
+}
+
+del {
+  text-decoration: line-through;
 }
 
 

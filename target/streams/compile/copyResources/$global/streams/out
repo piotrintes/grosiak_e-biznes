@@ -1,4 +1,5 @@
 [debug] Copy resource mappings: 
+[debug] 	(/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/silhouette.conf,/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/target/scala-2.12/classes/silhouette.conf)
 [debug] 	(/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/logback.xml,/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/target/scala-2.12/classes/logback.xml)
 [debug] 	(/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/application.conf,/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/target/scala-2.12/classes/application.conf)
 [debug] 	(/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/evolutions,/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/target/scala-2.12/classes/evolutions)
