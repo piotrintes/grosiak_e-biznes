@@ -71,14 +71,14 @@ GET     /comment/:id                controllers.HomeController.comment(id: Int)
 GET     /comments                   controllers.HomeController.comments
 
 # Users
-GET     /adduser                    controllers.HomeController.addUser
-+nocsrf
-POST    /adduserhandle              controllers.HomeController.addUserHandle
-GET     /updateuser/:id             controllers.HomeController.updateUser(id: Int)
-GET     /updateuserhandle           controllers.HomeController.updateUserHandle
-GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Int)
-GET     /user/:id                   controllers.HomeController.user(id: Int)
-GET     /users                      controllers.HomeController.users
+#GET     /adduser                    controllers.HomeController.addUser
+#+nocsrf
+#POST    /adduserhandle              controllers.HomeController.addUserHandle
+#GET     /updateuser/:id             controllers.HomeController.updateUser(id: UUID)
+#GET     /updateuserhandle           controllers.HomeController.updateUserHandle
+#GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: UUID)
+#GET     /user/:id                   controllers.HomeController.user(id: UUID)
+#GET     /users                      controllers.HomeController.users
 
 # Cart
 GET     /addtocart/:id                       controllers.HomeController.addToCart(id: Int)

@@ -50,7 +50,7 @@ Seq[Any](format.raw/*6.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-04-07T21:48:29.383271
+                  DATE: 2020-06-08T19:00:40.597472
                   SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/index.scala.html
                   HASH: ab80a84d2e099a1e533a45d445eba46b56f9fccc
                   MATRIX: 818->95|929->113|957->308|985->310|1017->333|1057->335|1090->464|1122->470|1176->503|1209->506

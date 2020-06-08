@@ -1,5 +1,8 @@
-package models
+/*package models
 
+import java.util.UUID
+
+import com.mohiva.play.silhouette.api.LoginInfo
 import javax.inject.{Inject, Singleton}
 import play.api.db.slick.DatabaseConfigProvider
 import slick.jdbc.JdbcProfile
@@ -14,7 +17,8 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
   import profile.api._
 
   class UserTable(tag: Tag) extends Table[User](tag, "user") {
-    def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
+    def id = column[UUID]("id", O.PrimaryKey, O.AutoInc)
+    def loginInfo = column[LoginInfo]("loginInfo")
     def usrName = column[String]("usrName")
     def name = column[String]("name")
     def surname: Rep[String] = column[String]("surname")
@@ -26,7 +30,7 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
 
   val user = TableQuery[UserTable]
 
-  def create(name: String, usrName: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {
+  def create(name: String, loginInfo: LoginInfo, usrName: String, surname: String, email: String, admin: Boolean): Future[User] = db.run {
     (user.map(u => (u.usrName, u.name, u.surname,u.email, u.admin))
       returning user.map(_.id)
       into {case ((usrName, name,surname,email,admin),id) => User(id, usrName, name, surname, email, admin)}
@@ -37,19 +41,19 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
     user.result
   }
 
-  def delete(id: Int): Future[Unit] = db.run(user.filter(_.id === id).delete).map(_ => ())
+  def delete(id: UUID): Future[Unit] = db.run(user.filter(_.id === id).delete).map(_ => ())
 
-  def update(id: Int, new_user: User): Future[Unit] = {
+  def update(id: UUID, new_user: User): Future[Unit] = {
     val userToUpdate: User = new_user.copy(id)
     db.run(user.filter(_.id === id).update(userToUpdate)).map(_ => ())
   }
 
-  def getById(id: Int): Future[User] = db.run {
+  def getById(id: UUID): Future[User] = db.run {
     user.filter(_.id === id).result.head
   }
 
-  def getByIdOption(id: Int): Future[Option[User]] = db.run {
+  def getByIdOption(id: UUID): Future[Option[User]] = db.run {
     user.filter(_.id === id).result.headOption
   }
 }
-
+*/

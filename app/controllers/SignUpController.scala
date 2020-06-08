@@ -2,19 +2,18 @@ package controllers
 
 import java.util.UUID
 
-import javax.inject.Inject
 import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.api.repositories.AuthInfoRepository
-import models.services.{AuthTokenService, UserService}
 import com.mohiva.play.silhouette.api.util.PasswordHasherRegistry
 import com.mohiva.play.silhouette.impl.providers._
-import forms.SignUpForm
+import javax.inject.Inject
 import models.User
+import models.services.{AuthTokenService, UserService}
 import play.api.i18n.{I18nSupport, Messages}
-import play.api.mvc.{ AbstractController, AnyContent, ControllerComponents, Request }
+import play.api.mvc.{AbstractController, AnyContent, ControllerComponents, Request}
 import utils.auth.DefaultEnv
 
-import scala.concurrent.{ ExecutionContext, Future }
+import scala.concurrent.{ExecutionContext, Future}
 
 /**
  * The `Sign Up` controller.
@@ -46,7 +45,38 @@ class SignUpController @Inject() (
     Future.successful(Ok("register"))
   }
 
-  def submit = silhouette.UnsecuredAction.async { implicit request: Request[AnyContent] =>
+
+  def submit = silhouette.UnsecuredAction.async { implicit request =>
+    val password = request.body.asJson.get("usrName").as[String]
+    val name = request.body.asJson.get("name").as[String]
+    val surname = request.body.asJson.get("surname").as[String]
+    val email = request.body.asJson.get("email").as[String]
+
+
+
+    val result = Redirect(routes.SignUpController.view()).flashing("info" -> Messages("sign.up.email.sent", email))
+    val loginInfo = LoginInfo(CredentialsProvider.ID, email)
+
+    userService.retrieve(loginInfo).flatMap {
+      case None =>
+        val authInfo = passwordHasherRegistry.current.hash(password)
+        val user = User(
+          id = UUID.randomUUID(),
+          loginInfo = loginInfo,
+          usrName = Some(name + " " + surname),
+          name = Some(name),
+          surname = Some(surname),
+          email = Some(email),
+          admin = false
+        )
+        Future.successful(result)
+    }
+
+    Future.successful(Ok("register"))
+  }
+}
+
+    /*implicit request: Request[AnyContent] =>
     SignUpForm.form.bindFromRequest.fold(
       form => Future.successful(BadRequest("login")),
       success = data => {
@@ -71,5 +101,4 @@ class SignUpController @Inject() (
         }
       }
     )
-  }
-}
+  }*/

@@ -1,7 +1,9 @@
 package controllers
 
+import java.util.UUID
+
 import javax.inject._
-import models.{Cart, CartRepository, Category, CategoryRepository, Comment, CommentRepository, Delivery, DeliveryRepository, Payment, PaymentRepository, PrOpinion, PrOpinionRepository, Product, ProductRepository, Promotion, PromotionRepository, Transaction, TransactionRepository, User, UserRepository}
+import models.{Cart, CartRepository, Category, CategoryRepository, Comment, CommentRepository, Delivery, DeliveryRepository, Payment, PaymentRepository, PrOpinion, PrOpinionRepository, Product, ProductRepository, Promotion, PromotionRepository, Transaction, TransactionRepository, User/*, UserRepository*/}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
@@ -19,7 +21,7 @@ class HomeController @Inject()(
                                 productsRepo: ProductRepository, categoryRepo: CategoryRepository,
                                 cartRepo: CartRepository, commentRepo: CommentRepository, deliveryRepo: DeliveryRepository,
                                 paymentRepo: PaymentRepository, prOpinionRepo: PrOpinionRepository, promotionRepo: PromotionRepository,
-                                transactionRepo: TransactionRepository, userRepo: UserRepository,
+                                transactionRepo: TransactionRepository, /*userRepo: UserRepository,*/
                                 cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
 
   val productForm: Form[CreateProductForm] = Form {
@@ -349,6 +351,7 @@ class HomeController @Inject()(
       "admin" -> boolean,
     )(UpdateUserForm.apply)(UpdateUserForm.unapply)
   }
+  /*
   def addUser = Action {
     Ok(views.html.index("Your new application is ready."))
   }
@@ -363,12 +366,12 @@ class HomeController @Inject()(
       Ok(Json.toJson(user))
     }
   }
-  def updateUser(id: Int): Action[AnyContent] = Action.async { implicit request =>
+  def updateUser(id: UUID): Action[AnyContent] = Action.async { implicit request =>
     val user = userRepo.getByIdOption(id)
     user.map(user => Ok(Json.toJson(user)))
   }
   def updateUserHandle = Action.async { implicit request =>
-    val id = request.body.asJson.get("id").as[Int]
+    val id = request.body.asJson.get("id").as[UUID]
     val usrName = request.body.asJson.get("usrName").as[String]
     val name = request.body.asJson.get("name").as[String]
     val surname = request.body.asJson.get("surname").as[String]
@@ -379,11 +382,11 @@ class HomeController @Inject()(
       Ok(Json.toJson(User(id,usrName,name,surname,email,admin)))
     }
   }
-  def deleteUser(id: Int) = Action {
+  def deleteUser(id: UUID) = Action {
     userRepo.delete(id)
     Redirect("/users")
   }
-  def user(id: Int): Action[AnyContent] = Action.async { implicit request =>
+  def user(id: UUID): Action[AnyContent] = Action.async { implicit request =>
     val user = userRepo.getByIdOption(id)
     user.map(user => Ok(Json.toJson(user)))
   }
@@ -392,7 +395,7 @@ class HomeController @Inject()(
     usr.map( users => Ok(Json.toJson(users)))
     //Ok(views.html.index("Your new application is ready."))
   }
-
+*/
 
   val cartForm: Form[CreateCartForm] = Form {
     mapping(
