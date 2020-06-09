@@ -1,0 +1,11 @@
+[error] /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/controllers/ProductController.scala:452:7: type mismatch;
+[error]  found   : play.api.mvc.Result
+[error]  required: scala.concurrent.Future[play.api.mvc.Result]
+[error]     Ok("Your new application is ready.")
+[error]       ^
+[error] /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/controllers/ProductController.scala:576:7: type mismatch;
+[error]  found   : play.api.mvc.Result
+[error]  required: scala.concurrent.Future[play.api.mvc.Result]
+[error]     Ok("Your new application is ready.")
+[error]       ^
+[error] two errors found

@@ -1,0 +1,13 @@
+@import play.api.data.Form
+@import play.api.i18n.Messages
+@import play.api.mvc.RequestHeader
+@import controllers.AssetsFinder
+@import forms.TotpRecoveryForm.Data
+
+@this()(implicit assets: AssetsFinder)
+@(totpRecoveryForm: Form[Data])(implicit request: RequestHeader, messages: Messages)
+
+    @implicitFieldConstructor = @{
+        b4.vertical.fieldConstructor()
+    }
+

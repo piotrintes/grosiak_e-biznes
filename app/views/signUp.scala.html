@@ -1,0 +1,11 @@
+@import play.api.data.Form
+@import play.api.i18n.Messages
+@import play.api.mvc.RequestHeader
+@import controllers.AssetsFinder
+@import forms.SignUpForm.Data
+
+@this()(implicit assets: AssetsFinder)
+@(signUpForm: Form[Data])(implicit request: RequestHeader, messages: Messages)
+
+@implicitFieldConstructor = @{ b4.vertical.fieldConstructor() }
+
