@@ -30,8 +30,8 @@ Seq[Any](_display_(/*4.2*/messages("email.reset.password.hello", user.name.getOr
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T17:46:52.302
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/emails/resetPassword.scala.txt
+                  DATE: 2020-06-09T20:28:43.582
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/emails/resetPassword.scala.txt
                   HASH: 20e040ce32e5d1d63dcf02402aef41c710d1b8db
                   MATRIX: 34->1|393->33|547->96|634->163|662->166|728->212
                   LINES: 4->1|9->3|14->4|14->4|16->6|16->6

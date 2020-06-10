@@ -9,6 +9,7 @@ class UserAvatar extends Component {
         };
     }
 
+
     componentDidMount() {
         var url = "http://localhost:9000/user/" + this.props.match.params.user
 

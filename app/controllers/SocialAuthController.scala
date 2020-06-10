@@ -3,6 +3,7 @@ package controllers
 import com.mohiva.play.silhouette.api._
 import com.mohiva.play.silhouette.api.exceptions.ProviderException
 import com.mohiva.play.silhouette.impl.providers._
+import models.UserClassRepository
 import javax.inject.Inject
 import play.api.i18n.Messages
 import play.api.mvc.{ AnyContent, Request }
@@ -14,7 +15,7 @@ import scala.concurrent.{ ExecutionContext, Future }
  * The social auth controller.
  */
 class SocialAuthController @Inject() (
-  scc: SilhouetteControllerComponents
+  scc: SilhouetteControllerComponents, userRepo: UserClassRepository
 )(implicit ex: ExecutionContext) extends SilhouetteController(scc) {
 
   /**
@@ -34,8 +35,17 @@ class SocialAuthController @Inject() (
             authInfo <- authInfoRepository.save(profile.loginInfo, authInfo)
             authenticator <- authenticatorService.create(profile.loginInfo)
             value <- authenticatorService.init(authenticator)
-            result <- authenticatorService.embed(value, Redirect(routes.ApplicationController.index()))
+            result <- authenticatorService.embed(value, Redirect("http://localhost:3000"))
           } yield {
+            userRepo.getByProvider(user.loginInfo.providerID, user.loginInfo.providerKey).flatMap(elem =>
+              {
+                elem match {
+                  case Some(_) => Future.successful(true)
+                  case None => userRepo.create(user.loginInfo.providerID, user.loginInfo.providerKey,
+                    user.fullName.getOrElse("name surname"), user.firstName.getOrElse("name"),
+                    user.lastName.getOrElse("surname"), user.email.getOrElse("email"), false)
+                }
+              })
             eventBus.publish(LoginEvent(user, request))
             result
           }

@@ -7,6 +7,7 @@ class TopBar extends Component {
         super();
         this.state = {
             loginFrame: "",
+            loggedIn: "",
         };
 
         this.showLogin = this.showLogin.bind(this);
@@ -14,8 +15,26 @@ class TopBar extends Component {
         this.hideLogin = this.hideLogin.bind(this);
     }
 
-    componentDidMount() {
+    logOut() {
+        fetch("http://localhost:9000/signOut", {credentials:"include"})
+    }
 
+    componentDidMount() {
+        fetch("http://localhost:9000/isLogged", {credentials:"include"})
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    var userLink = "/user/" + result.id
+                    this.setState({loggedIn:[
+                            <a href="/cart"><img id="circlebutton" src="/img/buttons/cart.png" width='38px' height='38px'/></a>,
+                            <a href={userLink}><img id="circlebutton" src="/img/buttons/user.png" width='40px' height='38px'/></a>,
+                            <a id="button" href="/" onClick={this.logOut}>Wyloguj</a>]})
+
+                },
+                (error) => {
+                    this.setState({loggedIn:[<a id="button" href="http://localhost:9000/authenticate/google">Zaloguj się</a>]})
+                }
+            )
     }
 
     hideLogin() {
@@ -89,9 +108,7 @@ class TopBar extends Component {
                         </td>
                         <td id="right">
                             <a href="/"><img id="circlebutton" src="/img/buttons/home.png" width='38px' height='38px'/></a>
-                            <a href="/cart"><img id="circlebutton" src="/img/buttons/cart.png" width='38px' height='38px'/></a>
-                            <a href="/user/1"><img id="circlebutton" src="/img/buttons/user.png" width='40px' height='38px'/></a>
-                            <a id="button" href="#" onClick={this.showLogin}>Zaloguj się</a>
+                            {this.state.loggedIn}
                         </td>
                     </tr>
                 </table>

@@ -17,7 +17,7 @@ class TransactionRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)
 
   private class TransactionTable(tag: Tag) extends Table[Transaction](tag, "transaction") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[UUID]("user")
+    def user = column[Int]("user")
     def product: Rep[Long] = column[Long]("product")
     def count: Rep[Int] = column[Int]("count")
     def price: Rep[Double] = column[Double]("price")
@@ -27,7 +27,7 @@ class TransactionRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)
 
   private val transaction = TableQuery[TransactionTable]
 
-  def create(user: UUID, product: Long, count: Int, price: Double, date: String): Future[Transaction] = db.run {
+  def create(user: Int, product: Long, count: Int, price: Double, date: String): Future[Transaction] = db.run {
     (transaction.map(t => (t.user, t.product, t.count, t.price, t.date))
       returning transaction.map(_.id)
       into { case ((user, product, count, price, date), id) => Transaction(id, user, product, count, price, date) }
@@ -53,7 +53,7 @@ class TransactionRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)
     transaction.filter(_.id === id).result.headOption
   }
 
-  def getByUser(id: UUID): Future[Seq[Transaction]] = db.run {
+  def getByUser(id: Int): Future[Seq[Transaction]] = db.run {
     transaction.filter(_.user === id).result
   }
 }

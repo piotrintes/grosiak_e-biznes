@@ -30,8 +30,8 @@ Seq[Any](_display_(/*4.2*/messages("email.activate.account.hello", user.name.get
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T17:46:52.330
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/emails/activateAccount.scala.txt
+                  DATE: 2020-06-09T20:28:43.607
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/emails/activateAccount.scala.txt
                   HASH: e0eedfa60f45f1c06fd86c261d667b29651aed14
                   MATRIX: 34->1|395->33|549->96|638->165|666->168|734->216
                   LINES: 4->1|9->3|14->4|14->4|16->6|16->6

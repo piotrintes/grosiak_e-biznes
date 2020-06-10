@@ -32,8 +32,8 @@ Seq[Any](format.raw/*8.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T18:00:00.680
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/activateAccount.scala.html
+                  DATE: 2020-06-09T20:28:43.488
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/activateAccount.scala.html
                   HASH: a2e66e4c6660596bf02782185ef2141159ecbdff
                   MATRIX: 28->1|65->32|106->67|140->95|230->133|577->168|739->237
                   LINES: 4->1|5->2|6->3|7->4|10->6|13->7|18->8

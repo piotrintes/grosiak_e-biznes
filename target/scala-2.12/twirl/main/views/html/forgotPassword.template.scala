@@ -33,8 +33,8 @@ Seq[Any](format.raw/*8.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T18:02:18.524
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/forgotPassword.scala.html
+                  DATE: 2020-06-09T20:28:43.516
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/forgotPassword.scala.html
                   HASH: b60bc93562fd2539df8fda38eebbfaa3e40417ec
                   MATRIX: 28->1|61->28|98->59|139->94|228->132|581->167|755->257|787->281|854->255|882->319
                   LINES: 4->1|5->2|6->3|7->4|10->6|13->7|17->9|17->9|18->8|19->9

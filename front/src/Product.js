@@ -29,11 +29,12 @@ class Product extends Component {
     addToCart() {
         fetch('http://localhost:9000/addtocarthandle', {
             method: 'POST',
-            body: JSON.stringify({ "user":1,"product":this.state.id,"count":parseInt(document.getElementsByName("number")[0].value)
+            body: JSON.stringify({"product":this.state.id,"count":parseInt(document.getElementsByName("number")[0].value)
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
-            }
+            },
+            credentials:"include"
         })
             .then(res => res.json())
             .then(console.log)

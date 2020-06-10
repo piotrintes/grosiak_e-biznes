@@ -31,8 +31,8 @@ Seq[Any]()
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T18:02:46.234
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/main.scala.html
+                  DATE: 2020-06-09T20:28:43.538
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/main.scala.html
                   HASH: 1daeed939f64cff44d536d1ca67368b17df97f53
                   MATRIX: 28->1|65->32|106->67|140->95|179->128|570->157
                   LINES: 4->1|5->2|6->3|7->4|8->5|13->7

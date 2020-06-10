@@ -35,8 +35,8 @@ Seq[Any](format.raw/*10.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T18:02:18.518
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/signIn.scala.html
+                  DATE: 2020-06-09T20:28:43.498
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/signIn.scala.html
                   HASH: dbb5b417eac284899b1fb74333be763db999ccab
                   MATRIX: 28->1|61->28|98->59|139->94|178->127|257->200|335->235|709->270|915->391|948->415|1016->389|1045->453
                   LINES: 4->1|5->2|6->3|7->4|8->5|9->6|12->8|15->9|19->11|19->11|20->10|21->11

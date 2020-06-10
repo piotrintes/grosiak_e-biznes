@@ -101,17 +101,9 @@ class Cart extends Component {
     }
 
     componentDidMount() {
-        let url = "http://localhost:9000/cart/1"
+        let url = "http://localhost:9000/cart"
         var cartObjectList = []
-        fetch(url, {
-            mode: 'cors',
-            headers:{
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Origin':'http://localhost:3000',
-            },
-            method: 'GET',
-        })
+        fetch(url, {credentials:"include"})
             .then(results => {
                 return results.json();
             }).then(data => {

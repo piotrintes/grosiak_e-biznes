@@ -35,8 +35,8 @@ Seq[Any](format.raw/*5.1*/("""
 
               /*
                   -- GENERATED --
-                  DATE: 2020-06-09T17:46:52.321
-                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/app/views/emails/resetPassword.scala.html
+                  DATE: 2020-06-09T20:28:43.598
+                  SOURCE: /home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/app/views/emails/resetPassword.scala.html
                   HASH: 81b9291d5fdac7c17a599b4bb3b16ede68dd57bf
                   MATRIX: 35->1|72->32|432->61|587->123|614->124|670->154|757->221|800->238|873->291
                   LINES: 4->1|5->2|10->4|15->5|16->6|18->8|18->8|19->9|19->9

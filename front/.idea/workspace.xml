@@ -20,57 +20,310 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54c7c2b2-c7c3-465e-acb8-5aa5c468e1f7" name="Default" comment="React views">
-      <change afterPath="$PROJECT_DIR$/../conf/silhouette.conf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CartItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Delivery.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Payment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ProductName.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_adrianhurt_play_bootstrap_2_12_1_5_1_P27_B4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_adrianhurt_play_bootstrap_core_2_12_1_5_1_P27_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_enragedginger_akka_quartz_scheduler_2_12_1_8_3_akka_2_6_x_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_annotations_2_10_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_core_2_10_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_databind_2_10_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_iheart_ficus_2_12_1_4_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mchange_c3p0_0_9_5_4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mchange_mchange_commons_java_0_2_15_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ehcache_2_12_2_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_mailer_2_12_7_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_mailer_guice_2_12_7_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_specs2_2_12_2_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_codingwell_scala_guice_2_12_4_2_6_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_quartz_scheduler_quartz_2_3_2_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_slf4j_api_1_7_30_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_webjars_bootstrap_4_4_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_webjars_jquery_3_2_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_webjars_popper_js_1_14_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/models/UserClass.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../app/models/UserClassRepository.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conf/evolutions/default/1.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../conf/evolutions/default/2.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__aopalliance_aopalliance_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__aopalliance_aopalliance_1_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__c3p0_c3p0_0_9_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__ch_qos_logback_logback_classic_1_2_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__ch_qos_logback_logback_classic_1_2_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__ch_qos_logback_logback_core_1_2_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__ch_qos_logback_logback_core_1_2_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_atlassian_jwt_jwt_api_2_0_5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_atlassian_jwt_jwt_api_2_0_5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_atlassian_jwt_jwt_core_2_0_5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_atlassian_jwt_jwt_core_2_0_5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_enragedginger_akka_quartz_scheduler_2_12_1_6_1_akka_2_5_x_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_annotations_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_core_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_core_jackson_databind_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_10_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_dataformat_jackson_dataformat_cbor_2_10_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_datatype_jackson_datatype_jdk8_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_datatype_jackson_datatype_jsr310_2_10_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_parameter_names_2_10_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_paranamer_2_10_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_12_2_10_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_fasterxml_jackson_module_jackson_module_scala_2_12_2_10_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_github_stephenc_jcip_jcip_annotations_1_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_github_stephenc_jcip_jcip_annotations_1_0_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_code_findbugs_jsr305_3_0_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_code_findbugs_jsr305_3_0_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_errorprone_error_prone_annotations_2_3_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_errorprone_error_prone_annotations_2_3_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_failureaccess_1_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_failureaccess_1_0_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_guava_28_1_jre_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_guava_28_1_jre_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_guava_listenablefuture_9999_0_empty_to_avoid_conflict_with_guava_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_inject_extensions_guice_assistedinject_4_2_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_inject_extensions_guice_assistedinject_4_2_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_inject_extensions_guice_multibindings_4_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_inject_guice_4_2_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_inject_guice_4_2_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_j2objc_j2objc_annotations_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_j2objc_j2objc_annotations_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_protobuf_protobuf_java_3_10_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_google_protobuf_protobuf_java_3_10_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_iheart_ficus_2_12_1_4_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_cas_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_cas_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_crypto_jca_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_crypto_jca_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_password_bcrypt_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_password_bcrypt_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_persistence_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_persistence_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_testkit_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_testkit_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_totp_2_12_7_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_mohiva_play_silhouette_totp_2_12_7_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_nimbusds_nimbus_jose_jwt_4_41_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_nimbusds_nimbus_jose_jwt_4_41_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_novocode_junit_interface_0_11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_novocode_junit_interface_0_11_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_squareup_okhttp3_okhttp_3_11_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_squareup_okhttp3_okhttp_3_11_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_squareup_okio_okio_1_14_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_squareup_okio_okio_1_14_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_sun_mail_javax_mail_1_5_6_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_sun_mail_javax_mail_1_5_6_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_thoughtworks_paranamer_paranamer_2_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_actor_typed_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_actor_typed_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_http_core_2_12_10_1_11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_http_core_2_12_10_1_11_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_parsing_2_12_10_1_11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_parsing_2_12_10_1_11_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_protobuf_v3_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_protobuf_v3_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_serialization_jackson_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_serialization_jackson_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_slf4j_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_slf4j_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_stream_2_12_2_6_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_akka_akka_stream_2_12_2_6_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_config_1_4_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_config_1_4_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_build_link_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_build_link_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_cachecontrol_2_12_2_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_cachecontrol_2_12_2_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_filters_helpers_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_filters_helpers_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_standalone_2_12_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_standalone_2_12_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_akka_http_server_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_akka_http_server_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_cache_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_cache_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ehcache_2_12_2_8_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_exceptions_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_exceptions_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_functional_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_functional_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_guice_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_guice_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_jdbc_api_2_12_2_7_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_jdbc_api_2_12_2_7_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_jdbc_evolutions_2_12_2_7_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_jdbc_evolutions_2_12_2_7_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_json_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_json_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_json_joda_2_12_2_7_4_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_json_joda_2_12_2_7_4_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_logback_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_logback_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_mailer_2_12_7_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_mailer_guice_2_12_7_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_openid_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_openid_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_server_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_server_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_slick_2_12_4_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_slick_2_12_4_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_slick_evolutions_2_12_4_0_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_slick_evolutions_2_12_4_0_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_specs2_2_12_2_8_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_streams_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_streams_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_test_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_test_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_2_12_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_2_12_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_2_12_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_2_12_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_json_2_12_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_json_2_12_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_xml_2_12_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_xml_2_12_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_shaded_asynchttpclient_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_shaded_asynchttpclient_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_shaded_oauth_2_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_shaded_oauth_2_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_twirl_api_2_12_1_5_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_play_twirl_api_2_12_1_5_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_slick_slick_2_12_3_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_slick_slick_2_12_3_3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_slick_slick_hikaricp_2_12_3_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_slick_slick_hikaricp_2_12_3_3_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_ssl_config_core_2_12_0_4_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_typesafe_ssl_config_core_2_12_0_4_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_warrenstrange_googleauth_1_2_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_warrenstrange_googleauth_1_2_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__com_zaxxer_HikariCP_3_2_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__com_zaxxer_HikariCP_3_2_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_codec_commons_codec_1_11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_codec_commons_codec_1_11_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_io_commons_io_2_6_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_io_commons_io_2_6_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_logging_commons_logging_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_logging_commons_logging_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_net_commons_net_3_6_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__commons_net_commons_net_3_6_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__de_svenkubiak_jBCrypt_0_4_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__de_svenkubiak_jBCrypt_0_4_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__io_jsonwebtoken_jjwt_0_9_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__io_jsonwebtoken_jjwt_0_9_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_activation_jakarta_activation_api_1_2_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_activation_jakarta_activation_api_1_2_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_transaction_jakarta_transaction_api_1_3_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_transaction_jakarta_transaction_api_1_3_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__jakarta_xml_bind_jakarta_xml_bind_api_2_3_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_activation_activation_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_activation_activation_1_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_cache_cache_api_1_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_cache_cache_api_1_1_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_inject_javax_inject_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__joda_time_joda_time_2_10_5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__joda_time_joda_time_2_10_5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_bytebuddy_byte_buddy_1_9_10_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_bytebuddy_byte_buddy_1_9_10_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_bytebuddy_byte_buddy_agent_1_9_10_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_bytebuddy_byte_buddy_agent_1_9_10_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_codingwell_scala_guice_2_12_4_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_minidev_accessors_smart_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_minidev_accessors_smart_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_minidev_json_smart_2_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_minidev_json_smart_2_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sf_ehcache_ehcache_2_10_6_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sf_ehcache_ehcache_2_10_6_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_2_36_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_2_36_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_core_js_2_36_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_core_js_2_36_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_cssparser_1_5_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_htmlunit_cssparser_1_5_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_neko_htmlunit_2_36_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__net_sourceforge_htmlunit_neko_htmlunit_2_36_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_email_1_5_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_email_1_5_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_exec_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_exec_1_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_lang3_3_8_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_lang3_3_9_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_lang3_3_9_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_text_1_7_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_commons_commons_text_1_7_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpclient_4_5_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpclient_4_5_9_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpclient_4_5_9_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpcore_4_4_11_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpcore_4_4_11_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpcore_4_4_6_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpmime_4_5_9_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_apache_httpcomponents_httpmime_4_5_9_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_atteo_classindex_classindex_3_4_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_atteo_classindex_classindex_3_4_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_bouncycastle_bcpkix_jdk15on_1_60_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_bouncycastle_bcpkix_jdk15on_1_60_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_bouncycastle_bcprov_jdk15on_1_60_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_bouncycastle_bcprov_jdk15on_1_60_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_brotli_dec_0_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_brotli_dec_0_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_checkerframework_checker_qual_2_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_checkerframework_checker_qual_2_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_codehaus_mojo_animal_sniffer_annotations_1_18_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_codehaus_mojo_animal_sniffer_annotations_1_18_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_client_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_client_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_http_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_http_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_io_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_io_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_util_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_util_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_xml_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_jetty_xml_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_api_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_api_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_client_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_client_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_common_9_4_20_v20190813_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_eclipse_jetty_websocket_websocket_common_9_4_20_v20190813_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_ehcache_jcache_1_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_ehcache_jcache_1_0_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_fluentlenium_fluentlenium_core_3_7_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_fluentlenium_fluentlenium_core_3_7_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_hamcrest_hamcrest_2_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_hamcrest_hamcrest_2_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_hamcrest_hamcrest_core_2_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_hamcrest_hamcrest_core_2_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_jasig_cas_client_cas_client_core_3_4_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_jasig_cas_client_cas_client_core_3_4_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_jasig_cas_client_cas_client_support_saml_3_4_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_jasig_cas_client_cas_client_support_saml_3_4_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_mockito_mockito_core_3_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_mockito_mockito_core_3_1_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_objenesis_objenesis_2_6_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_objenesis_objenesis_2_6_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_ow2_asm_asm_5_0_4_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_ow2_asm_asm_5_0_4_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_quartz_scheduler_quartz_2_2_3_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_reactivestreams_reactive_streams_1_0_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_reactivestreams_reactive_streams_1_0_3_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_java8_compat_2_12_0_9_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_java8_compat_2_12_0_9_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_parser_combinators_2_12_1_1_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_parser_combinators_2_12_1_1_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_12_1_2_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_modules_scala_xml_2_12_1_2_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_scala_library_2_12_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_scala_library_2_12_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_scala_reflect_2_12_8_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_lang_scala_reflect_2_12_8_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_sbt_test_interface_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_scala_sbt_test_interface_1_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_htmlunit_driver_2_36_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_htmlunit_driver_2_36_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_api_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_api_3_141_59_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_firefox_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_firefox_driver_3_141_59_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_remote_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_remote_driver_3_141_59_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_support_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_seleniumhq_selenium_selenium_support_3_141_59_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_jcl_over_slf4j_1_7_29_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_jcl_over_slf4j_1_7_29_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_jul_to_slf4j_1_7_29_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_jul_to_slf4j_1_7_29_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_slf4j_slf4j_api_1_7_29_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_common_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_common_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_core_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_core_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_fp_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_fp_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_junit_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_junit_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_matcher_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_matcher_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_mock_2_12_4_8_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_specs2_specs2_mock_2_12_4_8_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_typelevel_macro_compat_2_12_1_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_typelevel_macro_compat_2_12_1_1_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__org_xerial_sqlite_jdbc_3_30_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__org_xerial_sqlite_jdbc_3_30_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__xalan_serializer_2_7_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__xalan_serializer_2_7_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__xalan_xalan_2_7_2_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__xalan_xalan_2_7_2_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__xerces_xercesImpl_2_12_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__xerces_xercesImpl_2_12_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/libraries/sbt__xml_apis_xml_apis_1_4_01_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/libraries/sbt__xml_apis_xml_apis_1_4_01_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules/play-silhouette-seed-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules/play-silhouette-seed-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules/play-silhouette-seed.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/modules/play-silhouette-seed.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules/project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules/untitled9-build.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules/untitled9.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/play2_project_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/play2_project_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/play2_settings.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/sbt.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/sbt.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/scala_compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/scala_compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/5/6/56b86967e2832e6a8ed0bbff569cd767314a2c9c" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/6/4/644f59db746795ef1538ef95c4cbc0eab6663e28" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/sonarlint/issuestore/8/2/82ca690539d21e2770ba3163a9391843c2c3a739" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/controllers/ApplicationController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/ApplicationController.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/controllers/ProductController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/ProductController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/controllers/SocialAuthController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/controllers/SocialAuthController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/Cart.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/Cart.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/models/CartRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/CartRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/Comment.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/Comment.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/models/CommentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/CommentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/DeliveryRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/DeliveryRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/PaymentRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/PaymentRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../app/models/PromotionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/PromotionRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/PrOpinion.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/PrOpinion.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/PrOpinionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/PrOpinionRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/Transaction.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/Transaction.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../app/models/TransactionRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../app/models/TransactionRepository.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/../build.sbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../conf/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/evolutions/default/2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/UserRepository.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../conf/silhouette.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../conf/silhouette.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ebiznes.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/../ebiznes.sqlite" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cart.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Opinions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Opinions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Products.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Promotions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Promotions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TopBar.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Transactions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UserPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/UserPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/../logs/application.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/default/project-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-compile-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-compile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-docs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-docs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-optional.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-provided.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-runtime-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-runtime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-scala-tool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-sources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-sources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.10/sbt-0.13/resolution-cache/reports/default-project-build-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/update_cache_2.10/output" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$c63e878178286773ddb0$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$c63e878178286773ddb0.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$c63e878178286773ddb0.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$cf794960657f021d8712$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$cf794960657f021d8712.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$cf794960657f021d8712.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$fcb496a9a10f80bab495$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$fcb496a9a10f80bab495.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/project/target/config-classes/$fcb496a9a10f80bab495.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2a99913b9917ccb5fb1f$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2a99913b9917ccb5fb1f.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2a99913b9917ccb5fb1f.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2da24a82fecec258ebb2$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2da24a82fecec258ebb2.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$2da24a82fecec258ebb2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$4ed4add38f2b1d3077d4$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$4ed4add38f2b1d3077d4.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$4ed4add38f2b1d3077d4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7efac511e3e7c98b4356$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7efac511e3e7c98b4356.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7efac511e3e7c98b4356.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7f361fb7713e04f7e2dd$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7f361fb7713e04f7e2dd.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$7f361fb7713e04f7e2dd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$821329aa1ea3357af695$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$821329aa1ea3357af695.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$821329aa1ea3357af695.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$87da6a9dc66bf3221790$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$87da6a9dc66bf3221790.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$87da6a9dc66bf3221790.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$9781cee6072ee2d395fc$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$9781cee6072ee2d395fc.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$9781cee6072ee2d395fc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$ab609ac9cb264b3b3225$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$ab609ac9cb264b3b3225.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$ab609ac9cb264b3b3225.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$b35857bce2b8e845a1d9$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$b35857bce2b8e845a1d9.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$b35857bce2b8e845a1d9.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$c5a9511505011e14cf7d$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$c5a9511505011e14cf7d.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$c5a9511505011e14cf7d.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d3b14d095c57cc587c78$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d3b14d095c57cc587c78.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d3b14d095c57cc587c78.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d64c72caacebad832778$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d64c72caacebad832778.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d64c72caacebad832778.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d91a3e7e4c005af732c8$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d91a3e7e4c005af732c8.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$d91a3e7e4c005af732c8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$f89aeac0516d2ac0a792$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$f89aeac0516d2ac0a792.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/config-classes/$f89aeac0516d2ac0a792.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/scala-2.12/sbt-1.0/update/update_cache_2.12/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/_global/_global/csrLogger/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/_global/_global/csrLogger/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/runtime/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/runtime/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/runtime/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/runtime/fullClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/runtime/fullClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../project/target/streams/runtime/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ApplicationController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCartForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateCategoryForm$.class" afterDir="false" />
@@ -92,9 +345,14 @@
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/CreateUserForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/HomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseAssets.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseAssets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseCountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseActivateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseActivateAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseChangePasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseChangePasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseForgotPasswordController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseHomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseSignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/ReverseSignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/SocialAuthController$$anonfun$$nestedInanonfun$authenticate$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/SocialAuthController$$anonfun$$nestedInanonfun$authenticate$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/SocialAuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/SocialAuthController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCartForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateCategoryForm$.class" afterDir="false" />
@@ -115,34 +373,76 @@
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateTransactionForm.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/UpdateUserForm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseAssets.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseAssets.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseCountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseCountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseActivateAccountController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseActivateAccountController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseApplicationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseApplicationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseChangePasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseChangePasswordController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseForgotPasswordController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseForgotPasswordController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseHomeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/2.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/evolutions/default/2.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseSignUpController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/controllers/javascript/ReverseSignUpController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Cart$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Cart$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Cart.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository$CartTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository$CartTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CartRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Comment$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Comment$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Comment.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Comment.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CommentRepository$CommentTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CommentRepository$CommentTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/DeliveryRepository$DeliveryTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/DeliveryRepository$DeliveryTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/DeliveryRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/DeliveryRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PaymentRepository$PaymentTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PaymentRepository$PaymentTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PaymentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PaymentRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PromotionRepository$PromotionTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PromotionRepository$PromotionTable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PromotionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PromotionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CommentRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/CommentRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinion$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinion$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinion.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository$PrOpinionTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository$PrOpinionTable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/PrOpinionRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Transaction$.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Transaction$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/Transaction.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/TransactionRepository$TransactionTable.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/TransactionRepository$TransactionTable.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/models/TransactionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/models/TransactionRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes$$anonfun$routes$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/router/Routes.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/classes/silhouette.conf" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/classes/silhouette.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/controllers/routes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/Routes.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/RoutesPrefix.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/routes/main/router/RoutesPrefix.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/dependencyPositions/$global/streams/update_cache_2.12/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/$global/playCommonClassloader/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/$global/streams/op-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/activateAccount.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/activateAccount.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/changePassword.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/changePassword.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/activateAccount.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/activateAccount.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/alreadySignedUp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/alreadySignedUp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/resetPassword.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/resetPassword.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/signUp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/emails/signUp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/forgotPassword.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/forgotPassword.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/home.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/home.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/main.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/main.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/passwordStrength.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/passwordStrength.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/resetPassword.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/resetPassword.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/signIn.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/signIn.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/signUp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/signUp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/totp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/totp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/totpRecovery.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/html/totpRecovery.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/activateAccount.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/activateAccount.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/alreadySignedUp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/alreadySignedUp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/resetPassword.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/resetPassword.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/signUp.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/../target/scala-2.12/twirl/main/views/txt/emails/signUp.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/_global/_global/_global/streams/sync-exported-assets-web-assets" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/_global/_global/_global/streams/sync-exported-assets-web-assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/_global/_global/checkBuildSources/_global/inputFileStamps/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/_global/_global/checkBuildSources/_global/inputFileStamps/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/_global/dependencyPositions/_global/streams/update_cache_2.12/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/_global/_global/compileSourceFileInputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/_global/_global/compileSourceFileInputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/_global/_global/managedSourcePaths/previous" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/_global/_global/managedSourcePaths/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compile/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compileIncSetup/_global/streams/inc_compile_2.12.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/compileIncremental/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/copyResources/_global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/copyResources/_global/streams/copy-resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/playRoutes/_global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/playRoutes/_global/streams/op-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/scalariform/in-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/scalariform/in-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/scalariform/out-cache" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/compile/scalariformFormat/_global/streams/scalariform/out-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/runtime/exportedProducts/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/runtime/exportedProducts/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/runtime/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/runtime/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../target/streams/web-assets/assets/_global/streams/sync-assets-web-assets" beforeDir="false" afterPath="$PROJECT_DIR$/../target/streams/web-assets/assets/_global/streams/sync-assets-web-assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -161,7 +461,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="10.15.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -221,6 +521,9 @@
       <workItem from="1591276308431" duration="17350000" />
       <workItem from="1591360311583" duration="5170000" />
       <workItem from="1591540503707" duration="344000" />
+      <workItem from="1591726272367" duration="8000" />
+      <workItem from="1591726288273" duration="683000" />
+      <workItem from="1591794008531" duration="7280000" />
     </task>
     <task id="LOCAL-00001" summary="React views">
       <created>1590245947601</created>
@@ -272,33 +575,33 @@
     </state>
     <state x="2347" y="238" key="FileChooserDialogImpl/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697389903" />
     <state x="641" y="269" width="424" height="485" key="FileChooserDialogImpl/0.36.1920.1002@0.36.1920.1002" timestamp="1590763383657" />
-    <state width="945" height="222" key="GridCell.Tab.0.bottom" timestamp="1591540847176">
+    <state width="945" height="222" key="GridCell.Tab.0.bottom" timestamp="1591726971101">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.bottom/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753450" />
-    <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1591540847176" />
+    <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.1920.1002@0.36.1920.1002" timestamp="1591726971101" />
     <state width="945" height="222" key="GridCell.Tab.0.bottom/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953563" />
-    <state width="945" height="222" key="GridCell.Tab.0.center" timestamp="1591540847175">
+    <state width="945" height="222" key="GridCell.Tab.0.center" timestamp="1591726971101">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.center/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753449" />
-    <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1591540847175" />
+    <state width="945" height="222" key="GridCell.Tab.0.center/0.36.1920.1002@0.36.1920.1002" timestamp="1591726971101" />
     <state width="945" height="222" key="GridCell.Tab.0.center/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953542" />
-    <state width="945" height="222" key="GridCell.Tab.0.left" timestamp="1591540847175">
+    <state width="945" height="222" key="GridCell.Tab.0.left" timestamp="1591726971101">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.left/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753448" />
-    <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1591540847175" />
+    <state width="945" height="222" key="GridCell.Tab.0.left/0.36.1920.1002@0.36.1920.1002" timestamp="1591726971101" />
     <state width="945" height="222" key="GridCell.Tab.0.left/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953540" />
-    <state width="945" height="222" key="GridCell.Tab.0.right" timestamp="1591540847176">
+    <state width="945" height="222" key="GridCell.Tab.0.right" timestamp="1591726971101">
       <screen x="0" y="36" width="1920" height="1002" />
     </state>
     <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@0.36.1920.1002" timestamp="1590084902638" />
     <state width="626" height="276" key="GridCell.Tab.0.right/0.36.1920.1002/1920.0.1280.1024@1920.0.1280.1024" timestamp="1588697753450" />
-    <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1591540847176" />
+    <state width="945" height="222" key="GridCell.Tab.0.right/0.36.1920.1002@0.36.1920.1002" timestamp="1591726971101" />
     <state width="945" height="222" key="GridCell.Tab.0.right/0.36.3200.1002@0.36.3200.1002" timestamp="1590507953552" />
     <state x="189" y="164" width="1556" height="731" key="SettingsEditor" timestamp="1590071400148">
       <screen x="0" y="36" width="1920" height="1002" />

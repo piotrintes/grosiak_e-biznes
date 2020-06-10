@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
-// @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project_silhouette/conf/routes
-// @DATE:Tue Jun 09 18:59:01 CEST 2020
+// @SOURCE:/home/piotr/Dokumenty/Studia/Stopień2/Rok1.5/Semestr2/E-Biznes/project/conf/routes
+// @DATE:Wed Jun 10 20:01:45 CEST 2020
 
 package controllers;
 

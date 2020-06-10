@@ -32,6 +32,9 @@ POST        /password/change                 controllers.ChangePasswordControlle
 GET         /account/email/:email            controllers.ActivateAccountController.send(email: String)
 GET         /account/activate/:token         controllers.ActivateAccountController.activate(token: java.util.UUID)
 
+
+GET         /isLogged                        controllers.ApplicationController.isLogged
+
 # End of authentication
 
 # Categories
@@ -60,7 +63,7 @@ GET     /delete/:id                 controllers.HomeController.delete(id: Long)
 # Product Opinions
 GET     /addopinion/:productid              controllers.HomeController.addOpinion(productid: Long)
 +nocsrf
-POST    /addopinionhandle                   controllers.HomeController.addOpinionHandle
+POST    /addopinionhandle                   controllers.ApplicationController.addOpinionHandle
 GET     /updateopinion/:id                  controllers.HomeController.updateOpinion(id: Int)
 +nocsrf
 POST    /updateopinionhandle                controllers.HomeController.updateOpinionHandle
@@ -82,7 +85,7 @@ GET     /promotions                         controllers.HomeController.promotion
 # Comments
 GET     /addcomment                 controllers.HomeController.addComment
 +nocsrf
-POST    /addcommenthandle           controllers.HomeController.addCommentHandle
+POST    /addcommenthandle           controllers.ApplicationController.addCommentHandle
 GET     /updatecomment/:id          controllers.HomeController.updateComment(id: Int)
 GET     /updatecommenthandle        controllers.HomeController.updateCommentHandle
 GET     /deletecomment/:id          controllers.HomeController.deleteComment(id: Int)
@@ -90,24 +93,24 @@ GET     /comment/:id                controllers.HomeController.comment(id: Int)
 GET     /comments                   controllers.HomeController.comments
 
 # Users
-#GET     /adduser                    controllers.HomeController.addUser
-#+nocsrf
-#POST    /adduserhandle              controllers.HomeController.addUserHandle
-#GET     /updateuser/:id             controllers.HomeController.updateUser(id: UUID)
-#GET     /updateuserhandle           controllers.HomeController.updateUserHandle
-#GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: UUID)
-#GET     /user/:id                   controllers.HomeController.user(id: UUID)
-#GET     /users                      controllers.HomeController.users
+GET     /adduser                    controllers.HomeController.addUser
++nocsrf
+POST    /adduserhandle              controllers.HomeController.addUserHandle
+GET     /updateuser/:id             controllers.HomeController.updateUser(id: Int)
+GET     /updateuserhandle           controllers.HomeController.updateUserHandle
+GET     /deleteuser/:id             controllers.HomeController.deleteUser(id: Int)
+GET     /user/:id                   controllers.HomeController.user(id: Int)
+GET     /users                      controllers.HomeController.users
 
 # Cart
-GET     /addtocart/:id                       controllers.HomeController.addToCart(id: Int)
+GET     /addtocart/:id                    controllers.HomeController.addToCart(id: Int)
 +nocsrf
-POST    /addtocarthandle                     controllers.HomeController.addToCartHandle
-GET     /updatecart/:id                      controllers.HomeController.addToCart(id: Int)
+POST    /addtocarthandle                  controllers.ApplicationController.addToCartHandle
+GET     /updatecart/:id                   controllers.HomeController.addToCart(id: Int)
 +nocsrf
-POST    /updatecarthandle                    controllers.HomeController.addToCartHandle
-GET     /deletefromcart/:id                  controllers.HomeController.deleteFromCart(id: Int)
-GET     /cart                                controllers.HomeController.cart
+POST    /updatecarthandle                 controllers.ApplicationController.addToCartHandle
+GET     /deletefromcart/:id               controllers.HomeController.deleteFromCart(id: Int)
+GET     /cart                             controllers.ApplicationController.cart
 
 # Transactions
 GET     /addtransaction                 controllers.HomeController.addTransaction
@@ -118,7 +121,7 @@ GET     /updatetransactionhandle        controllers.HomeController.updateTransac
 GET     /deletetransaction/:id          controllers.HomeController.deleteTransaction(id: Int)
 GET     /transaction/:id                controllers.HomeController.transaction(id: Int)
 GET     /transactions                   controllers.HomeController.transactions
-GET     /transactionsusr                controllers.HomeController.transactionsUsr
+GET     /transactionsusr/:id            controllers.HomeController.transactionsUsr(id: Int)
 
 # Payments
 GET     /addpayment                 controllers.HomeController.addPayment

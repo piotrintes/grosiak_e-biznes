@@ -18,13 +18,15 @@ class Transactions extends Component {
     sentOpinion(id) {
         fetch('http://localhost:9000/addopinionhandle', {
             method: 'POST',
-            body: JSON.stringify({ "user":1,"product":id,
+            body: JSON.stringify({
+                "product":id,
                 "stars":parseInt(document.getElementsByName("stars")[0].value),
                 "text":document.getElementsByName("text")[0].value
             }),
             headers: {
                 'Content-type': 'application/json; charset=UTF-8'
-            }
+            },
+            credentials:"include"
         })
             .then(res => res.json())
             .then(console.log)

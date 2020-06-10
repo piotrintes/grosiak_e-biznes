@@ -17,7 +17,7 @@ class CartRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implic
 
   private class CartTable(tag: Tag) extends Table[Cart](tag, "cart") {
     def id = column[Int]("id", O.PrimaryKey, O.AutoInc)
-    def user = column[UUID]("user")
+    def user = column[Int]("user")
     def product: Rep[Long] = column[Long]("product")
     def count: Rep[Int] = column[Int]("count")
     def * = (id, user, product, count) <> ((Cart.apply _).tupled, Cart.unapply)
@@ -25,7 +25,7 @@ class CartRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implic
 
   private val cart = TableQuery[CartTable]
 
-  def create(user: UUID, product: Long, count: Int): Future[Cart] = db.run {
+  def create(user: Int, product: Long, count: Int): Future[Cart] = db.run {
     (cart.map(o => (o.user, o.product, o.count))
       returning cart.map(_.id)
       into { case ((user, product, count), id) => Cart(id, user, product, count) }
@@ -36,7 +36,7 @@ class CartRepository @Inject() (dbConfigProvider: DatabaseConfigProvider)(implic
     cart.result
   }
 
-  def list(user_id: UUID): Future[Seq[Cart]] = db.run {
+  def list(user_id: Int): Future[Seq[Cart]] = db.run {
     cart.filter(_.user === user_id).result
   }
 

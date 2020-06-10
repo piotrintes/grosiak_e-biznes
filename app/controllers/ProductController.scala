@@ -2,8 +2,10 @@ package controllers
 
 import java.util.UUID
 
+import com.mohiva.play.silhouette
+import com.mohiva.play.silhouette.api.actions.SecuredRequest
 import javax.inject._
-import models.{Cart, CartRepository, Category, CategoryRepository, Comment, CommentRepository, Delivery, DeliveryRepository, Payment, PaymentRepository, PrOpinion, PrOpinionRepository, Product, ProductRepository, Promotion, PromotionRepository, Transaction, TransactionRepository, User/*, UserRepository*/}
+import models.{Cart, CartRepository, Category, CategoryRepository, Comment, CommentRepository, Delivery, DeliveryRepository, Payment, PaymentRepository, PrOpinion, PrOpinionRepository, Product, ProductRepository, Promotion, PromotionRepository, Transaction, TransactionRepository, User, UserClass, UserClassRepository}
 import play.api.data.Form
 import play.api.data.Forms._
 import play.api.mvc._
@@ -12,6 +14,7 @@ import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success}
 import play.api.data.format.Formats._
 import play.api.libs.json.Json
+import utils.auth.DefaultEnv
 /**
  * This controller creates an `Action` to handle HTTP requests to the
  * application's home page.
@@ -21,8 +24,8 @@ class HomeController @Inject()(
                                 productsRepo: ProductRepository, categoryRepo: CategoryRepository,
                                 cartRepo: CartRepository, commentRepo: CommentRepository, deliveryRepo: DeliveryRepository,
                                 paymentRepo: PaymentRepository, prOpinionRepo: PrOpinionRepository, promotionRepo: PromotionRepository,
-                                transactionRepo: TransactionRepository, /*userRepo: UserRepository,*/
-                                cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc) {
+                                transactionRepo: TransactionRepository, userRepo: UserClassRepository,
+                                cc: MessagesControllerComponents)(implicit ec: ExecutionContext) extends MessagesAbstractController(cc){
 
   val productForm: Form[CreateProductForm] = Form {
     mapping(
@@ -175,23 +178,13 @@ class HomeController @Inject()(
   def addOpinion(productid: Long) = Action {
     Ok("Your new application is ready.")
   }
-  def addOpinionHandle = Action.async { implicit request =>
-    val user = request.body.asJson.get("user").as[UUID]
-    val product = request.body.asJson.get("product").as[Long]
-    val stars = request.body.asJson.get("stars").as[Int]
-    val text = request.body.asJson.get("text").as[String]
-
-    prOpinionRepo.create(user,product,stars,text).map { opinion =>
-      Ok(Json.toJson(opinion))
-    }
-  }
   def updateOpinion(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val op = prOpinionRepo.getByIdOption(id)
     op.map(opinion => Ok(Json.toJson(opinion)))
   }
   def updateOpinionHandle = Action.async { implicit request =>
     val id = request.body.asJson.get("id").as[Int]
-    val user = request.body.asJson.get("user").as[UUID]
+    val user = request.body.asJson.get("user").as[Int]
     val product = request.body.asJson.get("product").as[Long]
     val stars = request.body.asJson.get("stars").as[Int]
     val text = request.body.asJson.get("text").as[String]
@@ -293,22 +286,13 @@ class HomeController @Inject()(
   def addComment = Action {
     Ok("Your new application is ready.")
   }
-  def addCommentHandle = Action.async { implicit request =>
-    val user = request.body.asJson.get("user").as[UUID]
-    val stars = request.body.asJson.get("stars").as[Int]
-    val text = request.body.asJson.get("text").as[String]
-
-    commentRepo.create(user,stars,text).map { comment =>
-      Ok(Json.toJson(comment))
-    }
-  }
   def updateComment(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val comment = commentRepo.getByIdOption(id)
     comment.map(comment => Ok(Json.toJson(comment)))
   }
   def updateCommentHandle = Action.async { implicit request =>
     val id = request.body.asJson.get("id").as[Int]
-    val user = request.body.asJson.get("user").as[UUID]
+    val user = request.body.asJson.get("user").as[Int]
     val stars = request.body.asJson.get("stars").as[Int]
     val text = request.body.asJson.get("text").as[String]
 
@@ -351,42 +335,47 @@ class HomeController @Inject()(
       "admin" -> boolean,
     )(UpdateUserForm.apply)(UpdateUserForm.unapply)
   }
-  /*
+
   def addUser = Action {
-    Ok(views.html.index("Your new application is ready."))
+    Ok("Your new application is ready.")
   }
   def addUserHandle = Action.async { implicit request =>
     val usrName = request.body.asJson.get("usrName").as[String]
+    val providerId = request.body.asJson.get("providerId").as[String]
+    val userKey = request.body.asJson.get("userKey").as[String]
     val name = request.body.asJson.get("name").as[String]
     val surname = request.body.asJson.get("surname").as[String]
     val email = request.body.asJson.get("email").as[String]
     val admin = request.body.asJson.get("admin").as[Boolean]
 
-    userRepo.create(usrName,name,surname,email,admin).map { user =>
+    userRepo.create(providerId, userKey, usrName, name, surname, email, admin).map { user =>
       Ok(Json.toJson(user))
     }
   }
-  def updateUser(id: UUID): Action[AnyContent] = Action.async { implicit request =>
+  def updateUser(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val user = userRepo.getByIdOption(id)
     user.map(user => Ok(Json.toJson(user)))
   }
   def updateUserHandle = Action.async { implicit request =>
-    val id = request.body.asJson.get("id").as[UUID]
+    val id = request.body.asJson.get("id").as[Int]
+    val providerId = request.body.asJson.get("providerId").as[String]
+    val userKey = request.body.asJson.get("userKey").as[String]
     val usrName = request.body.asJson.get("usrName").as[String]
     val name = request.body.asJson.get("name").as[String]
     val surname = request.body.asJson.get("surname").as[String]
     val email = request.body.asJson.get("email").as[String]
     val admin = request.body.asJson.get("admin").as[Boolean]
 
-    userRepo.update(id,User(id,usrName,name,surname,email,admin)).map { user =>
-      Ok(Json.toJson(User(id,usrName,name,surname,email,admin)))
+    userRepo.update(id,UserClass(id,providerId,userKey,usrName,name,surname,email,admin)).map { user =>
+      Ok(Json.toJson(UserClass(id,providerId,userKey,usrName,name,surname,email,admin)))
     }
   }
-  def deleteUser(id: UUID) = Action {
+
+  def deleteUser(id: Int) = Action {
     userRepo.delete(id)
     Redirect("/users")
   }
-  def user(id: UUID): Action[AnyContent] = Action.async { implicit request =>
+  def user(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val user = userRepo.getByIdOption(id)
     user.map(user => Ok(Json.toJson(user)))
   }
@@ -395,7 +384,7 @@ class HomeController @Inject()(
     usr.map( users => Ok(Json.toJson(users)))
     //Ok(views.html.index("Your new application is ready."))
   }
-*/
+
 
   val cartForm: Form[CreateCartForm] = Form {
     mapping(
@@ -417,22 +406,13 @@ class HomeController @Inject()(
   def addToCart(id: Int) = Action {
     Ok("Your new application is ready.")
   }
-  def addToCartHandle = Action.async { implicit request =>
-    val user = request.body.asJson.get("user").as[UUID]
-    val product = request.body.asJson.get("product").as[Long]
-    val count = request.body.asJson.get("count").as[Int]
-
-    cartRepo.create(user,product,count).map { cart =>
-      Ok(Json.toJson(cart))
-    }
-  }
   def updateCart(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val cart = cartRepo.list()
     cart.map( cart => Ok(Json.toJson(cart)))
   }
   def updateCartHandle = Action.async { implicit request =>
     val id = request.body.asJson.get("id").as[Int]
-    val user = request.body.asJson.get("user").as[UUID]
+    val user = request.body.asJson.get("user").as[Int]
     val product = request.body.asJson.get("product").as[Long]
     val count = request.body.asJson.get("count").as[Int]
 
@@ -445,13 +425,6 @@ class HomeController @Inject()(
     Redirect("/cart")
   }
 
-  def cart(): Action[AnyContent] = Action.async { implicit request =>
-    /*val cart = cartRepo.list(userID)
-    cart.map( cart => Ok(Json.toJson(cart)))*/
-    //Ok(views.html.index("Your new application is ready."))
-    val payment = paymentRepo.getByIdOption(1)
-    payment.map(payment => Ok(Json.toJson(payment)))
-  }
 
 
   val paymentForm: Form[CreatePaymentForm] = Form {
@@ -532,7 +505,7 @@ class HomeController @Inject()(
     Ok("Your new application is ready.")
   }
   def addTransactionHandle = Action.async { implicit request =>
-    val user = request.body.asJson.get("user").as[UUID]
+    val user = request.body.asJson.get("user").as[Int]
     val product = request.body.asJson.get("product").as[Long]
     val count = request.body.asJson.get("count").as[Int]
     val price = request.body.asJson.get("price").as[Double]
@@ -548,7 +521,7 @@ class HomeController @Inject()(
   }
   def updateTransactionHandle = Action.async { implicit request =>
     val id = request.body.asJson.get("id").as[Int]
-    val user = request.body.asJson.get("user").as[UUID]
+    val user = request.body.asJson.get("user").as[Int]
     val product = request.body.asJson.get("product").as[Long]
     val count = request.body.asJson.get("count").as[Int]
     val price = request.body.asJson.get("price").as[Double]
@@ -570,11 +543,8 @@ class HomeController @Inject()(
     val trs = transactionRepo.list()
     trs.map( transactions => Ok(Json.toJson(transactions)))
   }
-  def transactionsUsr(): Action[AnyContent] = Action.async { implicit request =>
-    /*var id: UUID
+  def transactionsUsr(id: Int): Action[AnyContent] = Action.async { implicit request =>
     val trs = transactionRepo.getByUser(id)
-    trs.map( transactions => Ok(Json.toJson(transactions)))*/
-    val trs = transactionRepo.list()
     trs.map( transactions => Ok(Json.toJson(transactions)))
   }
 
