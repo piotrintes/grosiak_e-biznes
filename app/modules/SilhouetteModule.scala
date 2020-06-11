@@ -123,6 +123,7 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
    *
    * @param facebookProvider The Facebook provider implementation.
    * @param googleProvider The Google provider implementation.
+   * @param dropboxProvider The Google provider implementation.
    * @param vkProvider The VK provider implementation.
    * @param twitterProvider The Twitter provider implementation.
    * @param xingProvider The Xing provider implementation.
@@ -133,6 +134,7 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
   def provideSocialProviderRegistry(
     facebookProvider: FacebookProvider,
     googleProvider: GoogleProvider,
+    dropboxProvider: DropboxProvider,
     vkProvider: VKProvider,
     twitterProvider: TwitterProvider,
     xingProvider: XingProvider,
@@ -140,6 +142,7 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
 
     SocialProviderRegistry(Seq(
       googleProvider,
+      dropboxProvider,
       facebookProvider,
       twitterProvider,
       vkProvider,
@@ -402,6 +405,23 @@ class SilhouetteModule extends AbstractModule with ScalaModule {
     configuration: Configuration): GoogleProvider = {
 
     new GoogleProvider(httpLayer, socialStateHandler, configuration.underlying.as[OAuth2Settings]("silhouette.google"))
+  }
+
+  /**
+   * Provides the Dropbox provider.
+   *
+   * @param httpLayer The HTTP layer implementation.
+   * @param socialStateHandler The social state handler implementation.
+   * @param configuration The Play configuration.
+   * @return The Dropbox provider.
+   */
+  @Provides
+  def provideDropboxProvider(
+    httpLayer: HTTPLayer,
+    socialStateHandler: SocialStateHandler,
+    configuration: Configuration): DropboxProvider = {
+
+    new DropboxProvider(httpLayer, socialStateHandler, configuration.underlying.as[OAuth2Settings]("silhouette.dropbox"))
   }
 
   /**

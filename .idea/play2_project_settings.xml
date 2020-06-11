@@ -13,7 +13,22 @@
         <entry key="project">
           <value>
             <ProjectSettingsEntry>
-              <option name="playDistrPath" value="$USER_HOME$/.ivy2/cache/com.typesafe.play/play_2.12/jars/play_2.12-2.8.1.jar" />
+              <option name="playDistrPath" value="$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/play_2.12/2.8.1/play_2.12-2.8.1.jar" />
+            </ProjectSettingsEntry>
+          </value>
+        </entry>
+        <entry key="root">
+          <value>
+            <ProjectSettingsEntry>
+              <option name="sourceDir" value="$PROJECT_DIR$/app" />
+              <option name="confDir" value="$PROJECT_DIR$/app" />
+              <option name="routesImports">
+                <list>
+                  <option value="controllers.Assets.Asset" />
+                  <option value="utils.route.Binders._" />
+                </list>
+              </option>
+              <option name="uri" value="$PROJECT_DIR$" />
             </ProjectSettingsEntry>
           </value>
         </entry>

@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Category from "./Category";
 
 class TopBar extends Component {
 
@@ -11,12 +10,14 @@ class TopBar extends Component {
         };
 
         this.showLogin = this.showLogin.bind(this);
-        this.showRegister = this.showRegister.bind(this);
         this.hideLogin = this.hideLogin.bind(this);
     }
 
     logOut() {
         fetch("http://localhost:9000/signOut", {credentials:"include"})
+        setTimeout(() => {
+            window.location.reload(false);
+        }, 100)
     }
 
     componentDidMount() {
@@ -28,11 +29,11 @@ class TopBar extends Component {
                     this.setState({loggedIn:[
                             <a href="/cart"><img id="circlebutton" src="/img/buttons/cart.png" width='38px' height='38px'/></a>,
                             <a href={userLink}><img id="circlebutton" src="/img/buttons/user.png" width='40px' height='38px'/></a>,
-                            <a id="button" href="/" onClick={this.logOut}>Wyloguj</a>]})
+                            <a id="button" href="#" onClick={this.logOut}>Wyloguj</a>]})
 
                 },
                 (error) => {
-                    this.setState({loggedIn:[<a id="button" href="http://localhost:9000/authenticate/google">Zaloguj się</a>]})
+                    this.setState({loggedIn:[<a id="button" href="#" onClick={this.showLogin}>Zaloguj się</a>]})
                 }
             )
     }
@@ -53,45 +54,19 @@ class TopBar extends Component {
             <div id="darken" className="darkbcg"/>
                 <div id="framefloating" className="loginFrame">
                     <h1>Zaloguj się</h1>
-                    <h2>Login:</h2>
-                    <table>
-                        <tr>
-                            <td id="left">
-                                <a id="button" href="#" onClick={this.showRegister}>Zarejestruj się</a>
-                            </td>
-                            <td id="right">
-                                <a id="button" href="#" onClick={this.showLogin}>Zaloguj się</a>
-                                <a id="button" href="#" onClick={this.hideLogin}>Anuluj</a>
-                            </td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        this.setState({ loginFrame: login });
-    }
-
-    showRegister() {
-        let login =
-            <div>
-                <div id="darken" className="darkbcg"/>
-                <div id="framefloating" className="loginFrame">
-                    <div>
-                    <h1>Zarejestruj się</h1>
-                    <h2>Login:</h2>
-                    <h2>Imię:</h2>
-                    <h2>Nazwisko:</h2>
-                    <h2>Adres e-mail:</h2>
-                    <table>
-                        <tr>
-                            <td id="left">
-                                <a id="button" href="#" onClick={this.showLogin}>Zaloguj się</a>
-                            </td>
-                            <td id="right">
-                                <a id="button" href="#" onClick={this.showLogin}>Zarejestruj się</a>
-                                <a id="button" href="#" onClick={this.hideLogin}>Anuluj</a>
-                            </td>
-                        </tr>
-                    </table>
+                    <h3>Zaloguj się przy pomocy:</h3>
+                    <div id="center">
+                        <t/><t/><t/><t/>
+                        <a href="http://localhost:9000/authenticate/google">
+                            <img id="circlebutton" src="/img/buttons/google.png" width='64px' height='64px'/>
+                        </a>
+                        <a href="http://localhost:9000/authenticate/dropbox">
+                            <img id="circlebutton" src="/img/buttons/dropbox.png" width='64px' height='64px'/>
+                        </a>
+                    </div>
+                    <br/><br/><br/>
+                    <div id="right">
+                        <a id="button" href="#" onClick={this.hideLogin}>Anuluj</a>
                     </div>
                 </div>
             </div>

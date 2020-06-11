@@ -7,9 +7,10 @@ class Promotions extends Component {
         this.state = {
             products: [],
         };
+        this.loadData = this.loadData.bind(this);
     }
 
-    componentDidMount() {
+    loadData() {
         var url = "http://localhost:9000/products"
 
         fetch(url, {
@@ -48,7 +49,6 @@ class Promotions extends Component {
                                 PROMOCJA - {pro.discount}%
                                 <t/>
                                 {(prod.price * (100 - pro.discount) / 100).toFixed(2)} zł <t/></b>]
-
                             products.push([
                                 <a id="clearunderline" href={link} key={prod.id}>
                                     <div id="framebutton">
@@ -67,10 +67,15 @@ class Promotions extends Component {
                                 </a>
                             ])
                             this.setState({products: products})
+                            console.log(prod.name)
                         }
                     })
             })
         })
+    }
+
+    componentDidMount() {
+        this.loadData()
     }
 
     render() {

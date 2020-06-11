@@ -1,11 +1,13 @@
 <component name="libraryTable">
   <library name="sbt: com.typesafe.play:filters-helpers_2.12:2.8.1:jar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/com.typesafe.play/filters-helpers_2.12/jars/filters-helpers_2.12-2.8.1.jar!/" />
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/filters-helpers_2.12/2.8.1/filters-helpers_2.12-2.8.1.jar!/" />
     </CLASSES>
-    <JAVADOC />
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/filters-helpers_2.12/2.8.1/filters-helpers_2.12-2.8.1-javadoc.jar!/" />
+    </JAVADOC>
     <SOURCES>
-      <root url="jar://$USER_HOME$/.ivy2/cache/com.typesafe.play/filters-helpers_2.12/srcs/filters-helpers_2.12-2.8.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/play/filters-helpers_2.12/2.8.1/filters-helpers_2.12-2.8.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
